@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 module tb ();
 
-   logic        a;
-   logic 	b;
-   logic 	c;
-   logic 	y;
+	logic        [2:0] a;
+	logic 	[2:0] b;
+	logic 	[2:0] c;
+	logic 	[1:0] y;
    logic        clk;   
    
   // instantiate device under test
