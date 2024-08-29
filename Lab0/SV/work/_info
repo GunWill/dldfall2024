@@ -6,6 +6,13 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -26,7 +33,7 @@ n@_opt
 Z6 OL;O;2021.3;73
 R1
 T_opt1
-Z7 !s110 1724940584
+!s110 1724940584
 V7cIgNK<cTQ0JObz[]AkQS1
 R2
 =1-e4c76793e2a7-66d08128-209-3cac
@@ -35,6 +42,7 @@ R4
 R5
 n@_opt1
 R6
+R1
 T_opt2
 !s110 1724939853
 V8[k<VZR>BFinE=Y[jdmFM1
@@ -46,51 +54,107 @@ R5
 n@_opt2
 R6
 R1
-vsilly
+T_opt3
+!s110 1724963318
+V3H1V^Oc6RB329c1T_;BU<1
+R2
+=1-00be43900d33-66d0d9f6-57-17810
+R3
+R4
+R5
+n@_opt3
+R6
+R1
+T_opt4
+!s110 1724963958
+V80o?o<z24Z<7DC2YV<GoA1
+R2
+=1-00be43900d33-66d0dc76-cc-120a8
+R3
+R4
+R5
+n@_opt4
+R6
+R1
+T_opt5
+Z7 !s110 1724966203
+Vi>1:i>d;d8X>D]?_UCP<E2
+R2
+=1-00be43900d33-66d0e53b-207-17414
+R3
+R4
+R5
+n@_opt5
+R6
+vfulladder
 Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 R7
 !i10b 1
-!s100 bfWFc?;IJYg[EK<o@zm@F3
-IIiK^ceEe8jV>Tk=E81?B40
+!s100 oQ`PGGTN`nnAEn1;Ae<hF1
+IbfVNgfYg[8m=@KN`[ZEi@0
 S1
-R1
-w1724849775
-8silly.sv
-Fsilly.sv
+Z9 dC:/Users/ekravch/Documents/GitHub/dldfall2024/Lab0/SV
+Z10 w1724966079
+Z11 8silly.sv
+Z12 Fsilly.sv
 !i122 0
-L0 1 5
-Z9 VDg1SIo80bB@j0V0VzS_@n1
-Z10 OL;L;2021.3;73
+L0 6 7
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z11 !s108 1724940583.000000
-Z12 !s107 silly_tb.sv|silly.sv|
-Z13 !s90 -reportprogress|300|silly.sv|silly_tb.sv|
+Z15 !s108 1724966203.000000
+Z16 !s107 silly_tb.sv|silly.sv|
+Z17 !s90 -reportprogress|300|silly.sv|silly_tb.sv|
 !i113 0
-Z14 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vsilly
+R8
+R7
+!i10b 1
+!s100 a9QnRnUO;f804Z_m_Pz3c1
+IgbZ@ID@;B[QVY97Fz8jV41
+S1
+R9
+R10
+R11
+R12
+!i122 0
+L0 1 5
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
 R5
 vtb
 R8
 R7
 !i10b 1
-!s100 GBfTln1=]`Zg4[;lS<]lD2
-IP_C;Goc`bAl6;]YiTBhj]3
+!s100 9GR9c[cT]OmLARb9N39hO3
+IGgMRN;5dQdAT8F7mJMM^c1
 S1
-R1
-w1724940544
+R9
+w1724966125
 8silly_tb.sv
 Fsilly_tb.sv
 !i122 0
 L0 2 62
-R9
-R10
+R13
+R14
 r1
 !s85 0
 31
-R11
-R12
-R13
+R15
+R16
+R17
 !i113 0
-R14
+R18
 R5

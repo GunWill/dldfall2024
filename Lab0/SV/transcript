@@ -13,29 +13,34 @@
 # //
 # do silly.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is ekravch@CEAT-ENDV350-08.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is ekravch@CEAT-ENDV350-08.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:09:43 on Aug 29,2024
+# Start time: 16:16:43 on Aug 29,2024
 # vlog -reportprogress 300 silly.sv silly_tb.sv 
 # -- Compiling module silly
+# -- Compiling module fulladder
 # -- Compiling module tb
 # 
 # Top level modules:
+# 	silly
 # 	tb
-# End time: 09:09:44 on Aug 29,2024, Elapsed time: 0:00:01
+# End time: 16:16:43 on Aug 29,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.tb 
-# Start time: 09:09:44 on Aug 29,2024
+# Start time: 16:16:43 on Aug 29,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.tb(fast)
-# Loading work.silly(fast)
+# Loading work.fulladder(fast)
 # .main_pane.list.interior.cs.body
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: User  Hostname: EMELIA-LAPTOP  ProcessID: 22172
-#           Attempting to use alternate WLF file "./wlftwjiv4y".
+#           Attempting to use alternate WLF file "./wlftz0tmr5".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwjiv4y
+#           Using alternate file: ./wlftz0tmr5
