@@ -55,9 +55,9 @@ module tb ();
 	#0   b = 1'b1;	
 	#0   c = 1'b1;	
 
-	#20 a=1'b0;
-	#0 b=1'b0;
-	#0 c=1'b0;		//default 
+	//#20 a=1'b0;
+	//#0 b=1'b0;
+	//#0 c=1'b0;		//default 
 	
      end
 
