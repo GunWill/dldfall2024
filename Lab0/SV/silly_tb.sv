@@ -4,6 +4,8 @@ module tb ();
 	logic        a;
 	logic 	 b;
 	logic 	 c;
+	logic sum;
+	logic cout;
 	// logic 	 y;
    logic        clk;   
    
