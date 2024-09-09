@@ -27,14 +27,19 @@ module top_demo
   output logic [7:0] led
 );
 logic a,b,c,sum, cout;
-//  assign led[3:0] = sw;
-//  assign led[7:4] = btn;
+  //Instantiation for fulladder from the SV file
+
   
   fulladder dut(a, b, c, sum, cout);
     assign a=btn[0];
+  //Assigns a to 0th button
     assign b=btn[1];
+  //Assigns b to 1st button
     assign c=btn[2];
+  //Assigns c to 2nd button
     assign sum=led[0];
+  //Assigns "Sum" output to 0th LED
     assign cout=led[1];
+  //Assigns "cout" output to first LED
 endmodule
 
