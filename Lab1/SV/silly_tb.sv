@@ -1,19 +1,18 @@
 `timescale 1ns / 1ps		//1 ns display cycle, 1 ps calculation cycle 
 module tb ();
 
-   logic        a;
-   logic 	b;
+	logic        [3:0]a;
+	logic 	[3:0]b;
    logic 	c;
-   logic        c0, c1, c2;
-   logic 	sum;
+	logic 	[3:0]sum;
    logic        cout;
-   logic        clk;  
+   logic        clk;
+   logic [4:0] sum_correct;
 
 
 assign sum_correct = a + b + c;
-assign cout_correct = a&b | a&c | b&c;
 assign error_sum = sum != sum_correct; 
-assign error_out = cout != cout_correct;
+
    
   // instantiate device under test
 	
@@ -51,7 +50,7 @@ initial
 
 				@(negedge clk)
 				begin
-					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, sum, sum_correct, (sum==sum_correct));
+					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, {cout,sum}, sum_correct, ({cout,sum}==sum_correct));
 				end
 			end
 	end
