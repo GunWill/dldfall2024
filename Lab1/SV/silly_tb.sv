@@ -54,6 +54,7 @@ initial
 					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, sum, sum_correct, (sum==sum_correct));
 				end
 			end
+	end
 				
 
 
