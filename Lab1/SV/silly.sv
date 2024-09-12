@@ -5,3 +5,7 @@ assign sum=a^b^c;
 assign cout=a&b|a&c|b&c;
 
 endmodule //1-bit full adder module
+
+module ripple_carry_adder();
+
+endmodule //ripple carry adder
