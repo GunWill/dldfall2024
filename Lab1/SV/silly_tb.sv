@@ -6,19 +6,40 @@ module tb ();
    logic 	c;
    logic 	sum;
    logic        cout;
-   logic        clk;   
+   logic        clk;  
+
+
+
    
   // instantiate device under test
 	
 	fulladder_1 dut (a, b, c, sum, cout);
 	
-   // 20 ns clock
-   initial 
-     begin	
-	clk = 1'b1;
-	forever #10 clk = ~clk;
-     end
+	
+   //clock
 
+	initial 
+     	begin	
+		clk = 1'b1;
+		forever #10 clk = ~clk;
+     	end
+
+integer handle3;
+integer desc3;
+integer i;
+
+	initial 
+		begin
+			handle3 = $fopen("rca.out");
+			desc3 = handle3;
+			#1250 $finish; 
+		end
+
+initial
+	begin
+		for(i=0; i<175; i+i+1)
+			begin
+				
 
    initial
      begin
