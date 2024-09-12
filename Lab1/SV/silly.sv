@@ -7,7 +7,7 @@ assign cout=a&b|a&c|b&c;
 endmodule //1-bit full adder module
 
 
-module ripple_carry_adder(input logic [3:0] a, [3:0] b, c, output logic [3:0] sum, cout);
+module ripple_carry_adder(input logic [3:0] a, b, input logic c, output logic [3:0] sum, output logic cout);
 logic c0,c1,c2;
 
   fulladder FA0 (a[0], b[0], c, sum[0], c0);
