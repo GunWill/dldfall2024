@@ -51,9 +51,10 @@ initial
 
 				@(negedge clk)
 				begin
-					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, sum, sum_correct, (sum==sum_correct));
+					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, {cout,sum}, sum_correct, ({cout,sum}==sum_correct));
 				end
 			end
+	end
 				
 
 
