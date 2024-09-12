@@ -34,7 +34,7 @@ integer i;
 		begin
 			handle3 = $fopen("rca.out"); //generating a file
 			desc3 = handle3;
-			#3000 $finish; 
+			#4000 $finish; 
 		end
 
 initial
