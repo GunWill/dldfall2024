@@ -16,8 +16,7 @@ module tb ();
 	fulladder_1 dut (a, b, c, sum, cout);
 	
 	
-   //clock
-
+   	//clock
 	initial 
      	begin	
 		clk = 1'b1;
