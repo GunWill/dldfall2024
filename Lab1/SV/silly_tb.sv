@@ -46,6 +46,7 @@ initial
 				begin
 				a = $random;
 				b = $random;
+				c=0;
 				end
 
 				@(negedge clk)
