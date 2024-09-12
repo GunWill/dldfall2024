@@ -11,8 +11,9 @@ module tb ();
 
 
 assign sum_correct = a + b + c;
+assign cout_correct= a&b | a&c | b&c;
 assign error_sum = sum != sum_correct; 
-
+assign error_out = cout != cout_correct;
    
   // instantiate device under test
 	
@@ -54,8 +55,12 @@ initial
 					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, {cout,sum}, sum_correct, ({cout,sum}==sum_correct));
 				end
 			end
-	end
-				
+		end		
+
+
+   
+endmodule
+	
 
 
    
