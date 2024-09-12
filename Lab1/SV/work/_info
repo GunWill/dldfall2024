@@ -1,0 +1,94 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.3 2021.07, Jul 13 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/User/dldfall2024/Lab1/SV
+T_opt
+!s110 1726176586
+VXh9SgBnECP_nIU54G3<n_1
+04 2 4 work tb fast 0
+=1-e4c76793e2a7-66e35d49-2dd-5d44
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.3;73
+vfulladder
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1726176584
+!i10b 1
+!s100 KBUjAcLbD3AS@GDX=g3HT2
+I;Dh9YN7=KSY2Wz@ii12oX1
+S1
+R0
+Z4 w1726175313
+Z5 8silly.sv
+Z6 Fsilly.sv
+!i122 0
+L0 1 7
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.3;73
+r1
+!s85 0
+31
+Z9 !s108 1726176584.000000
+Z10 !s107 silly_tb.sv|silly.sv|
+Z11 !s90 silly.sv|silly_tb.sv|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+vripple_carry_adder
+R2
+R3
+!i10b 1
+!s100 jONG@09iM=EnfCVfPf10g2
+I9oXb]O2ASQYj_=eADFPVM2
+S1
+R0
+R4
+R5
+R6
+!i122 0
+L0 10 10
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
+vtb
+R2
+R3
+!i10b 1
+!s100 aTAY8Rf;nT94zdS2f1cf63
+I7?hC[nU7WW<L2FJEoe23o2
+S1
+R0
+w1726176547
+8silly_tb.sv
+Fsilly_tb.sv
+!i122 0
+L0 2 61
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R1
