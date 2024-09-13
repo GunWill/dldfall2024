@@ -3,19 +3,19 @@ module tb ();
 
 	logic        [3:0]a;
 	logic 	[3:0]b;
-   logic 	c;
+   logic 	cin;
 	logic 	[3:0]sum;
    logic        cout;
    logic        clk;
    logic [4:0] sum_correct;
 
 
-assign sum_correct = a + b + c;
+assign sum_correct = a + b + cin;
 assign error_sum = sum != sum_correct; 
    
   // instantiate device under test
 	
-ripple_carry_adder dut( a, b,  c, sum, cout);
+	ripple_carry_adder dut( a, b,  cin, sum, cout); //
 	
 	
    	//clock
@@ -24,6 +24,8 @@ ripple_carry_adder dut( a, b,  c, sum, cout);
 		clk = 1'b1;
 		forever #10 clk = ~clk;
      	end
+
+	//
 
 integer handle3;
 integer desc3;
@@ -45,7 +47,7 @@ initial
 				begin
 				a = $random;
 				b = $random;
-				c=0;
+				cin=0;
 				end
 
 				@(negedge clk)
