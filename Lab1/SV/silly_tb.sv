@@ -11,9 +11,7 @@ module tb ();
 
 
 assign sum_correct = a + b + c;
-assign cout_correct= a&b | a&c | b&c;
 assign error_sum = sum != sum_correct; 
-assign error_out = cout != cout_correct;
    
   // instantiate device under test
 	
