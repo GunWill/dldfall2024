@@ -1,7 +1,9 @@
 m255
 K4
 z2
-!s99 nomlopt
+Z0 !s99 nomlopt
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -9,86 +11,97 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dC:/Users/User/dldfall2024/Lab1/SV
+Z1 dC:/Users/User/dldfall2024/Lab1/SV
 T_opt
 !s110 1726176586
 VXh9SgBnECP_nIU54G3<n_1
-04 2 4 work tb fast 0
+Z2 04 2 4 work tb fast 0
 =1-e4c76793e2a7-66e35d49-2dd-5d44
-!s124 OEM100
-o-quiet -auto_acc_if_foreign -work work +acc
-Z1 tCvgOpt 0
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
 n@_opt
-OL;O;2021.3;73
+Z6 OL;O;2021.3;73
+R1
+T_opt1
+!s110 1726249016
+VXKKll?>HZ8m7;2Ab0Gi;U3
+R2
+=1-e4c76793e2a7-66e47838-1c4-4f14
+R3
+R4
+R5
+n@_opt1
+R6
 vfulladder
-Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1726176584
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z8 !s110 1726249015
 !i10b 1
 !s100 KBUjAcLbD3AS@GDX=g3HT2
 I;Dh9YN7=KSY2Wz@ii12oX1
 S1
-R0
-Z4 w1726175313
-Z5 8silly.sv
-Z6 Fsilly.sv
+Z9 dC:/Users/User/Desktop/GitHub/DLD LAB0/Gunnar_DLD_Repository/dldfall2024/lab1/sv
+Z10 w1726248882
+Z11 8silly.sv
+Z12 Fsilly.sv
 !i122 0
 L0 1 7
-Z7 VDg1SIo80bB@j0V0VzS_@n1
-Z8 OL;L;2021.3;73
+Z13 VDg1SIo80bB@j0V0VzS_@n1
+Z14 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z9 !s108 1726176584.000000
-Z10 !s107 silly_tb.sv|silly.sv|
-Z11 !s90 silly.sv|silly_tb.sv|
+Z15 !s108 1726249015.000000
+Z16 !s107 silly_tb.sv|silly.sv|
+Z17 !s90 -reportprogress|300|silly.sv|silly_tb.sv|
 !i113 0
-Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R1
+Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
 vripple_carry_adder
-R2
-R3
+R7
+R8
 !i10b 1
 !s100 jONG@09iM=EnfCVfPf10g2
 I9oXb]O2ASQYj_=eADFPVM2
 S1
-R0
-R4
-R5
-R6
-!i122 0
-L0 10 10
-R7
-R8
-r1
-!s85 0
-31
 R9
 R10
 R11
-!i113 0
 R12
-R1
+!i122 0
+L0 10 10
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R5
 vtb
-R2
-R3
+R7
+R8
 !i10b 1
-!s100 aTAY8Rf;nT94zdS2f1cf63
-I7?hC[nU7WW<L2FJEoe23o2
+!s100 0U`OQT8V=zzYakYZ972UQ3
+Izhj`0c=inz>5FO0amONdj1
 S1
-R0
-w1726176547
+R9
+w1726248650
 8silly_tb.sv
 Fsilly_tb.sv
 !i122 0
-L0 2 61
-R7
-R8
+L0 2 59
+R13
+R14
 r1
 !s85 0
 31
-R9
-R10
-R11
+R15
+R16
+R17
 !i113 0
-R12
-R1
+R18
+R5
