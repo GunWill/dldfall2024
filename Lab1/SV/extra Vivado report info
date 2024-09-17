@@ -1,0 +1,57 @@
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     1|
+|4     |LUT2   |     9|
+|5     |LUT3   |     2|
+|6     |LUT4   |     3|
+|7     |LUT5   |     3|
+|8     |LUT6   |    29|
+|9     |FDRE   |    19|
+|10    |IBUF   |    13|
+|11    |OBUF   |    12|
+|12    |OBUFT  |     8|
++------+-------+------+
+
+1. Slice Logic
+--------------
+
++-------------------------+------+-------+------------+-----------+-------+
+|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
++-------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs*             |   40 |     0 |          0 |     53200 |  0.08 |
+|   LUT as Logic          |   40 |     0 |          0 |     53200 |  0.08 |
+|   LUT as Memory         |    0 |     0 |          0 |     17400 |  0.00 |
+| Slice Registers         |   19 |     0 |          0 |    106400 |  0.02 |
+|   Register as Flip Flop |   19 |     0 |          0 |    106400 |  0.02 |
+|   Register as Latch     |    0 |     0 |          0 |    106400 |  0.00 |
+| F7 Muxes                |    0 |     0 |          0 |     26600 |  0.00 |
+| F8 Muxes                |    0 |     0 |          0 |     13300 |  0.00 |
+
+
+
+
+
+
+7. Primitives
+-------------
+
++----------+------+---------------------+
+| Ref Name | Used | Functional Category |
++----------+------+---------------------+
+| LUT6     |   29 |                 LUT |
+| FDRE     |   19 |        Flop & Latch |
+| IBUF     |   13 |                  IO |
+| OBUF     |   12 |                  IO |
+| LUT2     |    9 |                 LUT |
+| OBUFT    |    8 |                  IO |
+| CARRY4   |    5 |          CarryLogic |
+| LUT5     |    3 |                 LUT |
+| LUT4     |    3 |                 LUT |
+| LUT3     |    2 |                 LUT |
+| LUT1     |    1 |                 LUT |
+| BUFG     |    1 |               Clock |
++----------+------+---------------------+
