@@ -40,19 +40,19 @@ integer i;
 
 initial
 	begin
-		for(i=0; i<175; i=i+1)
+		for(i=0; i<175; i=i+1) //For loop for the number of iterations
 			begin
 
-				@(posedge clk)
+				@(posedge clk) //Numbers generated at the positive edge of the clock
 				begin
 				a = $random;
 				b = $random;
 				cin=0;
 				end
 
-				@(negedge clk)
+				@(negedge clk) //Numbers checked at the negative edge of the clock
 				begin
-					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, {cout,sum}, sum_correct, ({cout,sum}==sum_correct));
+					$fdisplay(desc3, "%h %h || %h | %h | %b", a, b, {cout,sum}, sum_correct, ({cout,sum}==sum_correct)); //Checks generated sums against golden vectors, verifying answers as correct
 				end
 			end
 		end		
