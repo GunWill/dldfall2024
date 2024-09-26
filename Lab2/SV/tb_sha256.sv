@@ -1,3 +1,5 @@
+//goal here is to design a SHA-256 that outputs 256 bits with is padded to 512 bits
+
 `timescale 1ns/1ps
 module stimulus;
 
