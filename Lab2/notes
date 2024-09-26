@@ -1,0 +1,40 @@
+lab 2 video
+
+hash function maps a message --> from input to output, making sure the recieved messgae is the sent message 
+way to authenticate
+hash function recieves, checks message is correct, unlocks like a key if correct message 
+
+collissian resistance vital
+
+path must be unique 
+
+SHA-256 // 256 bits
+//goal here is to design a SHA-256 that outputs 256 bits with is padded to 512 bits
+
+hash function can generate digests of messages, and we can use digests to detect if message has been altered since being sent
+
+
+digital summaries of data that are produced by a hash function, such as SHA.
+
+
+To run a program, go to the command prompt and type: python3
+ascii.py
+
+
+Python is an interpreted language and needs an interpreter which is called
+python3 to run any program
+
+
+Bit swizzling has two functions in SV
+– Concatenation (putting two vectors together)
+– Replication (repeating items within a vector or bit)
+
+rotation is just moving values to left or right by some amount
+
+
+
+
+The 512-bit message is processed at 32-bit blocks called the Merkle-Damgård
+construction labeled W0 through W63 for the prepare block
+
+
