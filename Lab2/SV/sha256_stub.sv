@@ -20,7 +20,7 @@ module sha_padder #(parameter MSG_SIZE = 24,
    (input logic [MSG_SIZE-1:0] message,
     output logic [PADDED_SIZE-1:0] padded);
 
-   // Pad your output (Section 2.2)
+	// Pad your output (Section 2.2) from pdf 
 
 endmodule // sha_padder
 
@@ -54,6 +54,8 @@ module sha256 #(parameter PADDED_SIZE = 512)
    logic [31:0]   a, b, c, d, e, f, g, h;
    logic [31:0]   a63_out, b63_out, c63_out, d63_out, e63_out, f63_out, g63_out, h63_out;
    logic [31:0]   h0, h1, h2, h3, h4, h5, h6, h7;
+
+	//define everything of 32 bits
 
    prepare p1 (padded[511:480], padded[479:448], padded[447:416],
                padded[415:384], padded[383:352], padded[351:320],
