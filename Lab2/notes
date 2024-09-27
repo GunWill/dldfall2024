@@ -38,3 +38,105 @@ The 512-bit message is processed at 32-bit blocks called the Merkle-Damgård
 construction labeled W0 through W63 for the prepare block
 
 
+
+
+
+
+
+64 bits for length
+ascii is 8 bits each 
+
+8 bytes for length
+512 bits total 
+if message 447 no padding
+1 bit indicates hte end of the message 
+
+message, 1 bit, then 64 bits for lenght 
+
+
+elf if a program 
+
+
+
+sha 256
+
+message is just stored as 1 and 0 in a file 
+
+sha - 256 256 bits padded to 512, processed in groups of 32 bits
+
+
+secure hash algortith
+
+send hash and mesage nad compare that its the same
+
+sha generate a unique number 
+
+
+sha hardware 
+
+rotating 
+
+
+
+shifting 
+
+to right divides by 2, to left multiplies by 2
+
+
+messes up message 
+
+encriptrion // gives fingerprint 
+
+encriptin // decription // brute force // 
+
+
+length of how many tiems it meses up cards
+
+
+sha creates fingerprint
+
+
+
+password checks if message matches
+
+
+can never go back to message from sha 256
+
+
+
+how is ip address unique to my computer // 128 bits // hard codded into my computer // mac address 
+
+VPN // just hides the data im acessing
+
+
+//possible to encript 
+
+// ping from different towers
+
+//python3 sha256.py
+cat sha256.py
+
+
+
+
+bit swizzling {} 
+
+adding
+
+
+
+try w/ 5 different messages 
+
+compare hash i should have to hash i do have
+
+
+//use modelsim and file 
+
+//optimization 
+
+
+
+
+
+
+
