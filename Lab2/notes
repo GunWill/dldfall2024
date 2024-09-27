@@ -29,7 +29,9 @@ Bit swizzling has two functions in SV
 – Concatenation (putting two vectors together)
 – Replication (repeating items within a vector or bit)
 
-rotation is just moving values to left or right by some amount
+rotation 
+
+shifting is just moving values to left or right by some amount
 
 
 
