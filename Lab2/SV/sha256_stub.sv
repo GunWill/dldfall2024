@@ -643,6 +643,22 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 	sigma1 sig1_32 (W45, W45_sigma1_out);
 	sigma1 sig1_33 (W46, W46_sigma1_out);
 
+	sigma1 sig1_34 (W47, W47_sigma1_out);
+	sigma1 sig1_35 (W48, W48_sigma1_out);
+	sigma1 sig1_36 (W49, W49_sigma1_out);
+	sigma1 sig1_37 (W50, W50_sigma1_out);
+	sigma1 sig1_38 (W51, W51_sigma1_out);
+	sigma1 sig1_39 (W52, W52_sigma1_out);
+	sigma1 sig1_40 (W53, W53_sigma1_out);
+	sigma1 sig1_41 (W54, W54_sigma1_out);
+	sigma1 sig1_42 (W55, W55_sigma1_out);
+	sigma1 sig1_43 (W56, W56_sigma1_out);
+	sigma1 sig1_44 (W57, W57_sigma1_out);
+	sigma1 sig1_45 (W58, W58_sigma1_out);
+	sigma1 sig1_46 (W59, W59_sigma1_out);
+	sigma1 sig1_47 (W60, W60_sigma1_out);
+	sigma1 sig1_48 (W62, W61_sigma1_out);
+
 
    //all the way to 61
 
