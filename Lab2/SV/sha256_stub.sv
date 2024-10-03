@@ -578,7 +578,7 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 	logic [31:0] 		W38_sigma1_out, W39_sigma1_out, W40_sigma1_out, W41_sigma1_out, W42_sigma1_out, W43_sigma1_out, W44_sigma1_out, W45_sigma1_out;
 	logic [31:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
 	logic [31:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
-   logic [31:0]      W62_sigma1_out, W63_sigma1_out;
+   //logic [31:0]      W62_sigma1_out, W63_sigma1_out;
 
 	logic [31:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
 	logic [31:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
@@ -611,10 +611,40 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
    // sigma 1 (see bottom of page 6)
    sigma1 sig1_1 (W14, W14_sigma1_out);
    sigma1 sig1_2 (W15, W15_sigma1_out);
-   
+	sigma1 sig1_3 (W16, W16_sigma1_out);
+	sigma1 sig1_4 (W17, W17_sigma1_out);
+	sigma1 sig1_5 (W18, W18_sigma1_out);
+	sigma1 sig1_6 (W19, W19_sigma1_out);
+	sigma1 sig1_7 (W20, W20_sigma1_out);
+	sigma1 sig1_8 (W21, W21_sigma1_out);
+	sigma1 sig1_9 (W22, W22_sigma1_out);
+	sigma1 sig1_10 (W23, W23_sigma1_out);
+	sigma1 sig1_11 (W24, W24_sigma1_out);
+	sigma1 sig1_12 (W25, W25_sigma1_out);
+	sigma1 sig1_13 (W26, W26_sigma1_out);
+	sigma1 sig1_14 (W27, W27_sigma1_out);
+	sigma1 sig1_15 (W28, W28_sigma1_out);
+	sigma1 sig1_16 (W29, W29_sigma1_out);
+	sigma1 sig1_17 (W30, W30_sigma1_out);
+	sigma1 sig1_18 (W31, W31_sigma1_out);
+	sigma1 sig1_18 (W32, W32_sigma1_out);
+	sigma1 sig1_20 (W33, W33_sigma1_out);
+	sigma1 sig1_21 (W34, W34_sigma1_out);
+	sigma1 sig1_22 (W35, W35_sigma1_out);
+	sigma1 sig1_23 (W36, W36_sigma1_out);
+	sigma1 sig1_24 (W37, W37_sigma1_out);
+	sigma1 sig1_25 (W38, W38_sigma1_out);
+	sigma1 sig1_26 (W39, W39_sigma1_out);
+	sigma1 sig1_27 (W40, W40_sigma1_out);
+	sigma1 sig1_28 (W41, W41_sigma1_out);
+	sigma1 sig1_29 (W42, W42_sigma1_out);
+	sigma1 sig1_30 (W43, W43_sigma1_out);
+	sigma1 sig1_31 (W44, W44_sigma1_out);
+	sigma1 sig1_32 (W45, W45_sigma1_out);
+	sigma1 sig1_33 (W46, W46_sigma1_out);
 
 
-   //all the way to 63
+   //all the way to 61
 
    // fill in other sigma1 blocks
 
