@@ -21,11 +21,9 @@ module sha_padder #(parameter MSG_SIZE = 24,
     output logic [PADDED_SIZE-1:0] padded);
 
 	// Pad your output (Section 2.2) from pdf 
-//logic [15:0] zero_width;
-//assign zero_width = 16'd423;
-//for message "abc" only
-
-	assign padded = {message, 1'b1, {423{1'b0}}, MSG_SIZE};
+localparam zero_width = PADDED_SIZE - 64 - MSG_SIZE - 1;
+localparam back_0_width = 64 - $bits(MSG_SIZE);
+	assign padded = {message, 1'b1, {zero_width{1'b0}}, {back_0_width{1'b0}}, MSG_SIZE};
 
 
 endmodule // sha_padder
@@ -124,7 +122,7 @@ module sha256 #(parameter PADDED_SIZE = 512)
 	logic [31:0] a61_out, b61_out, c61_out, d61_out, e61_out, f61_out, g61_out, h61_out;
 	logic [31:0] a62_out, b62_out, c62_out, d62_out, e62_out, f62_out, g62_out, h62_out;
 
-   logic [31:0] W0, W1, W2, W3, W4, W5, W6, W7, W8, W9, W10, W11, W12, W13, W14, W15, W16, W17, W18, W20, W21, W22, W23, W24, W25;
+   logic [31:0] W0, W1, W2, W3, W4, W5, W6, W7, W8, W9, W10, W11, W12, W13, W14, W15, W16, W17, W18, W19, W20, W21, W22, W23, W24, W25;
    logic [31:0] W26, W27, W28, W29, W30, W31, W32, W33, W34, W35, W36, W37, W38, W39, W40, W41, W42, W43, W44, W45, W46, W47, W48;
    logic [31:0] W49, W50, W51, W52, W53, W54, W55, W56, W57, W58, W59, W60, W61, W62, W63;
 	
@@ -776,19 +774,28 @@ module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h
 		  output logic [31:0] h_out);
 
    // Figure 4
-	
+logic [31:0] ch, maj, Sig0, Sig1;	
+choice ch1 ( e_in, f_in, g_in, ch);
+majority m1(a_in, b_in, c_in, maj);
+Sigma0 S0(e_in, Sig0);	
+Sigma1 S1(a_in, Sig1);
+logic [35:0] t1, t2;
+logic [31:0] T1, T2;
+assign t1=(h_in+Sig1+ch+K_in+W_in)  ;
+assign t2=(Sig0+maj) ;
+assign T1 = t1 % 2**32;
+assign T2 = t2 % 2**32;
 
-	assign a_out = a_in + h_in;
-	assign b_out = b_in + h_in;
-	assign c_out = c_in + h_in;
-	assign d_out = d_in + h_in;
-	assign e_out = e_in + h_in;
-	assign f_out = f_in + h_in;
-	assign g_out = g_in + h_in;
-	assign h_out = K_in + W_in;
+//% 2**32
 
-	
-
+assign h_out=g_in;
+assign g_out=f_in;
+assign f_out=e_in;
+assign e_out=(d_in+T1) ;
+assign d_out=c_in;
+assign c_out=b_in;
+assign b_out=a_in;
+assign a_out = (T1+T2) ;
 
 
 endmodule // main_comp
