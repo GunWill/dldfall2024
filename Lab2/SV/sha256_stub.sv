@@ -627,7 +627,7 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 	sigma1 sig1_16 (W29, W29_sigma1_out);
 	sigma1 sig1_17 (W30, W30_sigma1_out);
 	sigma1 sig1_18 (W31, W31_sigma1_out);
-	sigma1 sig1_18 (W32, W32_sigma1_out);
+	sigma1 sig1_19 (W32, W32_sigma1_out);
 	sigma1 sig1_20 (W33, W33_sigma1_out);
 	sigma1 sig1_21 (W34, W34_sigma1_out);
 	sigma1 sig1_22 (W35, W35_sigma1_out);
