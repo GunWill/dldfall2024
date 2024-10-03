@@ -779,7 +779,7 @@ choice ch1 ( e_in, f_in, g_in, ch);
 majority m1(a_in, b_in, c_in, maj);
 Sigma0 S0(e_in, Sig0);	
 Sigma1 S1(a_in, Sig1);
-logic [35:0] t1, t2;
+logic [35:0] t1, t2, a_out_int, e_out_int;
 logic [31:0] T1, T2;
 assign t1=(h_in+Sig1+ch+K_in+W_in)  ;
 assign t2=(Sig0+maj) ;
@@ -791,11 +791,13 @@ assign T2 = t2 % 2**32;
 assign h_out=g_in;
 assign g_out=f_in;
 assign f_out=e_in;
-assign e_out=(d_in+T1) ;
+assign e_out_int=(d_in+T1) ;
+assign e_out = e_out_int % 2**32;
 assign d_out=c_in;
 assign c_out=b_in;
 assign b_out=a_in;
-assign a_out = (T1+T2) ;
+assign a_out_int = (T1+T2) ;
+assign a_out = a_out_int % 2**32;
 
 
 endmodule // main_comp

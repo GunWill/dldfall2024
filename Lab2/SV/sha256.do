@@ -31,8 +31,8 @@ view wave
 
 -- display input and output signals as hexidecimal values
 # Diplays All Signals recursively
-add wave -hex -r /stimulus/*
-#add wave -noupdate -divider -height 32 "Main tb"
+#add wave -hex -r /stimulus/*
+add wave -noupdate -divider -height 32 "Main tb"
 #add wave -noupdate -expand -group tb /stimulus/message
 #add wave -noupdate -expand -group tb /stimulus/hashed
 #add wave -noupdate -divider -height 32 "padded"
