@@ -666,7 +666,52 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
    // sigma 0 (see bottom of page 6)
    sigma0 sig0_1 (W1, W1_sigma0_out);
    //all the way to 47
-
+sigma0 sig0_2 (W2, W2_sigma0_out);
+   sigma0 sig0_3 (W3, W3_sigma0_out);
+   sigma0 sig0_4 (W4, W4_sigma0_out);
+   sigma0 sig0_5 (W5, W5_sigma0_out);
+   sigma0 sig0_6 (W6, W6_sigma0_out);
+   sigma0 sig0_7 (W7, W7_sigma0_out);
+   sigma0 sig0_8 (W8, W8_sigma0_out);
+   sigma0 sig0_9 (W9, W9_sigma0_out);
+   sigma0 sig0_10 (W10, W10_sigma0_out);
+   sigma0 sig0_11 (W11, W11_sigma0_out);
+   sigma0 sig0_12 (W12, W12_sigma0_out);
+   sigma0 sig0_13 (W13, W13_sigma0_out);
+   sigma0 sig0_14 (W14, W14_sigma0_out);
+   sigma0 sig0_15 (W15, W15_sigma0_out);
+   sigma0 sig0_16 (W16, W16_sigma0_out);
+   sigma0 sig0_17 (W17, W17_sigma0_out);
+   sigma0 sig0_18 (W18, W18_sigma0_out);
+   sigma0 sig0_19 (W19, W19_sigma0_out);
+   sigma0 sig0_20 (W20, W20_sigma0_out);
+   sigma0 sig0_21 (W21, W21_sigma0_out);
+   sigma0 sig0_22 (W22, W22_sigma0_out);
+   sigma0 sig0_23 (W23, W23_sigma0_out);
+   sigma0 sig0_24 (W24, W24_sigma0_out);
+   sigma0 sig0_25 (W25, W25_sigma0_out);
+   sigma0 sig0_26 (W26, W26_sigma0_out);
+   sigma0 sig0_27 (W27, W27_sigma0_out);
+   sigma0 sig0_28 (W28, W28_sigma0_out);
+   sigma0 sig0_29 (W29, W29_sigma0_out);
+   sigma0 sig0_30 (W30, W30_sigma0_out);
+   sigma0 sig0_31 (W31, W31_sigma0_out);
+   sigma0 sig0_32 (W32, W32_sigma0_out);
+   sigma0 sig0_33 (W33, W33_sigma0_out);
+   sigma0 sig0_34 (W34, W34_sigma0_out);
+   sigma0 sig0_35 (W35, W35_sigma0_out);
+   sigma0 sig0_36 (W36, W36_sigma0_out);
+   sigma0 sig0_37 (W37, W37_sigma0_out);
+   sigma0 sig0_38 (W38, W38_sigma0_out);
+   sigma0 sig0_39 (W39, W39_sigma0_out);
+   sigma0 sig0_40 (W40, W40_sigma0_out);
+   sigma0 sig0_41 (W41, W41_sigma0_out);
+   sigma0 sig0_42 (W41, W42_sigma0_out);
+   sigma0 sig0_43 (W43, W43_sigma0_out);
+   sigma0 sig0_44 (W44, W44_sigma0_out);
+   sigma0 sig0_45 (W45, W45_sigma0_out);
+   sigma0 sig0_46 (W46, W46_sigma0_out);
+   sigma0 sig0_47 (W47, W47_sigma0_out);
    // fill in other sigma0 blocks
 
    // Equation for W_i (top of page 7)3
