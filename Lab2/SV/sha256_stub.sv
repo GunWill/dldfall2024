@@ -776,6 +776,18 @@ module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h
 		  output logic [31:0] h_out);
 
    // Figure 4
+	
+
+	assign a_out = a_in + h_in;
+	assign b_out = b_in + h_in;
+	assign c_out = c_in + h_in;
+	assign d_out = d_in + h_in;
+	assign e_out = e_in + h_in;
+	assign f_out = f_in + h_in;
+	assign g_out = g_in + h_in;
+	assign h_out = K_in + W_in;
+
+	
 
 
 
