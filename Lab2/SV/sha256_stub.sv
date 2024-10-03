@@ -21,8 +21,12 @@ module sha_padder #(parameter MSG_SIZE = 24,
     output logic [PADDED_SIZE-1:0] padded);
 
 	// Pad your output (Section 2.2) from pdf 
+//logic [15:0] zero_width;
+//assign zero_width = 16'd423;
+//for message "abc" only
 
-	assign padded = {message, 1'b1, zero_width{1'b0}, back_zero_width{1'b0}, MSG_SIZE};
+	assign padded = {message, 1'b1, {423{1'b0}}, MSG_SIZE};
+
 
 endmodule // sha_padder
 
@@ -119,8 +123,14 @@ module sha256 #(parameter PADDED_SIZE = 512)
 	logic [31:0] a60_out, b60_out, c60_out, d60_out, e60_out, f60_out, g60_out, h60_out;
 	logic [31:0] a61_out, b61_out, c61_out, d61_out, e61_out, f61_out, g61_out, h61_out;
 	logic [31:0] a62_out, b62_out, c62_out, d62_out, e62_out, f62_out, g62_out, h62_out;
+
+   logic [31:0] W0, W1, W2, W3, W4, W5, W6, W7, W8, W9, W10, W11, W12, W13, W14, W15, W16, W17, W18, W20, W21, W22, W23, W24, W25;
+   logic [31:0] W26, W27, W28, W29, W30, W31, W32, W33, W34, W35, W36, W37, W38, W39, W40, W41, W42, W43, W44, W45, W46, W47, W48;
+   logic [31:0] W49, W50, W51, W52, W53, W54, W55, W56, W57, W58, W59, W60, W61, W62, W63;
 	
    logic [31:0]   h0, h1, h2, h3, h4, h5, h6, h7;
+
+   //32 bit Ws
 
 	//define everything of 32 bits
 
@@ -568,7 +578,8 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 	logic [31:0] 		W38_sigma1_out, W39_sigma1_out, W40_sigma1_out, W41_sigma1_out, W42_sigma1_out, W43_sigma1_out, W44_sigma1_out, W45_sigma1_out;
 	logic [31:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
 	logic [31:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
-   
+   logic [31:0]      W62_sigma1_out, W63_sigma1_out;
+
 	logic [31:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
 	logic [31:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
 	logic [31:0]		W17_sigma0_out, W18_sigma0_out, W19_sigma0_out, W20_sigma0_out, W21_sigma0_out, W22_sigma0_out, W23_sigma0_out, W24_sigma0_out;
@@ -599,11 +610,17 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 
    // sigma 1 (see bottom of page 6)
    sigma1 sig1_1 (W14, W14_sigma1_out);
+   sigma1 sig1_2 (W15, W15_sigma1_out);
+   
+
+
+   //all the way to 63
 
    // fill in other sigma1 blocks
 
    // sigma 0 (see bottom of page 6)
    sigma0 sig0_1 (W1, W1_sigma0_out);
+   //all the way to 47
 
    // fill in other sigma0 blocks
 
@@ -671,6 +688,7 @@ module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h
    // Figure 4
 
 
+
 endmodule // main_comp
 
 module intermediate_hash (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h_in,
@@ -691,6 +709,7 @@ endmodule
 module majority (input logic [31:0] x, y, z, output logic [31:0] maj);
 
    // See Section 2.3.3, Number 4
+   assign maj = (x & y) ^ (x & z) ^ (y & z);
 
 endmodule // majority
 
@@ -698,10 +717,14 @@ module choice (input logic [31:0] x, y, z, output logic [31:0] ch);
 
    // See Section 2.3.3, Number 4
 
+   assign ch = (x & y) ^ (~x & z); 
+
 
 endmodule // choice
 
 module Sigma0 (input logic [31:0] x, output logic [31:0] Sig0);
+
+assign Sig0 = ({x[1:0], x[31:2]})^({x[12:0], x[31:13]})^({x[21:0], x[31:22]});
 
    // See Section 2.3.3, Number 4
 
@@ -711,6 +734,8 @@ endmodule // Sigma0
 module sigma0 (input logic [31:0] x, output logic [31:0] sig0);
 
       // See Section 2.3.3, Number 2
+
+      assign sig0 = ({x[6:0], x[31:7]})^({x[17:0], x[31:18]})^(x>>3);
    
 
 endmodule // sigma0
@@ -718,7 +743,7 @@ endmodule // sigma0
 module Sigma1 (input logic [31:0] x, output logic [31:0] Sig1);
 
    // See Section 2.3.3, Number 4
-   
+   assign Sig1 = ({x[5:0], x[31:6]})^({x[10:0], x[31:11]})^({x[24:0], x[31:25]});
 
 endmodule // Sigma1
 
@@ -726,7 +751,7 @@ module sigma1 (input logic [31:0] x, output logic [31:0] sig1);
 
       // See Section 2.3.3, Number 2
    
-
+assign sig1 = ({x[16:0], x[31:17]})^({x[18:0], x[31:19]})^(x>>10);
 
 endmodule // sigma1
 
