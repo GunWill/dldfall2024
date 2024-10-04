@@ -777,16 +777,17 @@ module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h
 logic [31:0] ch, maj, Sig0, Sig1;	
 choice ch1 ( e_in, f_in, g_in, ch);
 majority m1(a_in, b_in, c_in, maj);
-Sigma0 S0(e_in, Sig0);	
-Sigma1 S1(a_in, Sig1);
+	Sigma0 S0(a_in, Sig0);	
+	Sigma1 S1(e_in, Sig1);
 logic [35:0] t1, t2, a_out_int, e_out_int;
 logic [31:0] T1, T2;
 assign t1=(h_in+Sig1+ch+K_in+W_in)  ;
 assign t2=(Sig0+maj) ;
-assign T1 = t1 % 2**32;
-assign T2 = t2 % 2**32;
+assign T1 = t1;
+assign T2 = t2;
 
-//% 2**32
+//aout and e out
+	//
 
 assign h_out=g_in;
 assign g_out=f_in;
