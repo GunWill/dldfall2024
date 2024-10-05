@@ -584,7 +584,7 @@ module prepare (input logic [31:0] M0, M1, M2, M3,
 	logic [31:0]		W17_sigma0_out, W18_sigma0_out, W19_sigma0_out, W20_sigma0_out, W21_sigma0_out, W22_sigma0_out, W23_sigma0_out, W24_sigma0_out;
 	logic [31:0]		W25_sigma0_out, W26_sigma0_out, W27_sigma0_out, W28_sigma0_out, W29_sigma0_out, W30_sigma0_out, W31_sigma0_out, W32_sigma0_out;
 	logic [31:0]		W33_sigma0_out, W34_sigma0_out, W35_sigma0_out, W36_sigma0_out, W37_sigma0_out, W38_sigma0_out, W39_sigma0_out, W40_sigma0_out;
-	logic [31:0]		W41_sigma0_out, W42_sigma0_out, W43_sigma0_out, W44_sigma0_out, W45_sigma0_out, W46_sigma0_out, W47_sigma0_out;
+	logic [31:0]		W41_sigma0_out, W42_sigma0_out, W43_sigma0_out, W44_sigma0_out, W45_sigma0_out, W46_sigma0_out, W47_sigma0_out, W48_sigma0_out;
 	
 	
 	//define all sigma0 and sigma 1 values
@@ -711,6 +711,7 @@ sigma0 sig0_2 (W2, W2_sigma0_out);
    sigma0 sig0_45 (W45, W45_sigma0_out);
    sigma0 sig0_46 (W46, W46_sigma0_out);
    sigma0 sig0_47 (W47, W47_sigma0_out);
+   sigma0 sig0_48 (W48, W48_sigma0_out);
    // fill in other sigma0 blocks
 
    // Equation for W_i (top of page 7)3

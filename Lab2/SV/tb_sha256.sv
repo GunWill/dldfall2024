@@ -5,6 +5,9 @@ module stimulus;
 
    logic [MSG_SIZE-1:0] message;   
    logic [255:0] hashed;
+   logic [255:0] golden;
+
+   assign golden = 256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271;
 
    logic 	 clk;
    logic [31:0]  errors;
