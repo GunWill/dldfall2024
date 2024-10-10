@@ -2,10 +2,12 @@
 // Secure Hash Standard (SHA-256)
 //
 
+//MSG_SIZE must be declared in test bench - testbench value will override value here
+
 module top #(parameter MSG_SIZE = 24,
-	     parameter PADDED_SIZE = 512)
+	     parameter PADDED_SIZE = 1024)
    (input logic [MSG_SIZE-1:0] message,
-    output logic [255:0] hashed);
+    output logic [512:0] hashed);
 
    logic [PADDED_SIZE-1:0] padded;
 
