@@ -11,10 +11,10 @@ module stimulus;
    logic [31:0]  errors;
    logic [31:0]  vectornum;
    logic [63:0]  result;
-   // Size of [351:0] is size of vector in file: 96 + 256 = 352 bits
+	// Size of [375:0] is size of vector in file: 120 + 256 = 375 bits
 
   //change this?
-   logic [351:0] testvectors[511:0];
+	logic [375:0] testvectors[511:0];
    
    integer 	 handle3;
    integer 	 desc3;
@@ -52,7 +52,8 @@ module stimulus;
    always @(posedge clk)
      begin
 
-       #1; hashed = testvectors[vectornum[255:0]] ;
+	     #1; result = testvectors[vectornum[255:0]] ; message = testvectors[vectornum[375:256]]; golden = result;
+	     
        //put in message
 
     
