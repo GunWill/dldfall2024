@@ -1,5 +1,5 @@
 //
-// Secure Hash Standard (SHA-256)
+// Secure Hash Standard (SHA-512)
 //
 
 //MSG_SIZE must be declared in test bench - testbench value will override value here
@@ -15,14 +15,15 @@ module top #(parameter MSG_SIZE = 24,
    sha256 #(.PADDED_SIZE(PADDED_SIZE)) main (.padded(padded), .hashed(hashed));
    
    
-endmodule // sha_256
+endmodule // sha_512
 
 module sha_padder #(parameter MSG_SIZE = 24,	     
-		    parameter PADDED_SIZE = 512) 
+		    parameter PADDED_SIZE = 1024) 
    (input logic [MSG_SIZE-1:0] message,
     output logic [PADDED_SIZE-1:0] padded);
 
 	// Pad your output (Section 2.2) from pdf 
+	
 localparam zero_width = PADDED_SIZE - 64 - MSG_SIZE - 1;
 localparam back_0_width = 64 - $bits(MSG_SIZE);
 	assign padded = {message, 1'b1, {zero_width{1'b0}}, {back_0_width{1'b0}}, MSG_SIZE};
