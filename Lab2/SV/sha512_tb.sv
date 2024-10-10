@@ -1,15 +1,18 @@
 `timescale 1ns/1ps
 module stimulus;
 
-   parameter MSG_SIZE = 120;   
+   parameter MSG_SIZE = 112;   
 
    logic [MSG_SIZE-1:0] message;   
-   logic [255:0] hashed;
-   logic [255:0] golden;
+	logic [512:0] hashed;
+	logic [512:0] golden;
 
-   assign golden = 256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271;
+   assign golden = 512'hD693DB7749949506622261A533EF98E54ED5F60920F60AD03BC338D05BD9C90514919AE8B3DE1F25F7D99F87B0565D0A402493C5B40166A5EB7665C9E3ACAF2B;
 
    logic 	 clk;
+
+	//do we need to change these sizes?
+	
    logic [31:0]  errors;
    logic [31:0]  vectornum;
    logic [63:0]  result;
@@ -22,7 +25,9 @@ module stimulus;
    integer       j;
 
    // Instantiate DUT
-   top #(MSG_SIZE, 512) dut (message, hashed);
+	//num was 512 but chnaged to 1024, ????
+	
+	top #(MSG_SIZE, 1024) dut (message, hashed);
 
    // 1 ns clock
    initial 
@@ -33,7 +38,7 @@ module stimulus;
 
    initial
      begin
-	handle3 = $fopen("sha256.out");
+	     handle3 = $fopen("sha512.out");
 	vectornum = 0;
 	errors = 0;		
 	desc3 = handle3;
@@ -42,10 +47,10 @@ module stimulus;
     // apply test vectors on rising edge of clk
    always @(posedge clk)
      begin
-	// Add message here : "Hello, SHA-256!"	
-	#1 message = 120'h48656c6c6f2c205348412d32353621;
+	// Add message here : "Hello SHA-512!"	
+	#1 message = 112'h48656c6c6f205348412d35313221;
 	// Expected result 
-        #0 result = 256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271;	
+        #0 result = 512'hD693DB7749949506622261A533EF98E54ED5F60920F60AD03BC338D05BD9C90514919AE8B3DE1F25F7D99F87B0565D0A402493C5B40166A5EB7665C9E3ACAF2B;	
      end  
 
    // check results on falling edge of clk
@@ -56,7 +61,7 @@ module stimulus;
         $fdisplay(desc3, "%h %h || %h || %b", 
                   message, hashed, result, (result == hashed));
 	vectornum = vectornum + 1;
-	if (testvectors[vectornum] === 352'bx) 
+	     if (testvectors[vectornum] === 352'bx) //do i need to change this ?
           begin 
              $display("%d tests completed with %d errors", 
                       vectornum, errors);
