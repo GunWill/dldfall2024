@@ -23,7 +23,7 @@ if [file exists work] {
 }
 vlib work
 # compile source files
-vlog sha256_stub.sv tb_sha256.sv
+vlog sha256_stub.sv sha256_tb_tv.sv
 
 # start and run simulation
 vsim -voptargs=+acc work.stimulus
@@ -115,5 +115,5 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation 
-run 25 ns
+run 250 ns
 quit
