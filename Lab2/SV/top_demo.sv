@@ -77,11 +77,15 @@ case(ctrl)
 4'b1110: segments = hashed[239:224];
 4'b1111: segments = hashed[255:240];
 
-default: segments = 4'h000_0000;
+default: segments = 16'hAAAA;
 endcase
  endmodule
   
+  //input random letters
+
   
+
+  assign led [0] = hashed[0];
   
   // 7-segment display
   segment_driver driver(
