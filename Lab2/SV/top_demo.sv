@@ -88,9 +88,9 @@ endcase
 
   assign led [0] = segments[3:0];
   assign led[1] = segments[7:4];
-  assign led [2] = segments[15:12];
+  assign led [2] = segments[15:12]; //not geting signal
   assign led[3] = segments[15:0];
-  assign led[4] = segments[11:8];
+  assign led[4] = segments[11:8]; //not getting signal
   
     assign led [5] = segments[2:0];
   assign led[6] = segments[2:0];
@@ -99,6 +99,8 @@ endcase
   //getting signal segments[0];
 //getting signals from segments !!!!!, must put range as shown above, this is talking about the LED only
   //256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271
+  
+  //code here is only showing first bit of every 4 bits -> showing 1, 4, 1, 0, 9, etc. this may be correct tho, since I only have digit 1 programmed rn
 
   
   // 7-segment display
