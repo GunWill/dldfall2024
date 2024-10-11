@@ -45,6 +45,7 @@ module top_demo
   logic        smol_clk;
  // logic [3:0] ctrl;
   logic [15:0] segments; 
+  logic [255:0] hashed;
   // Place TicTacToe instantiation here
   top #(120, 512) dut (120'h48656c6c6f2c205348412d32353621, hashed);
   multiplexer dut1 (hashed, sw[3:0], segments);
@@ -85,16 +86,40 @@ endcase
 
   
 
-  assign led [0] = hashed[0];
+  assign led [0] = segments[3:0];
+  assign led[1] = segments[7:4];
+  assign led [2] = segments[15:12];
+  assign led[3] = segments[15:0];
+  assign led[4] = segments[11:8];
+  
+    assign led [5] = segments[2:0];
+  assign led[6] = segments[2:0];
+  assign led [7] = segments[7:0];
+  
+  //getting signal segments[0];
+//getting signals from segments !!!!!, must put range as shown above, this is talking about the LED only
+  //256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271
+
   
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
   .digit0(segments[3:0]),
-  .digit1(segments[7:4]),
-  .digit2(segments[11:8]),
-  .digit3(segments[15:12]),
+ // .digit1(segments[7:4]),
+ // .digit2(segments[11:8]),
+ // .digit3(segments[15:12]),
+ 
+ 
+ 
+   //.digit0(4'hF),
+  .digit1(4'hf),
+  .digit2(4'hb),
+  .digit3(4'hB),
+  
+  //board display has issues w/ B, must have malfunction, or dead circuit in board
+  //board displaying B as b, either due to board display error or implementation error? Most likely segment display is malfunctioning, because displays A and E as A and E
+ 
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
