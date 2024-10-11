@@ -2,7 +2,7 @@
 // Secure Hash Standard (SHA-256)
 //
 
-module top #(parameter MSG_SIZE = 24,
+module top #(parameter MSG_SIZE = 120,
 	     parameter PADDED_SIZE = 512)
    (input logic [MSG_SIZE-1:0] message,
     output logic [255:0] hashed);
@@ -15,7 +15,7 @@ module top #(parameter MSG_SIZE = 24,
    
 endmodule // sha_256
 
-module sha_padder #(parameter MSG_SIZE = 24,	     
+module sha_padder #(parameter MSG_SIZE = 120,	     
 		    parameter PADDED_SIZE = 512) 
    (input logic [MSG_SIZE-1:0] message,
     output logic [PADDED_SIZE-1:0] padded);
