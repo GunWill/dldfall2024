@@ -51,7 +51,7 @@ module top_demo
   multiplexer dut1 (hashed, sw[3:0], segments);
   
   
-  //256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271
+  //256'h_d0e8_b8f1_1c98_f369_016e_b2ed_3c54_1e1f_0138_2f9d_5b31_04c9_ffd0_6b61_75a4_6271
   
   //multiplexer
   
@@ -61,22 +61,22 @@ input logic [3:0] ctrl,
 always_comb
 case(ctrl)
 // abc_defg
-4'b0000: segments = hashed[15:0];
-4'b0001: segments = hashed[31:16];
-4'b0010: segments = hashed[47:32];
-4'b0011: segments = hashed[63:48];
-4'b0100: segments = hashed[79:64];
-4'b0101: segments = hashed[95:80];
-4'b0110: segments = hashed[112:96];
-4'b0111: segments = hashed[127:113];
-4'b1000: segments = hashed[143:128];
-4'b1001: segments = hashed[159:144];
-4'b1010: segments = hashed[175:160];
-4'b1011: segments = hashed[191:176];
-4'b1100: segments = hashed[207:192];
-4'b1101: segments = hashed[223:208];
-4'b1110: segments = hashed[239:224];
-4'b1111: segments = hashed[255:240];
+4'b0000: segments = hashed[15:0]; //6271 works 0
+4'b0001: segments = hashed[31:16]; //75a4 works 1
+4'b0010: segments = hashed[47:32]; //6b61 works 2
+4'b0011: segments = hashed[63:48]; //ffd0 works 3
+4'b0100: segments = hashed[79:64]; //04c9 works 4
+4'b0101: segments = hashed[95:80]; //5b31 works 5
+4'b0110: segments = hashed[111:96]; //2f9d works 6
+4'b0111: segments = hashed[127:112]; //0138 7 works
+4'b1000: segments = hashed[143:128]; //1e1f 8 works
+4'b1001: segments = hashed[159:144]; //3c54 9 works
+4'b1010: segments = hashed[175:160]; //b2ed 10 works
+4'b1011: segments = hashed[191:176]; //016e 11 works
+4'b1100: segments = hashed[207:192]; //f369 12 works
+4'b1101: segments = hashed[223:208]; //1c98 13 works
+4'b1110: segments = hashed[239:224]; //b8f1 14 works
+4'b1111: segments = hashed[255:240]; //d0e8 15 works
 
 default: segments = 16'hAAAA;
 endcase
@@ -88,9 +88,9 @@ endcase
 
   assign led [0] = segments[3:0];
   assign led[1] = segments[7:4];
-  assign led [2] = segments[15:12]; //not geting signal
+  assign led [2] = segments[15:12];
   assign led[3] = segments[15:0];
-  assign led[4] = segments[11:8]; //not getting signal
+  assign led[4] = segments[11:8]; //gets all signals
   
     assign led [5] = segments[2:0];
   assign led[6] = segments[2:0];
@@ -108,16 +108,16 @@ endcase
   .clk(smol_clk),
   .rst(btn[3]),
   .digit0(segments[3:0]),
- // .digit1(segments[7:4]),
- // .digit2(segments[11:8]),
- // .digit3(segments[15:12]),
+ .digit1(segments[7:4]),
+  .digit2(segments[11:8]),
+ .digit3(segments[15:12]),
  
  
  
    //.digit0(4'hF),
-  .digit1(4'hf),
-  .digit2(4'hb),
-  .digit3(4'hB),
+  //.digit1(4'hf),
+  //.digit2(4'hb),
+  //.digit3(4'hB),
   
   //board display has issues w/ B, must have malfunction, or dead circuit in board
   //board displaying B as b, either due to board display error or implementation error? Most likely segment display is malfunctioning, because displays A and E as A and E
