@@ -36,14 +36,16 @@ module sha256 #(parameter PADDED_SIZE = 1024)
     output logic [512:0] hashed);  
 
 	//we have to update these H and K values, these are only for the sha256
-	//H is first 64 bits of fractional part of square root of prime number 9th thru 16th prime nums
+	//H is first 64 bits of fractional part of square root of prime number 1th thru 8th prime nums
 
 	//K is 2.3.2 in lab pdf, but we need to figure it out for sha512, is it 64 bit size????
+	//in fips doc
 
 	logic [255:0] H = {64'h, 64'h,
 		      64'h, 64'h, 64'h, 64'h,
 			64'h, 64'h};   
 	//need 80 K values of 64 bits for each values, now how to get that values?
+	//5120
 	
    logic [2047:0] K = {32'h428a2f98, 32'h71374491, 32'hb5c0fbcf,
 		       32'he9b5dba5, 32'h3956c25b, 32'h59f111f1, 32'h923f82a4,
