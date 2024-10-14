@@ -13,9 +13,9 @@ module stimulus;
 
 	//do we need to change these sizes?
 	
-   logic [31:0]  errors;
-   logic [31:0]  vectornum;
-   logic [63:0]  result;
+	logic [63:0]  errors;
+	logic [63:0]  vectornum;
+	logic [127:0]  result;
    // Size of [351:0] is size of vector in file: 96 + 256 = 352 bits
    logic [351:0] testvectors[511:0];
    
@@ -45,16 +45,17 @@ module stimulus;
      end
 
     // apply test vectors on rising edge of clk
-   always @(posedge clk)
+   initial
      begin
 	// Add message here : "Hello SHA-512!"	
 	#1 message = 112'h48656c6c6f205348412d35313221;
 	// Expected result 
-        #0 result = 512'hD693DB7749949506622261A533EF98E54ED5F60920F60AD03BC338D05BD9C90514919AE8B3DE1F25F7D99F87B0565D0A402493C5B40166A5EB7665C9E3ACAF2B;	
+        #0 result = 512'hD693DB7749949506622261A533EF98E54ED5F60920F60AD03BC338D05BD9C90514919AE8B3DE1F25F7D99F87B0565D0A402493C5B40166A5EB7665C9E3ACAF2B;
+	     #0 golden = 512'hD693DB7749949506622261A533EF98E54ED5F60920F60AD03BC338D05BD9C90514919AE8B3DE1F25F7D99F87B0565D0A402493C5B40166A5EB7665C9E3ACAF2B;
      end  
 
    // check results on falling edge of clk
-   always @(negedge clk)
+   initial
      begin
 	if (result != hashed)
           errors = errors + 1;
