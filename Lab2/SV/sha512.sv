@@ -39,7 +39,7 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 	//H is first 64 bits of fractional part of square root of prime number 1th thru 8th prime nums
 
 	//K is 2.3.2 in lab pdf, but we need to figure it out for sha512, is it 64 bit size????
-	//in fips doc
+	//in fips doc ---> fips doc is where you'll find knew H and K values, range values, and basically the whole algorithm for sha512
 
 	logic [255:0] H = {64'h, 64'h,
 		      64'h, 64'h, 64'h, 64'h,
@@ -47,7 +47,7 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 	//need 80 K values of 64 bits for each values, now how to get that values?
 	//5120
 	
-	logic [2047:0] K = {64'h428a2f98d728ae22, 64'h7137449123ef65cd, 64'hb5c0fbcfec4d3b2f,
+	logic [5119:0] K = {64'h428a2f98d728ae22, 64'h7137449123ef65cd, 64'hb5c0fbcfec4d3b2f,
 		       64'he9b5dba58189dbbc, 64'h3956c25bf348b538, 32'h59f111f1, 32'h923f82a4,
 		       32'hab1c5ed5, 32'hd807aa98, 32'h12835b01, 32'h243185be,
 		       32'h550c7dc3, 32'h72be5d74, 32'h80deb1fe, 32'h9bdc06a7,
@@ -71,7 +71,7 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 
 
 
-
+//these are the knew K values
 
 64'h428a2f98d728ae22, 64'h7137449123ef65cd, 65'hb5c0fbcfec4d3b2f, 65'he9b5dba58189dbbc,
 65'h3956c25bf348b538, 65'h59f111f1b605d019 923f82a4af194f9b ab1c5ed5da6d8118
@@ -196,12 +196,12 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 	logic [63:0] W26, W27, W28, W29, W30, W31, W32, W33, W34, W35, W36, W37, W38, W39, W40, W41, W42, W43, W44, W45, W46, W47, W48;
 	logic [63:0] W49, W50, W51, W52, W53, W54, W55, W56, W57, W58, W59, W60, W61, W62, W63, W64, W65, W66, W67, W68, W69, W70, W71, W72, W73, W74, W75, W76, W77, W78, W79;
 	
-	logic [64:0]   h0, h1, h2, h3, h4, h5, h6, h7;
+	logic [63:0]   h0, h1, h2, h3, h4, h5, h6, h7;
 	
 
 
 	//define everything of 64 bits
-
+//p1 good
 	prepare p1 (padded[1023:960], padded[959:896], padded[895:832],
 		    padded[831:768], padded[767:704], padded[703:640],
 		    padded[639:576], padded[575:512], padded[511:448],
@@ -217,7 +217,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    // Initialize a through h
 
-	//need to change H still, range has been changed but not H 
+	//need to change H still, range has been changed but not H , still need to update H
 	
 	assign a = H[511:448];
 	assign b = H[447:384];
@@ -231,7 +231,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
    // 80 hash computations
    // Each main_comp block computes according to Sec 2.3.3
 
-	//need to change K in each main comp mc01 - mc80
+	//need to change K range in each main comp mc01 - mc80, 64 bits each time for K range
 	
    main_comp mc01 (a, b, c, d, 
                    e, f, g, h, 
@@ -735,38 +735,38 @@ endmodule // sha_main
 
 //module prepare has a lot of work to be done 
 
-module prepare (input logic [31:0] M0, M1, M2, M3,
-		input logic [31:0]  M4, M5, M6, M7,
-		input logic [31:0]  M8, M9, M10, M11,
-		input logic [31:0]  M12, M13, M14, M15,
-		output logic [31:0] W0, W1, W2, W3, W4, 
-		output logic [31:0] W5, W6, W7, W8, W9,
-		output logic [31:0] W10, W11, W12, W13, W14, 
-		output logic [31:0] W15, W16, W17, W18, W19,
-		output logic [31:0] W20, W21, W22, W23, W24, 
-		output logic [31:0] W25, W26, W27, W28, W29,
-		output logic [31:0] W30, W31, W32, W33, W34, 
-		output logic [31:0] W35, W36, W37, W38, W39,
-		output logic [31:0] W40, W41, W42, W43, W44, 
-		output logic [31:0] W45, W46, W47, W48, W49,
-		output logic [31:0] W50, W51, W52, W53, W54, 
-		output logic [31:0] W55, W56, W57, W58, W59,
-		output logic [31:0] W60, W61, W62, W63);
+module prepare (input logic [63:0] M0, M1, M2, M3,
+		input logic [63:0]  M4, M5, M6, M7,
+		input logic [63:0]  M8, M9, M10, M11,
+		input logic [63:0]  M12, M13, M14, M15,
+		output logic [63:0] W0, W1, W2, W3, W4, 
+		output logic [63:0] W5, W6, W7, W8, W9,
+		output logic [63:0] W10, W11, W12, W13, W14, 
+		output logic [63:0] W15, W16, W17, W18, W19,
+		output logic [63:0] W20, W21, W22, W23, W24, 
+		output logic [63:0] W25, W26, W27, W28, W29,
+		output logic [63:0] W30, W31, W32, W33, W34, 
+		output logic [63:0] W35, W36, W37, W38, W39,
+		output logic [63:0] W40, W41, W42, W43, W44, 
+		output logic [63:0] W45, W46, W47, W48, W49,
+		output logic [63:0] W50, W51, W52, W53, W54, 
+		output logic [63:0] W55, W56, W57, W58, W59,
+		output logic [63:0] W60, W61, W62, W63);
 
-	logic [31:0] 		W14_sigma1_out, W15_sigma1_out, W16_sigma1_out, W17_sigma1_out, W18_sigma1_out, W19_sigma1_out, W20_sigma1_out, W21_sigma1_out;
-	logic [31:0] 		W22_sigma1_out, W23_sigma1_out, W24_sigma1_out, W25_sigma1_out, W26_sigma1_out, W27_sigma1_out, W28_sigma1_out, W29_sigma1_out;
-	logic [31:0] 		W30_sigma1_out, W31_sigma1_out, W32_sigma1_out, W33_sigma1_out, W34_sigma1_out, W35_sigma1_out, W36_sigma1_out, W37_sigma1_out;
-	logic [31:0] 		W38_sigma1_out, W39_sigma1_out, W40_sigma1_out, W41_sigma1_out, W42_sigma1_out, W43_sigma1_out, W44_sigma1_out, W45_sigma1_out;
-	logic [31:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
-	logic [31:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
-   //logic [31:0]      W62_sigma1_out, W63_sigma1_out;
+	logic [63:0] 		W14_sigma1_out, W15_sigma1_out, W16_sigma1_out, W17_sigma1_out, W18_sigma1_out, W19_sigma1_out, W20_sigma1_out, W21_sigma1_out;
+	logic [63:0] 		W22_sigma1_out, W23_sigma1_out, W24_sigma1_out, W25_sigma1_out, W26_sigma1_out, W27_sigma1_out, W28_sigma1_out, W29_sigma1_out;
+	logic [63:0] 		W30_sigma1_out, W31_sigma1_out, W32_sigma1_out, W33_sigma1_out, W34_sigma1_out, W35_sigma1_out, W36_sigma1_out, W37_sigma1_out;
+	logic [63:0] 		W38_sigma1_out, W39_sigma1_out, W40_sigma1_out, W41_sigma1_out, W42_sigma1_out, W43_sigma1_out, W44_sigma1_out, W45_sigma1_out;
+	logic [63:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
+	logic [63:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
+   logic [63:0]      W62_sigma1_out, W63_sigma1_out;
 
-	logic [31:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
-	logic [31:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
-	logic [31:0]		W17_sigma0_out, W18_sigma0_out, W19_sigma0_out, W20_sigma0_out, W21_sigma0_out, W22_sigma0_out, W23_sigma0_out, W24_sigma0_out;
-	logic [31:0]		W25_sigma0_out, W26_sigma0_out, W27_sigma0_out, W28_sigma0_out, W29_sigma0_out, W30_sigma0_out, W31_sigma0_out, W32_sigma0_out;
-	logic [31:0]		W33_sigma0_out, W34_sigma0_out, W35_sigma0_out, W36_sigma0_out, W37_sigma0_out, W38_sigma0_out, W39_sigma0_out, W40_sigma0_out;
-	logic [31:0]		W41_sigma0_out, W42_sigma0_out, W43_sigma0_out, W44_sigma0_out, W45_sigma0_out, W46_sigma0_out, W47_sigma0_out, W48_sigma0_out;
+	logic [63:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
+	logic [63:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
+	logic [63:0]		W17_sigma0_out, W18_sigma0_out, W19_sigma0_out, W20_sigma0_out, W21_sigma0_out, W22_sigma0_out, W23_sigma0_out, W24_sigma0_out;
+	logic [63:0]		W25_sigma0_out, W26_sigma0_out, W27_sigma0_out, W28_sigma0_out, W29_sigma0_out, W30_sigma0_out, W31_sigma0_out, W32_sigma0_out;
+	logic [63:0]		W33_sigma0_out, W34_sigma0_out, W35_sigma0_out, W36_sigma0_out, W37_sigma0_out, W38_sigma0_out, W39_sigma0_out, W40_sigma0_out;
+	logic [63:0]		W41_sigma0_out, W42_sigma0_out, W43_sigma0_out, W44_sigma0_out, W45_sigma0_out, W46_sigma0_out, W47_sigma0_out, W48_sigma0_out;
 	
 	
 	//define all sigma0 and sigma 1 values
