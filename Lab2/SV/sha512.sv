@@ -4,20 +4,20 @@
 
 //MSG_SIZE must be declared in test bench - testbench value will override value here - done
 
-module top #(parameter MSG_SIZE = 24,
+module top #(parameter MSG_SIZE = 112,
 	     parameter PADDED_SIZE = 1024)
    (input logic [MSG_SIZE-1:0] message,
-    output logic [512:0] hashed);
+    output logic [511:0] hashed);
 
    logic [PADDED_SIZE-1:0] padded;
 
    sha_padder #(.MSG_SIZE(MSG_SIZE), .PADDED_SIZE(PADDED_SIZE)) padder (.message(message), .padded(padded));
-   sha256 #(.PADDED_SIZE(PADDED_SIZE)) main (.padded(padded), .hashed(hashed));
+   sha512 #(.PADDED_SIZE(PADDED_SIZE)) main (.padded(padded), .hashed(hashed));
    
    
 endmodule // sha_512
 
-module sha_padder #(parameter MSG_SIZE = 24,	     
+module sha_padder #(parameter MSG_SIZE = 112,	     
 		    parameter PADDED_SIZE = 1024) 
    (input logic [MSG_SIZE-1:0] message,
     output logic [PADDED_SIZE-1:0] padded);
@@ -31,9 +31,9 @@ localparam back_0_width = 128 - $bits(MSG_SIZE);
 
 endmodule // sha_padder
 
-module sha256 #(parameter PADDED_SIZE = 1024)
+module sha512 #(parameter PADDED_SIZE = 1024)
    (input logic [PADDED_SIZE-1:0] padded,
-    output logic [512:0] hashed);  
+    output logic [511:0] hashed);  
 
 	//we have to update these H and K values, these are only for the sha256
 	//H is first 64 bits of fractional part of square root of prime number 1th thru 8th prime nums
@@ -41,7 +41,7 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 	//K is 2.3.2 in lab pdf, but we need to figure it out for sha512, is it 64 bit size????
 	//in fips doc ---> fips doc is where you'll find knew H and K values, range values, and basically the whole algorithm for sha512
 
-	logic [255:0] H = {64'h6a09e667f3bcc908, 64'hbb67ae8584caa73b,
+	logic [511:0] H = {64'h6a09e667f3bcc908, 64'hbb67ae8584caa73b,
 		      64'h3c6ef372fe94f82b, 64'ha54ff53a5f1d36f1, 64'h510e527fade682d1, 64'h9b05688c2b3e6c1f,
 			64'h1f83d9abfb41bd6b, 64'h5be0cd19137e2179};   
 	//need 80 K values of 64 bits for each values, now how to get that values?
@@ -390,13 +390,13 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    main_comp mc26 (a24_out, b24_out, c24_out, d24_out, 
                    e24_out, f24_out, g24_out, h24_out,
-		   K[3519:3546], W25,
+		   K[3519:3456], W25,
                    a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out ); 
 
    main_comp mc27 (a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out,
-		   K[3545:3392], W26,
+		   K[3455:3392], W26,
                    a26_out, b26_out, c26_out, d26_out, 
                    e26_out, f26_out, g26_out, h26_out );
 
@@ -498,19 +498,19 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    main_comp mc44 (a42_out, b42_out, c42_out, d42_out, 
                    e42_out, f42_out, g42_out, h42_out,
-		   K[2365:2304], W43,
+		   K[2367:2304], W43,
                    a43_out, b43_out, c43_out, d43_out, 
                    e43_out, f43_out, g43_out, h43_out ); 
 
    main_comp mc45 (a43_out, b43_out, c43_out, d43_out, 
                    e43_out, f43_out, g43_out, h43_out,
-		   K[2303:2204], W44,
+		   K[2303:2240], W44,
                    a44_out, b44_out, c44_out, d44_out, 
                    e44_out, f44_out, g44_out, h44_out ); 
 
    main_comp mc46 (a44_out, b44_out, c44_out, d44_out, 
                    e44_out, f44_out, g44_out, h44_out,
-		   K[2203:2176], W45,
+		   K[2239:2176], W45,
                    a45_out, b45_out, c45_out, d45_out, 
                    e45_out, f45_out, g45_out, h45_out ); 
 
@@ -756,7 +756,7 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 		output logic [63:0] W45, W46, W47, W48, W49,
 		output logic [63:0] W50, W51, W52, W53, W54, 
 		output logic [63:0] W55, W56, W57, W58, W59,
-		output logic [63:0] W60, W61, W62, W63);
+		output logic [63:0] W60, W61, W62, W63, W64, W65, W66, W67, W68, W69, W70, W71, W72, W73, W74, W75, W76, W77, W78, W79);
 
 	logic [63:0] 		W14_sigma1_out, W15_sigma1_out, W16_sigma1_out, W17_sigma1_out, W18_sigma1_out, W19_sigma1_out, W20_sigma1_out, W21_sigma1_out;
 	logic [63:0] 		W22_sigma1_out, W23_sigma1_out, W24_sigma1_out, W25_sigma1_out, W26_sigma1_out, W27_sigma1_out, W28_sigma1_out, W29_sigma1_out;
@@ -765,6 +765,8 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	logic [63:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
 	logic [63:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
   	logic [63:0]      	W62_sigma1_out, W63_sigma1_out;
+   logic [63:0] W64_sigma1_out, W65_sigma1_out, W66_sigma1_out, W67_sigma1_out, W68_sigma1_out, W69_sigma1_out;
+   logic [63:0] W70_sigma1_out, W71_sigma1_out, W72_sigma1_out, W73_sigma1_out, W74_sigma1_out, W75_sigma1_out, W76_sigma1_out, W77_sigma1_out;
 
 	logic [63:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
 	logic [63:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
@@ -772,6 +774,8 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	logic [63:0]		W25_sigma0_out, W26_sigma0_out, W27_sigma0_out, W28_sigma0_out, W29_sigma0_out, W30_sigma0_out, W31_sigma0_out, W32_sigma0_out;
 	logic [63:0]		W33_sigma0_out, W34_sigma0_out, W35_sigma0_out, W36_sigma0_out, W37_sigma0_out, W38_sigma0_out, W39_sigma0_out, W40_sigma0_out;
 	logic [63:0]		W41_sigma0_out, W42_sigma0_out, W43_sigma0_out, W44_sigma0_out, W45_sigma0_out, W46_sigma0_out, W47_sigma0_out, W48_sigma0_out;
+   logic [63:0]		W49_sigma0_out, W50_sigma0_out, W51_sigma0_out, W52_sigma0_out, W53_sigma0_out, W54_sigma0_out, W55_sigma0_out, W56_sigma0_out;
+   logic [63:0]		W57_sigma0_out, W58_sigma0_out, W59_sigma0_out, W60_sigma0_out, W61_sigma0_out, W62_sigma0_out, W63_sigma0_out, W64_sigma0_out;
 	
 	
 	//define all sigma0 and sigma 1 values
@@ -855,10 +859,10 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	sigma1 sig1_58 (W71, W71_sigma1_out);
 	sigma1 sig1_59 (W72, W72_sigma1_out);
 	sigma1 sig1_60 (W73, W73_sigma1_out);
-	sigma1 sig1_62 (W74, W74_sigma1_out);
-	sigma1 sig1_63 (W75, W75_sigma1_out);
-	sigma1 sig1_64 (W76, W76_sigma1_out);
-	sigma1 sig1_65 (W77, W77_sigma1_out);
+	sigma1 sig1_61 (W74, W74_sigma1_out);
+	sigma1 sig1_62 (W75, W75_sigma1_out);
+	sigma1 sig1_63 (W76, W76_sigma1_out);
+	sigma1 sig1_64 (W77, W77_sigma1_out);
    //all the way to 61
 
    // fill in other sigma1 blocks

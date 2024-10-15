@@ -11,20 +11,22 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do sha256.do
+# do sha512.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:24:28 on Oct 11,2024
-# vlog -reportprogress 300 sha256_stub.sv sha256_tb_tv.sv 
+# Start time: 13:39:55 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
-# -- Compiling module sha256
+# -- Compiling module sha512
 # -- Compiling module prepare
 # -- Compiling module main_comp
 # -- Compiling module intermediate_hash
@@ -38,16 +40,448 @@
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:24:28 on Oct 11,2024, Elapsed time: 0:00:00
+# End time: 13:39:55 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:24:28 on Oct 11,2024
+# Start time: 13:39:55 on Oct 15,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
 # Loading work.sha_padder(fast)
-# Loading work.sha256(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_51 File: sha512.sv Line: 848
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_52 File: sha512.sv Line: 849
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_53 File: sha512.sv Line: 850
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_54 File: sha512.sv Line: 851
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_55 File: sha512.sv Line: 852
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_56 File: sha512.sv Line: 853
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_57 File: sha512.sv Line: 854
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_58 File: sha512.sv Line: 855
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_59 File: sha512.sv Line: 856
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_60 File: sha512.sv Line: 857
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_62 File: sha512.sv Line: 858
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_63 File: sha512.sv Line: 859
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_64 File: sha512.sv Line: 860
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_65 File: sha512.sv Line: 861
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_49 File: sha512.sv Line: 916
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_50 File: sha512.sv Line: 917
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_51 File: sha512.sv Line: 918
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_52 File: sha512.sv Line: 919
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_53 File: sha512.sv Line: 920
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_54 File: sha512.sv Line: 921
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_55 File: sha512.sv Line: 922
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_56 File: sha512.sv Line: 923
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_57 File: sha512.sv Line: 924
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_58 File: sha512.sv Line: 925
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_59 File: sha512.sv Line: 926
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_60 File: sha512.sv Line: 927
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_61 File: sha512.sv Line: 928
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_62 File: sha512.sv Line: 929
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_63 File: sha512.sv Line: 930
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_64 File: sha512.sv Line: 931
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (62) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc44 File: sha512.sv Line: 499
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (100) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc45 File: sha512.sv Line: 505
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (28) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc46 File: sha512.sv Line: 511
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlft3v3g19".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft3v3g19
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:54:08 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:54:08 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:54:11 on Oct 15,2024, Elapsed time: 0:14:16
+# Errors: 0, Warnings: 35
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:54:11 on Oct 15,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_51 File: sha512.sv Line: 848
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_52 File: sha512.sv Line: 849
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_53 File: sha512.sv Line: 850
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_54 File: sha512.sv Line: 851
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_55 File: sha512.sv Line: 852
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_56 File: sha512.sv Line: 853
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_57 File: sha512.sv Line: 854
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_58 File: sha512.sv Line: 855
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_59 File: sha512.sv Line: 856
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_60 File: sha512.sv Line: 857
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_62 File: sha512.sv Line: 858
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_63 File: sha512.sv Line: 859
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_64 File: sha512.sv Line: 860
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_65 File: sha512.sv Line: 861
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_49 File: sha512.sv Line: 916
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_50 File: sha512.sv Line: 917
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_51 File: sha512.sv Line: 918
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_52 File: sha512.sv Line: 919
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_53 File: sha512.sv Line: 920
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_54 File: sha512.sv Line: 921
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_55 File: sha512.sv Line: 922
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_56 File: sha512.sv Line: 923
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_57 File: sha512.sv Line: 924
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_58 File: sha512.sv Line: 925
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_59 File: sha512.sv Line: 926
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_60 File: sha512.sv Line: 927
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_61 File: sha512.sv Line: 928
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_62 File: sha512.sv Line: 929
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_63 File: sha512.sv Line: 930
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_64 File: sha512.sv Line: 931
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (62) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc44 File: sha512.sv Line: 499
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (100) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc45 File: sha512.sv Line: 505
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (28) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc46 File: sha512.sv Line: 511
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftr2cbg2".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftr2cbg2
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:59:35 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:59:35 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:59:44 on Oct 15,2024, Elapsed time: 0:05:33
+# Errors: 0, Warnings: 35
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:59:44 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_51 File: sha512.sv Line: 848
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_52 File: sha512.sv Line: 849
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_53 File: sha512.sv Line: 850
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_54 File: sha512.sv Line: 851
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_55 File: sha512.sv Line: 852
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_56 File: sha512.sv Line: 853
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_57 File: sha512.sv Line: 854
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_58 File: sha512.sv Line: 855
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_59 File: sha512.sv Line: 856
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_60 File: sha512.sv Line: 857
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_61 File: sha512.sv Line: 858
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_62 File: sha512.sv Line: 859
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_63 File: sha512.sv Line: 860
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig1'. The port definition is at: sha512.sv(1106).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig1_64 File: sha512.sv Line: 861
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_49 File: sha512.sv Line: 916
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_50 File: sha512.sv Line: 917
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_51 File: sha512.sv Line: 918
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_52 File: sha512.sv Line: 919
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_53 File: sha512.sv Line: 920
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_54 File: sha512.sv Line: 921
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_55 File: sha512.sv Line: 922
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_56 File: sha512.sv Line: 923
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_57 File: sha512.sv Line: 924
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_58 File: sha512.sv Line: 925
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_59 File: sha512.sv Line: 926
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_60 File: sha512.sv Line: 927
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_61 File: sha512.sv Line: 928
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_62 File: sha512.sv Line: 929
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_63 File: sha512.sv Line: 930
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'sig0'. The port definition is at: sha512.sv(1085).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/p1/sig0_64 File: sha512.sv Line: 931
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (62) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc44 File: sha512.sv Line: 499
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (100) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc45 File: sha512.sv Line: 505
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (28) for port 'K_in'. The port definition is at: sha512.sv(1008).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc46 File: sha512.sv Line: 511
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftsxfbkd".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftsxfbkd
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:07:14 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:07:15 on Oct 15,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# End time: 14:07:16 on Oct 15,2024, Elapsed time: 0:07:32
+# Errors: 0, Warnings: 35
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:07:16 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (62) for port 'K_in'. The port definition is at: sha512.sv(1012).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc44 File: sha512.sv Line: 499
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (100) for port 'K_in'. The port definition is at: sha512.sv(1012).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc45 File: sha512.sv Line: 505
+# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (28) for port 'K_in'. The port definition is at: sha512.sv(1012).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/mc46 File: sha512.sv Line: 511
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftn91v1s".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftn91v1s
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:16:48 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:16:48 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:17:02 on Oct 15,2024, Elapsed time: 0:09:46
+# Errors: 0, Warnings: 5
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:17:02 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
 # Loading work.prepare(fast)
 # Loading work.sigma1(fast)
 # Loading work.sigma0(fast)
@@ -60,6 +494,421 @@
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
-#           Attempting to use alternate WLF file "./wlftt65qai".
+#           Attempting to use alternate WLF file "./wlft4r8jcv".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftt65qai
+#           Using alternate file: ./wlft4r8jcv
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:25:48 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha512_tb.sv(59): near "-": syntax error, unexpected '-'.
+# End time: 14:25:48 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha512.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha512.sv sha512_tb.sv"
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:26:21 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:26:21 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:26:23 on Oct 15,2024, Elapsed time: 0:09:21
+# Errors: 1, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:26:23 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftdbw6r4".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftdbw6r4
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:27:03 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:27:03 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:27:07 on Oct 15,2024, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:27:07 on Oct 15,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlft5vcqjj".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft5vcqjj
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:28:50 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:28:50 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:28:52 on Oct 15,2024, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:28:52 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (512) does not match connection size (513) for port 'hashed'. The port definition is at: sha512.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut File: sha512_tb.sv Line: 30
+# ** Warning: (vsim-3015) [PCDPC] - Port size (513) does not match connection size (512) for port 'hashed'. The port definition is at: sha512.sv(36).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main File: sha512.sv Line: 15
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftwqz4ry".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftwqz4ry
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:30:47 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:30:47 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:30:50 on Oct 15,2024, Elapsed time: 0:01:58
+# Errors: 0, Warnings: 4
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:30:51 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (512) does not match connection size (513) for port 'hashed'. The port definition is at: sha512.sv(10).
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut File: sha512_tb.sv Line: 30
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftz42y2c".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftz42y2c
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:32:07 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:32:07 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:32:09 on Oct 15,2024, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 3
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:32:09 on Oct 15,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlft925q40".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft925q40
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:38:14 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:38:14 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 14:38:16 on Oct 15,2024, Elapsed time: 0:06:07
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:38:16 on Oct 15,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlft01ndx7".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlft01ndx7
+do sha512.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 14:39:31 on Oct 15,2024
+# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha512
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 14:39:31 on Oct 15,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

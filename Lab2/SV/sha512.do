@@ -61,6 +61,7 @@ add wave -noupdate -expand -group mc01 /stimulus/dut/main/mc01/e_out
 add wave -noupdate -expand -group mc01 /stimulus/dut/main/mc01/f_out
 add wave -noupdate -expand -group mc01 /stimulus/dut/main/mc01/g_out
 add wave -noupdate -expand -group mc01 /stimulus/dut/main/mc01/h_out
+
 add wave -noupdate -divider -height 64 "sha512 mc02"
 add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/a_out
 add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/b_out
@@ -70,6 +71,7 @@ add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/e_out
 add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/f_out
 add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/g_out
 add wave -noupdate -expand -group mc02 /stimulus/dut/main/mc02/h_out
+
 add wave -noupdate -divider -height 64 "sha512 mc03"
 add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/a_out
 add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/b_out
@@ -79,6 +81,49 @@ add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/e_out
 add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/f_out
 add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/g_out
 add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc03/h_out
+
+
+add wave -noupdate -divider -height 64 "sha512 mc04"
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/a_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/b_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/c_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/d_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/e_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/f_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/g_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc04/h_out
+
+add wave -noupdate -divider -height 64 "sha512 mc15"
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/a_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/b_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/c_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/d_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/e_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/f_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/g_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc15/h_out
+
+add wave -noupdate -divider -height 64 "sha512 mc61"
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/a_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/b_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/c_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/d_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/e_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/f_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/g_out
+add wave -noupdate -expand -group mc03 /stimulus/dut/main/mc61/h_out
+
+
+add wave -noupdate -divider -height 64 "sha512 mc62"
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/a_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/b_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/c_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/d_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/e_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/f_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/g_out
+add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc62/h_out
+
 add wave -noupdate -divider -height 64 "sha512 mc63"
 add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/a_out
 add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/b_out
@@ -88,6 +133,8 @@ add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/e_out
 add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/f_out
 add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/g_out
 add wave -noupdate -expand -group mc63 /stimulus/dut/main/mc63/h_out
+
+
 add wave -noupdate -divider -height 64 "sha512 mc64"
 add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/a_out
 add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/b_out
@@ -97,6 +144,7 @@ add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/e_out
 add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/f_out
 add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/g_out
 add wave -noupdate -expand -group mc64 /stimulus/dut/main/mc64/h_out
+
 add wave -noupdate -divider -height 64 "sha512 intermediate hash"
 add wave -noupdate -expand -group ih1 /stimulus/dut/main/ih1/*
 
@@ -117,5 +165,5 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation 
-run 500 ns
+run 25 ns
 quit

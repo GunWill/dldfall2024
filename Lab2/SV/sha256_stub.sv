@@ -817,6 +817,7 @@ module intermediate_hash (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in,
    assign h6_out = g_in + h6_in;
    assign h7_out = h_in + h7_in;
    
+   
 endmodule
 			  
 module majority (input logic [31:0] x, y, z, output logic [31:0] maj);
