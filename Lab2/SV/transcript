@@ -912,3 +912,28 @@ do sha512.do
 # 	stimulus
 # End time: 14:39:31 on Oct 15,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+# End time: 14:39:33 on Oct 15,2024, Elapsed time: 0:01:17
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 14:39:33 on Oct 15,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt7
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha512(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
+#           Attempting to use alternate WLF file "./wlftvgjyfk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvgjyfk
