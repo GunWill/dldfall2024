@@ -1042,7 +1042,7 @@ endmodule // choice
 
 module Sigma0 (input logic [63:0] x, output logic [63:0] Sig0);
 
-assign Sig0 = ({x[1:0], x[31:2]})^({x[12:0], x[31:13]})^({x[21:0], x[31:22]});
+assign Sig0 = ({x[27:0], x[63:28]})^({x[33:0], x[63:34]})^({x[38:0], x[63:39]});
 
    
 	//ror^28 ^ ror^34 ^ ror^39
@@ -1054,7 +1054,7 @@ endmodule // Sigma0
 module sigma0 (input logic [63:0] x, output logic [63:0] sig0);
 
 
-      assign sig0 = ({x[6:0], x[31:7]})^({x[17:0], x[31:18]})^(x>>3);
+      assign sig0 = ({x[0], x[63:1]})^({x[7:0], x[63:8]})^(x>>7);
 
 	//ror^1 ^ ror^8 ^ (x>>7)
 	//need to change to above equation
@@ -1065,7 +1065,7 @@ endmodule // sigma0
 module Sigma1 (input logic [63:0] x, output logic [63:0] Sig1);
 
    // See Section 2.3.3, Number 4
-   assign Sig1 = ({x[5:0], x[31:6]})^({x[10:0], x[31:11]})^({x[24:0], x[31:25]});
+   assign Sig1 = ({x[13:0], x[63:14]})^({x[17:0], x[63:18]})^({x[40:0], x[63:41]});
 
 	//ror^14 ^ ror^18 ^ ror^41
 	//need to change to above equation
@@ -1076,7 +1076,7 @@ module sigma1 (input logic [63:0] x, output logic [63:0] sig1);
 
       
    
-assign sig1 = ({x[16:0], x[31:17]})^({x[18:0], x[31:19]})^(x>>10);
+assign sig1 = ({x[18:0], x[63:19]})^({x[60:0], x[63:61]})^(x>>6);
 
 	//ror^19 ^ ror^61 ^ (x>>6)
 	//need to change to above equation
