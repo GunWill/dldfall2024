@@ -844,7 +844,21 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	sigma1 sig1_47 (W60, W60_sigma1_out);
 	sigma1 sig1_48 (W61, W61_sigma1_out);
 	sigma1 sig1_49 (W62, W62_sigma1_out);
-
+	sigma1 sig1_50 (W63, W63_sigma1_out);
+	sigma1 sig1_51 (W64, W64_sigma1_out);
+	sigma1 sig1_52 (W65, W65_sigma1_out);
+	sigma1 sig1_53 (W66, W66_sigma1_out);
+	sigma1 sig1_54 (W67, W67_sigma1_out);
+	sigma1 sig1_55 (W68, W68_sigma1_out);
+	sigma1 sig1_56 (W69, W69_sigma1_out);
+	sigma1 sig1_57 (W70, W70_sigma1_out);
+	sigma1 sig1_58 (W71, W71_sigma1_out);
+	sigma1 sig1_59 (W72, W72_sigma1_out);
+	sigma1 sig1_60 (W73, W73_sigma1_out);
+	sigma1 sig1_62 (W74, W74_sigma1_out);
+	sigma1 sig1_63 (W75, W75_sigma1_out);
+	sigma1 sig1_64 (W76, W76_sigma1_out);
+	sigma1 sig1_65 (W77, W77_sigma1_out);
    //all the way to 61
 
    // fill in other sigma1 blocks
@@ -852,7 +866,7 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
    // sigma 0 (see bottom of page 6)
    sigma0 sig0_1 (W1, W1_sigma0_out);
    //all the way to 47
-sigma0 sig0_2 (W2, W2_sigma0_out);
+   sigma0 sig0_2 (W2, W2_sigma0_out);
    sigma0 sig0_3 (W3, W3_sigma0_out);
    sigma0 sig0_4 (W4, W4_sigma0_out);
    sigma0 sig0_5 (W5, W5_sigma0_out);
@@ -899,6 +913,23 @@ sigma0 sig0_2 (W2, W2_sigma0_out);
    sigma0 sig0_46 (W46, W46_sigma0_out);
    sigma0 sig0_47 (W47, W47_sigma0_out);
    sigma0 sig0_48 (W48, W48_sigma0_out);
+   sigma0 sig0_49 (W49, W49_sigma0_out);
+   sigma0 sig0_50 (W50, W50_sigma0_out);
+   sigma0 sig0_51 (W51, W51_sigma0_out);
+   sigma0 sig0_52 (W52, W52_sigma0_out);
+   sigma0 sig0_53 (W53, W53_sigma0_out);
+   sigma0 sig0_54 (W54, W54_sigma0_out);
+   sigma0 sig0_55 (W55, W55_sigma0_out);
+   sigma0 sig0_56 (W56, W56_sigma0_out);
+   sigma0 sig0_57 (W57, W57_sigma0_out);
+   sigma0 sig0_58 (W58, W58_sigma0_out);
+   sigma0 sig0_59 (W59, W59_sigma0_out);
+   sigma0 sig0_60 (W60, W60_sigma0_out);
+   sigma0 sig0_61 (W61, W61_sigma0_out);
+   sigma0 sig0_62 (W62, W62_sigma0_out);
+   sigma0 sig0_63 (W63, W63_sigma0_out);
+   sigma0 sig0_64 (W64, W64_sigma0_out);
+	
    // fill in other sigma0 blocks
 
    // Equation for W_i (top of page 7)3
