@@ -264,361 +264,361 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    main_comp mc05 (a3_out, b3_out, c3_out, d3_out, 
                    e3_out, f3_out, g3_out, h3_out,
-                   K[], W4,
+		   K[4863:4800], W4,
                    a4_out, b4_out, c4_out, d4_out, 
                    e4_out, f4_out, g4_out, h4_out ); 
 
    main_comp mc06 (a4_out, b4_out, c4_out, d4_out, 
                    e4_out, f4_out, g4_out, h4_out,
-                   K[], W5,
+		   K[4799:4736], W5,
                    a5_out, b5_out, c5_out, d5_out, 
                    e5_out, f5_out, g5_out, h5_out ); 
 
    main_comp mc07 (a5_out, b5_out, c5_out, d5_out, 
                    e5_out, f5_out, g5_out, h5_out,
-                   K[], W6,
+		   K[4735:4672], W6,
                    a6_out, b6_out, c6_out, d6_out, 
                    e6_out, f6_out, g6_out, h6_out ); 
 
    main_comp mc08 (a6_out, b6_out, c6_out, d6_out, 
                    e6_out, f6_out, g6_out, h6_out,
-                   K[], W7,
+		   K[4671:4608], W7,
                    a7_out, b7_out, c7_out, d7_out, 
                    e7_out, f7_out, g7_out, h7_out ); 
 
    main_comp mc09 (a7_out, b7_out, c7_out, d7_out, 
                    e7_out, f7_out, g7_out, h7_out,
-                   K[], W8,
+		   K[4607:4544], W8,
                    a8_out, b8_out, c8_out, d8_out, 
                    e8_out, f8_out, g8_out, h8_out ); 
    
    main_comp mc10 (a8_out, b8_out, c8_out, d8_out, 
                    e8_out, f8_out, g8_out, h8_out,
-                   K[], W9,
+		   K[4543:4480], W9,
                    a9_out, b9_out, c9_out, d9_out, 
                    e9_out, f9_out, g9_out, h9_out ); 
 
    main_comp mc11 (a9_out, b9_out, c9_out, d9_out, 
                    e9_out, f9_out, g9_out, h9_out,
-                   K[], W10,
+		   K[4479:4416], W10,
                    a10_out, b10_out, c10_out, d10_out, 
                    e10_out, f10_out, g10_out, h10_out ); 
 
    main_comp mc12 (a10_out, b10_out, c10_out, d10_out, 
                    e10_out, f10_out, g10_out, h10_out,
-                   K[], W11,
+		   K[4415:4352], W11,
                    a11_out, b11_out, c11_out, d11_out, 
                    e11_out, f11_out, g11_out, h11_out );
 
    main_comp mc13 (a11_out, b11_out, c11_out, d11_out, 
                    e11_out, f11_out, g11_out, h11_out,
-                   K[], W12,
+		   K[4351:4288], W12,
                    a12_out, b12_out, c12_out, d12_out, 
                    e12_out, f12_out, g12_out, h12_out ); 
 
    main_comp mc14 (a12_out, b12_out, c12_out, d12_out, 
                    e12_out, f12_out, g12_out, h12_out,
-                   K[], W13,
+		   K[4287:4224], W13,
                    a13_out, b13_out, c13_out, d13_out, 
                    e13_out, f13_out, g13_out, h13_out ); 
 
    main_comp mc15 (a13_out, b13_out, c13_out, d13_out, 
                    e13_out, f13_out, g13_out, h13_out,
-                   K[], W14,
+		   K[4223:4160], W14,
                    a14_out, b14_out, c14_out, d14_out, 
                    e14_out, f14_out, g14_out, h14_out ); 
 
    main_comp mc16 (a14_out, b14_out, c14_out, d14_out, 
                    e14_out, f14_out, g14_out, h14_out,
-                   K[1567:1536], W15,
+		   K[4159:4096], W15,
                    a15_out, b15_out, c15_out, d15_out, 
                    e15_out, f15_out, g15_out, h15_out ); 
 
    main_comp mc17 (a15_out, b15_out, c15_out, d15_out, 
                    e15_out, f15_out, g15_out, h15_out,
-                   K[1535:1504], W16,
+		   K[4095:4032], W16,
                    a16_out, b16_out, c16_out, d16_out, 
                    e16_out, f16_out, g16_out, h16_out ); 
 
    main_comp mc18 (a16_out, b16_out, c16_out, d16_out, 
                    e16_out, f16_out, g16_out, h16_out,
-                   K[1503:1472], W17,
+		   K[4031:3968], W17,
                    a17_out, b17_out, c17_out, d17_out, 
                    e17_out, f17_out, g17_out, h17_out ); 
 
    main_comp mc19 (a17_out, b17_out, c17_out, d17_out, 
                    e17_out, f17_out, g17_out, h17_out,
-                   K[1471:1440], W18,
+		   K[3967:3904], W18,
                    a18_out, b18_out, c18_out, d18_out, 
                    e18_out, f18_out, g18_out, h18_out ); 
 
    main_comp mc20 (a18_out, b18_out, c18_out, d18_out, 
                    e18_out, f18_out, g18_out, h18_out,
-                   K[1439:1408], W19,
+		   K[3903:3840], W19,
                    a19_out, b19_out, c19_out, d19_out, 
                    e19_out, f19_out, g19_out, h19_out ); 
 
    main_comp mc21 (a19_out, b19_out, c19_out, d19_out, 
                    e19_out, f19_out, g19_out, h19_out,
-                   K[1407:1376], W20,
+		   K[3839:3776], W20,
                    a20_out, b20_out, c20_out, d20_out, 
                    e20_out, f20_out, g20_out, h20_out ); 
 
    main_comp mc22 (a20_out, b20_out, c20_out, d20_out, 
                    e20_out, f20_out, g20_out, h20_out,
-                   K[1375:1344], W21,
+		   K[3775:3712], W21,
                    a21_out, b21_out, c21_out, d21_out, 
                    e21_out, f21_out, g21_out, h21_out ); 
 
    main_comp mc23 (a21_out, b21_out, c21_out, d21_out, 
                    e21_out, f21_out, g21_out, h21_out,
-                   K[1343:1312], W22,
+		   K[3711:3648], W22,
                    a22_out, b22_out, c22_out, d22_out, 
                    e22_out, f22_out, g22_out, h22_out ); 
 
    main_comp mc24 (a22_out, b22_out, c22_out, d22_out, 
                    e22_out, f22_out, g22_out, h22_out,
-                   K[1311:1280], W23,
+		   K[3647:3584], W23,
                    a23_out, b23_out, c23_out, d23_out, 
                    e23_out, f23_out, g23_out, h23_out ); 
 
    main_comp mc25 (a23_out, b23_out, c23_out, d23_out, 
                    e23_out, f23_out, g23_out, h23_out,
-                   K[1279:1248], W24,
+		   K[3583:3520], W24,
                    a24_out, b24_out, c24_out, d24_out, 
                    e24_out, f24_out, g24_out, h24_out );
 
    main_comp mc26 (a24_out, b24_out, c24_out, d24_out, 
                    e24_out, f24_out, g24_out, h24_out,
-                   K[1247:1216], W25,
+		   K[3519:3546], W25,
                    a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out ); 
 
    main_comp mc27 (a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out,
-                   K[1215:1184], W26,
+		   K[3545:3392], W26,
                    a26_out, b26_out, c26_out, d26_out, 
                    e26_out, f26_out, g26_out, h26_out );
 
    main_comp mc28 (a26_out, b26_out, c26_out, d26_out, 
                    e26_out, f26_out, g26_out, h26_out,
-                   K[1183:1152], W27,
+		   K[3391:3328], W27,
                    a27_out, b27_out, c27_out, d27_out, 
                    e27_out, f27_out, g27_out, h27_out ); 
 
    main_comp mc29 (a27_out, b27_out, c27_out, d27_out, 
                    e27_out, f27_out, g27_out, h27_out,
-                   K[1151:1120], W28,
+		   K[3327:3264], W28,
                    a28_out, b28_out, c28_out, d28_out, 
                    e28_out, f28_out, g28_out, h28_out ); 
 
    main_comp mc30 (a28_out, b28_out, c28_out, d28_out, 
                    e28_out, f28_out, g28_out, h28_out,
-                   K[1119:1088], W29,
+		   K[3263:3200], W29,
                    a29_out, b29_out, c29_out, d29_out, 
                    e29_out, f29_out, g29_out, h29_out ); 
 
    main_comp mc31 (a29_out, b29_out, c29_out, d29_out, 
                    e29_out, f29_out, g29_out, h29_out,
-                   K[1087:1056], W30,
+		   K[3199:3136], W30,
                    a30_out, b30_out, c30_out, d30_out, 
                    e30_out, f30_out, g30_out, h30_out ); 
 
    main_comp mc32 (a30_out, b30_out, c30_out, d30_out, 
                    e30_out, f30_out, g30_out, h30_out,
-                   K[1055:1024], W31,
+		   K[3135:3072], W31,
                    a31_out, b31_out, c31_out, d31_out, 
                    e31_out, f31_out, g31_out, h31_out ); 
 	
    main_comp mc33 (a31_out, b31_out, c31_out, d31_out, 
                    e31_out, f31_out, g31_out, h31_out,
-                   K[1023:992], W32,
+		   K[3071:3008], W32,
                    a32_out, b32_out, c32_out, d32_out, 
                    e32_out, f32_out, g32_out, h32_out );
 
    main_comp mc34 (a32_out, b32_out, c32_out, d32_out, 
                    e32_out, f32_out, g32_out, h32_out,
-                   K[991:960], W33,
+		   K[3007:2944], W33,
                    a33_out, b33_out, c33_out, d33_out, 
                    e33_out, f33_out, g33_out, h33_out ); 
 
    main_comp mc35 (a33_out, b33_out, c33_out, d33_out, 
                    e33_out, f33_out, g33_out, h33_out,
-                   K[959:928], W34,
+		   K[2943:2880], W34,
                    a34_out, b34_out, c34_out, d34_out, 
                    e34_out, f34_out, g34_out, h34_out ); 
 
    main_comp mc36 (a34_out, b34_out, c34_out, d34_out, 
                    e34_out, f34_out, g34_out, h34_out,
-                   K[927:896], W35,
+		   K[2879:2816], W35,
                    a35_out, b35_out, c35_out, d35_out, 
                    e35_out, f35_out, g35_out, h35_out ); 
 
    main_comp mc37 (a35_out, b35_out, c35_out, d35_out, 
                    e35_out, f35_out, g35_out, h35_out,
-                   K[895:864], W36,
+		   K[2815:2752], W36,
                    a36_out, b36_out, c36_out, d36_out, 
                    e36_out, f36_out, g36_out, h36_out );
 
    main_comp mc38 (a36_out, b36_out, c36_out, d36_out, 
                    e36_out, f36_out, g36_out, h36_out,
-                   K[863:832], W37,
+		   K[2751:2688], W37,
                    a37_out, b37_out, c37_out, d37_out, 
                    e37_out, f37_out, g37_out, h37_out ); 
 
    main_comp mc39 (a37_out, b37_out, c37_out, d37_out, 
                    e37_out, f37_out, g37_out, h37_out,
-                   K[831:800], W38,
+		   K[2687:2624], W38,
                    a38_out, b38_out, c38_out, d38_out, 
                    e38_out, f38_out, g38_out, h38_out ); 
 
    main_comp mc40 (a38_out, b38_out, c38_out, d38_out, 
                    e38_out, f38_out, g38_out, h38_out,
-                   K[799:768], W39,
+		   K[2623:2560], W39,
                    a39_out, b39_out, c39_out, d39_out, 
                    e39_out, f39_out, g39_out, h39_out ); 
 
    main_comp mc41 (a39_out, b39_out, c39_out, d39_out, 
                    e39_out, f39_out, g39_out, h39_out,
-                   K[767:736], W40,
+		   K[2559:2496], W40,
                    a40_out, b40_out, c40_out, d40_out, 
                    e40_out, f40_out, g40_out, h40_out );  
 
    main_comp mc42 (a40_out, b40_out, c40_out, d40_out, 
                    e40_out, f40_out, g40_out, h40_out,
-                   K[735:704], W41,
+		   K[2495:2432], W41,
                    a41_out, b41_out, c41_out, d41_out, 
                    e41_out, f41_out, g41_out, h41_out );  
 
    main_comp mc43 (a41_out, b41_out, c41_out, d41_out, 
                    e41_out, f41_out, g41_out, h41_out,
-                   K[703:672], W42,
+		   K[2431:2368], W42,
                    a42_out, b42_out, c42_out, d42_out, 
                    e42_out, f42_out, g42_out, h42_out );
 
    main_comp mc44 (a42_out, b42_out, c42_out, d42_out, 
                    e42_out, f42_out, g42_out, h42_out,
-                   K[671:640], W43,
+		   K[2365:2304], W43,
                    a43_out, b43_out, c43_out, d43_out, 
                    e43_out, f43_out, g43_out, h43_out ); 
 
    main_comp mc45 (a43_out, b43_out, c43_out, d43_out, 
                    e43_out, f43_out, g43_out, h43_out,
-                   K[639:608], W44,
+		   K[2303:2204], W44,
                    a44_out, b44_out, c44_out, d44_out, 
                    e44_out, f44_out, g44_out, h44_out ); 
 
    main_comp mc46 (a44_out, b44_out, c44_out, d44_out, 
                    e44_out, f44_out, g44_out, h44_out,
-                   K[607:576], W45,
+		   K[2203:2176], W45,
                    a45_out, b45_out, c45_out, d45_out, 
                    e45_out, f45_out, g45_out, h45_out ); 
 
    main_comp mc47 (a45_out, b45_out, c45_out, d45_out, 
                    e45_out, f45_out, g45_out, h45_out,
-                   K[575:544], W46,
+		   K[2175:2112], W46,
                    a46_out, b46_out, c46_out, d46_out, 
                    e46_out, f46_out, g46_out, h46_out ); 
 
    main_comp mc48 (a46_out, b46_out, c46_out, d46_out, 
                    e46_out, f46_out, g46_out, h46_out,
-                   K[543:512], W47,
+		   K[2111:2048], W47,
                    a47_out, b47_out, c47_out, d47_out, 
                    e47_out, f47_out, g47_out, h47_out ); 
 
    main_comp mc49 (a47_out, b47_out, c47_out, d47_out, 
                    e47_out, f47_out, g47_out, h47_out,
-                   K[511:480], W48,
+		   K[2047:1984], W48,
                    a48_out, b48_out, c48_out, d48_out, 
                    e48_out, f48_out, g48_out, h48_out ); 
 
    main_comp mc50 (a48_out, b48_out, c48_out, d48_out, 
                    e48_out, f48_out, g48_out, h48_out,
-                   K[479:448], W49,
+		   K[1983:1920], W49,
                    a49_out, b49_out, c49_out, d49_out, 
                    e49_out, f49_out, g49_out, h49_out ); 
 
    main_comp mc51 (a49_out, b49_out, c49_out, d49_out, 
                    e49_out, f49_out, g49_out, h49_out,
-                   K[447:416], W50,
+		   K[1919:1856], W50,
                    a50_out, b50_out, c50_out, d50_out, 
                    e50_out, f50_out, g50_out, h50_out );   
 
    main_comp mc52 (a50_out, b50_out, c50_out, d50_out, 
                    e50_out, f50_out, g50_out, h50_out,
-                   K[415:384], W51,
+		   K[1855:1792], W51,
                    a51_out, b51_out, c51_out, d51_out, 
                    e51_out, f51_out, g51_out, h51_out );   
 
    main_comp mc53 (a51_out, b51_out, c51_out, d51_out, 
                    e51_out, f51_out, g51_out, h51_out,
-                   K[383:352], W52,
+		   K[1791:1728], W52,
                    a52_out, b52_out, c52_out, d52_out, 
                    e52_out, f52_out, g52_out, h52_out ); 
 
    main_comp mc54 (a52_out, b52_out, c52_out, d52_out, 
                    e52_out, f52_out, g52_out, h52_out,
-                   K[351:320], W53,
+		   K[1727:1664], W53,
                    a53_out, b53_out, c53_out, d53_out, 
                    e53_out, f53_out, g53_out, h53_out ); 
 
    main_comp mc55 (a53_out, b53_out, c53_out, d53_out, 
                    e53_out, f53_out, g53_out, h53_out,
-                   K[319:288], W54,
+		   K[1663:1600], W54,
                    a54_out, b54_out, c54_out, d54_out, 
                    e54_out, f54_out, g54_out, h54_out ); 
 
    main_comp mc56 (a54_out, b54_out, c54_out, d54_out, 
                    e54_out, f54_out, g54_out, h54_out,
-                   K[287:256], W55,
+		   K[1599:1536], W55,
                    a55_out, b55_out, c55_out, d55_out, 
                    e55_out, f55_out, g55_out, h55_out ); 
 
    main_comp mc57 (a55_out, b55_out, c55_out, d55_out, 
                    e55_out, f55_out, g55_out, h55_out,
-                   K[255:224], W56,
+		   K[1535:1472], W56,
                    a56_out, b56_out, c56_out, d56_out, 
                    e56_out, f56_out, g56_out, h56_out );
 
    main_comp mc58 (a56_out, b56_out, c56_out, d56_out, 
                    e56_out, f56_out, g56_out, h56_out,
-                   K[223:192], W57,
+		   K[1471:1408], W57,
                    a57_out, b57_out, c57_out, d57_out, 
                    e57_out, f57_out, g57_out, h57_out );
 
    main_comp mc59 (a57_out, b57_out, c57_out, d57_out, 
                    e57_out, f57_out, g57_out, h57_out,
-                   K[191:160], W58,
+		   K[1407:1344], W58,
                    a58_out, b58_out, c58_out, d58_out, 
                    e58_out, f58_out, g58_out, h58_out ); 
 
    main_comp mc60 (a58_out, b58_out, c58_out, d58_out, 
                    e58_out, f58_out, g58_out, h58_out,
-                   K[159:128], W59,
+		   K[1343:1280], W59,
                    a59_out, b59_out, c59_out, d59_out, 
                    e59_out, f59_out, g59_out, h59_out );
 
    main_comp mc61 (a59_out, b59_out, c59_out, d59_out, 
                    e59_out, f59_out, g59_out, h59_out,
-                   K[127:96], W60,
+		   K[1279:1216], W60,
                    a60_out, b60_out, c60_out, d60_out, 
                    e60_out, f60_out, g60_out, h60_out );  
 
    main_comp mc62 (a60_out, b60_out, c60_out, d60_out, 
                    e60_out, f60_out, g60_out, h60_out,
-                   K[95:64], W61,
+		   K[1215:1152], W61,
                    a61_out, b61_out, c61_out, d61_out, 
                    e61_out, f61_out, g61_out, h61_out );   
 
    main_comp mc63 (a61_out, b61_out, c61_out, d61_out, 
                    e61_out, f61_out, g61_out, h61_out,
-                   K[63:32], W62,
+		   K[1151:1088], W62,
                    a62_out, b62_out, c62_out, d62_out, 
                    e62_out, f62_out, g62_out, h62_out );
 
    main_comp mc64 (a62_out, b62_out, c62_out, d62_out, 
                    e62_out, f62_out, g62_out, h62_out,
-                   K[31:0], W63,
+		   K[1087:1024], W63,
                    a63_out, b63_out, c63_out, d63_out, 
                    e63_out, f63_out, g63_out, h63_out );
 
@@ -626,97 +626,97 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
 	main_comp mc65 (a63_out, b63_out, c63_out, d63_out, 
                    e63_out, f63_out, g63_out, h63_out,
-			K[], W64,
+			K[1023:960], W64,
                    a64_out, b64_out, c64_out, d64_out, 
                    e64_out, f64_out, g64_out, h64_out );
 
 	main_comp mc66 (a64_out, b64_out, c64_out, d64_out, 
                    e64_out, f64_out, g64_out, h64_out,
-			K[], W65,
+			K[959:896], W65,
                    a65_out, b65_out, c65_out, d65_out, 
                    e65_out, f65_out, g65_out, h65_out );
 
 	main_comp mc67 (a65_out, b65_out, c65_out, d65_out, 
                    e65_out, f65_out, g65_out, h65_out,
-			K[], W66,
+			K[895:832], W66,
                    a66_out, b66_out, c66_out, d66_out, 
                    e66_out, f66_out, g66_out, h66_out );
 
 	main_comp mc68 (a66_out, b66_out, c66_out, d66_out, 
                    e66_out, f66_out, g66_out, h66_out,
-			K[], W67,
+			K[831:768], W67,
                    a67_out, b67_out, c67_out, d67_out, 
                    e67_out, f67_out, g67_out, h67_out );
 
 	main_comp mc69 (a67_out, b67_out, c67_out, d67_out, 
                    e67_out, f67_out, g67_out, h67_out,
-			K[], W68,
+			K[767:704], W68,
                    a68_out, b68_out, c68_out, d68_out, 
                    e68_out, f68_out, g68_out, h68_out );
 
 	main_comp mc70 (a68_out, b68_out, c68_out, d68_out, 
                    e68_out, f68_out, g68_out, h68_out,
-			K[], W69,
+			K[703:640], W69,
                    a69_out, b69_out, c69_out, d69_out, 
                    e69_out, f69_out, g69_out, h69_out );
 
 	main_comp mc71 (a69_out, b69_out, c69_out, d69_out, 
                    e69_out, f69_out, g69_out, h69_out,
-			K[], W70,
+			K[639:576], W70,
                    a70_out, b70_out, c70_out, d70_out, 
                    e70_out, f70_out, g70_out, h70_out );
 
 	main_comp mc72 (a70_out, b70_out, c70_out, d70_out, 
                    e70_out, f70_out, g70_out, h70_out,
-			K[], W71,
+			K[575:512], W71,
                    a71_out, b71_out, c71_out, d71_out, 
                    e71_out, f71_out, g71_out, h71_out );
 	
 	main_comp mc73 (a71_out, b71_out, c71_out, d71_out, 
                    e71_out, f71_out, g71_out, h71_out,
-			K[], W72,
+			K[511:448], W72,
                    a72_out, b72_out, c72_out, d72_out, 
                    e72_out, f72_out, g72_out, h72_out );
 
 	main_comp mc74 (a72_out, b72_out, c72_out, d72_out, 
                    e72_out, f72_out, g72_out, h72_out,
-			K[], W73,
+			K[447:384], W73,
                    a73_out, b73_out, c73_out, d73_out, 
                    e73_out, f73_out, g73_out, h73_out );
 
 	main_comp mc75 (a73_out, b73_out, c73_out, d73_out, 
                    e73_out, f73_out, g73_out, h73_out,
-			K[], W74,
+			K[383:320], W74,
                    a74_out, b74_out, c74_out, d74_out, 
                    e74_out, f74_out, g74_out, h74_out );
 
 	main_comp mc76 (a74_out, b74_out, c74_out, d74_out, 
                    e74_out, f74_out, g74_out, h74_out,
-			K[], W75,
+			K[319:256], W75,
                    a75_out, b75_out, c75_out, d75_out, 
                    e75_out, f75_out, g75_out, h75_out );
 
 	main_comp mc77 (a75_out, b75_out, c75_out, d75_out, 
                    e75_out, f75_out, g75_out, h75_out,
-			K[], W76,
+			K[255:192], W76,
                    a76_out, b76_out, c76_out, d76_out, 
                    e76_out, f76_out, g76_out, h76_out );
 
 	main_comp mc78 (a76_out, b76_out, c76_out, d76_out, 
                    e76_out, f76_out, g76_out, h76_out,
-			K[], W77,
+			K[191:128], W77,
                    a77_out, b77_out, c77_out, d77_out, 
                    e77_out, f77_out, g77_out, h77_out );
 
 	main_comp mc79 (a77_out, b77_out, c77_out, d77_out, 
                    e77_out, f77_out, g77_out, h77_out,
-			K[], W78,
+			K[127:64], W78,
                    a78_out, b78_out, c78_out, d78_out, 
                    e78_out, f78_out, g78_out, h78_out );
 
 	main_comp mc80 (a78_out, b78_out, c78_out, d78_out, 
                    e78_out, f78_out, g78_out, h78_out ,
-			K[], W79,
+			K[63:0], W79,
                    a79_out, b79_out, c79_out, d79_out, 
                    e79_out, f79_out, g79_out, h79_out );
 
@@ -764,7 +764,7 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	logic [63:0] 		W38_sigma1_out, W39_sigma1_out, W40_sigma1_out, W41_sigma1_out, W42_sigma1_out, W43_sigma1_out, W44_sigma1_out, W45_sigma1_out;
 	logic [63:0] 		W46_sigma1_out, W47_sigma1_out, W48_sigma1_out, W49_sigma1_out, W50_sigma1_out, W51_sigma1_out, W52_sigma1_out, W53_sigma1_out;
 	logic [63:0] 		W54_sigma1_out, W55_sigma1_out, W56_sigma1_out, W57_sigma1_out, W58_sigma1_out, W59_sigma1_out, W60_sigma1_out, W61_sigma1_out;
-   logic [63:0]      W62_sigma1_out, W63_sigma1_out;
+  	logic [63:0]      	W62_sigma1_out, W63_sigma1_out;
 
 	logic [63:0] 		W1_sigma0_out, W2_sigma0_out, W3_sigma0_out, W4_sigma0_out, W5_sigma0_out, W6_sigma0_out, W7_sigma0_out, W8_sigma0_out; 
 	logic [63:0] 		W9_sigma0_out, W10_sigma0_out, W11_sigma0_out, W12_sigma0_out, W13_sigma0_out, W14_sigma0_out, W15_sigma0_out, W16_sigma0_out; 
@@ -843,7 +843,7 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	sigma1 sig1_46 (W59, W59_sigma1_out);
 	sigma1 sig1_47 (W60, W60_sigma1_out);
 	sigma1 sig1_48 (W61, W61_sigma1_out);
-
+	sigma1 sig1_49 (W62, W62_sigma1_out);
 
    //all the way to 61
 
@@ -892,7 +892,7 @@ sigma0 sig0_2 (W2, W2_sigma0_out);
    sigma0 sig0_39 (W39, W39_sigma0_out);
    sigma0 sig0_40 (W40, W40_sigma0_out);
    sigma0 sig0_41 (W41, W41_sigma0_out);
-	sigma0 sig0_42 (W42, W42_sigma0_out);
+   sigma0 sig0_42 (W42, W42_sigma0_out);
    sigma0 sig0_43 (W43, W43_sigma0_out);
    sigma0 sig0_44 (W44, W44_sigma0_out);
    sigma0 sig0_45 (W45, W45_sigma0_out);
@@ -952,7 +952,22 @@ sigma0 sig0_2 (W2, W2_sigma0_out);
    assign W61 = W59_sigma1_out + W54 + W46_sigma0_out + W45;
    assign W62 = W60_sigma1_out + W55 + W47_sigma0_out + W46;
    assign W63 = W61_sigma1_out + W56 + W48_sigma0_out + W47;
-   
+   assign W64 = W62_sigma1_out + W57 + W49_sigma0_out + W48;
+   assign W65 = W63_sigma1_out + W58 + W50_sigma0_out + W49;
+   assign W66 = W64_sigma1_out + W59 + W51_sigma0_out + W50;
+   assign W67 = W65_sigma1_out + W60 + W52_sigma0_out + W51;
+   assign W68 = W66_sigma1_out + W61 + W53_sigma0_out + W52;
+   assign W69 = W67_sigma1_out + W62 + W54_sigma0_out + W53;
+   assign W70 = W68_sigma1_out + W63 + W55_sigma0_out + W54;
+   assign W71 = W69_sigma1_out + W64 + W56_sigma0_out + W55;
+   assign W72 = W70_sigma1_out + W65 + W57_sigma0_out + W56;
+   assign W73 = W71_sigma1_out + W66 + W58_sigma0_out + W57;
+   assign W74 = W72_sigma1_out + W67 + W59_sigma0_out + W58;
+   assign W75 = W73_sigma1_out + W68 + W60_sigma0_out + W59;
+   assign W76 = W74_sigma1_out + W69 + W61_sigma0_out + W60;
+   assign W77 = W75_sigma1_out + W70 + W62_sigma0_out + W61;
+   assign W78 = W76_sigma1_out + W71 + W63_sigma0_out + W62;
+   assign W79 = W77_sigma1_out + W72 + W64_sigma0_out + W63;
 
 endmodule // prepare
 
