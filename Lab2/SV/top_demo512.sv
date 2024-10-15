@@ -59,7 +59,7 @@ module top_demo
   logic [31:0] segments; 
   logic [511:0] hashed;
   // Place TicTacToe instantiation here
-  top #(120, 512) dut (112'h48656c6c6f205348412d35313221, hashed);
+  top #(120, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
   multiplexer dut1 (hashed[255:0], sw[3:0], segments[15:0]);
   multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
   
