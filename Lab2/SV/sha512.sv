@@ -390,13 +390,13 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    main_comp mc26 (a24_out, b24_out, c24_out, d24_out, 
                    e24_out, f24_out, g24_out, h24_out,
-		   K[3519:3546], W25,
+		   K[3519:3456], W25,
                    a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out ); 
 
    main_comp mc27 (a25_out, b25_out, c25_out, d25_out, 
                    e25_out, f25_out, g25_out, h25_out,
-		   K[3545:3392], W26,
+		   K[3455:3392], W26,
                    a26_out, b26_out, c26_out, d26_out, 
                    e26_out, f26_out, g26_out, h26_out );
 
