@@ -46,24 +46,29 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 			64'h, 64'h};   
 	//need 80 K values of 64 bits for each values, now how to get that values?
 	//5120
+	//Done
 	
 	logic [5119:0] K = {64'h428a2f98d728ae22, 64'h7137449123ef65cd, 64'hb5c0fbcfec4d3b2f,
-		       64'he9b5dba58189dbbc, 64'h3956c25bf348b538, 32'h59f111f1, 32'h923f82a4,
-		       32'hab1c5ed5, 32'hd807aa98, 32'h12835b01, 32'h243185be,
-		       32'h550c7dc3, 32'h72be5d74, 32'h80deb1fe, 32'h9bdc06a7,
-		       32'hc19bf174, 32'he49b69c1, 32'hefbe4786, 32'h0fc19dc6,
-		       32'h240ca1cc, 32'h2de92c6f, 32'h4a7484aa, 32'h5cb0a9dc,
-		       32'h76f988da, 32'h983e5152, 32'ha831c66d, 32'hb00327c8,
-		       32'hbf597fc7, 32'hc6e00bf3, 32'hd5a79147, 32'h06ca6351,
-		       32'h14292967, 32'h27b70a85, 32'h2e1b2138, 32'h4d2c6dfc,
-		       32'h53380d13, 32'h650a7354, 32'h766a0abb, 32'h81c2c92e,
-		       32'h92722c85, 32'ha2bfe8a1, 32'ha81a664b, 32'hc24b8b70,
-		       32'hc76c51a3, 32'hd192e819, 32'hd6990624, 32'hf40e3585,
-		       32'h106aa070, 32'h19a4c116, 32'h1e376c08, 32'h2748774c,
-		       32'h34b0bcb5, 32'h391c0cb3, 32'h4ed8aa4a, 32'h5b9cca4f,
-		       32'h682e6ff3, 32'h748f82ee, 32'h78a5636f, 32'h84c87814,
-		       32'h8cc70208, 32'h90befffa, 32'ha4506ceb, 32'hbef9a3f7,
-		       32'hc67178f2};
+		       64'he9b5dba58189dbbc, 64'h3956c25bf348b538, 64'h59f111f1b605d019, 64'h923f82a4af194f9b,
+		        64'hab1c5ed5da6d8118, 64'hd807aa98a3030242, 64'h12835b0145706fbe, 64'h243185be4ee4b28c,
+		        64'h550c7dc3d5ffb4e2, 64'h72be5d74f27b896f, 64'h80deb1fe3b1696b1, 64'h9bdc06a725c71235,
+			64'hc19bf174cf692694, 64'he49b69c19ef14ad2, 64'hefbe4786384f25e3, 64'h0fc19dc68b8cd5b5,
+		        64'h240ca1cc77ac9c65, 64'h2de92c6f592b0275, 64'h4a7484aa6ea6e483, 64'h5cb0a9dcbd41fbd4,
+			64'h76f988da831153b5, 64'h983e5152ee66dfab, 64'ha831c66d2db43210, 64'hb00327c898fb213f,
+		        64'hbf597fc7beef0ee4, 64'hc6e00bf33da88fc2, 64'hd5a79147930aa725, 64'h06ca6351e003826f,
+		        64'h142929670a0e6e70, 64'h27b70a8546d22ffc, 64'h2e1b21385c26c926, 64'h4d2c6dfc5ac42aed,
+		        64'h53380d139d95b3df, 64'h650a73548baf63de, 64'h766a0abb3c77b2a8, 64'h81c2c92e47edaee6,
+		        64'h92722c851482353b, 64'ha2bfe8a14cf10364, 64'ha81a664bbc423001, 64'hc24b8b70d0f89791,
+		        64'hc76c51a30654be30, 64'hd192e819d6ef5218, 64'hd69906245565a910, 64'hf40e35855771202a,
+		        64'h106aa07032bbd1b8, 64'h19a4c116b8d2d0c8, 64'h1e376c085141ab53, 64'h2748774cdf8eeb99,
+		        64'h34b0bcb5e19b48a8, 64'h391c0cb3c5c95a63, 64'h4ed8aa4ae3418acb, 64'h5b9cca4f7763e373,
+		        64'h682e6ff3d6b2b8a3, 64'h748f82ee5defb2fc, 64'h78a5636f43172f60, 64'h84c87814a1f0ab72,
+		        64'h8cc702081a6439ec, 64'h90befffa23631e28, 64'ha4506cebde82bde9, 64'hbef9a3f7b2c67915,
+		        64'hc67178f2e372532b, 64'hca273eceea26619c, 64'hd186b8c721c0c207, 64'heada7dd6cde0eb1e,
+			64'hf57d4f7fee6ed178, 64'h06f067aa72176fba, 64'h0a637dc5a2c898a6, 64'h113f9804bef90dae,
+			64'h1b710b35131c471b, 64'h28db77f523047d84, 64'h32caab7b40c72493, 64'h3c9ebe0a15c9bebc,
+			64'h431d67c49c100d4c, 64'h4cc5d4becb3e42b6, 64'h597f299cfc657e2a, 64'h5fcb6fab3ad6faec,
+			64'h6c44198c4a475817 };
 
 
 
@@ -72,7 +77,7 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 
 
 //these are the knew K values
-
+/*
 64'h428a2f98d728ae22, 64'h7137449123ef65cd, 65'hb5c0fbcfec4d3b2f, 65'he9b5dba58189dbbc,
 65'h3956c25bf348b538, 65'h59f111f1b605d019 923f82a4af194f9b ab1c5ed5da6d8118
 d807aa98a3030242 12835b0145706fbe 243185be4ee4b28c 550c7dc3d5ffb4e2
@@ -93,7 +98,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 06f067aa72176fba 0a637dc5a2c898a6 113f9804bef90dae 1b710b35131c471b
 28db77f523047d84 32caab7b40c72493 3c9ebe0a15c9bebc 431d67c49c100d4c
 4cc5d4becb3e42b6 597f299cfc657e2a 5fcb6fab3ad6faec 6c44198c4a475817
-
+*/
 
 
 
@@ -235,25 +240,25 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 	
    main_comp mc01 (a, b, c, d, 
                    e, f, g, h, 
-                   K[], W0,
+		   K[5119:5056], W0,
                    a0_out, b0_out, c0_out, d0_out, 
                    e0_out, f0_out, g0_out, h0_out);
 
    main_comp mc02 (a0_out, b0_out, c0_out, d0_out, 
                    e0_out, f0_out, g0_out, h0_out, 
-                   K[], W1,
+		   K[5055:4992], W1,
                    a1_out, b1_out, c1_out, d1_out, 
                    e1_out, f1_out, g1_out, h1_out);
 
    main_comp mc03 (a1_out, b1_out, c1_out, d1_out, 
                    e1_out, f1_out, g1_out, h1_out,
-                   K[], W2,
+		   K[4991:4928], W2,
                    a2_out, b2_out, c2_out, d2_out, 
                    e2_out, f2_out, g2_out, h2_out ); 
 
    main_comp mc04 (a2_out, b2_out, c2_out, d2_out, 
                    e2_out, f2_out, g2_out, h2_out,
-                   K[], W3,
+		   K[4927:4864], W3,
                    a3_out, b3_out, c3_out, d3_out, 
                    e3_out, f3_out, g3_out, h3_out );
 
