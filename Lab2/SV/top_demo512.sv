@@ -10,18 +10,6 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/15/2021 06:40:11 PM
-// Design Name: 
-// Module Name: top_demo
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
 // 
 // Dependencies: 
 // 
@@ -59,25 +47,25 @@ module top_demo
   logic [31:0] segments; 
   logic [511:0] hashed;
   // Place TicTacToe instantiation here
-  top #(120, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
-  multiplexer dut1 (hashed[255:0], sw[3:0], segments[15:0]);
-  multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
+  top #(112, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
+  multiplexer dut1 (hashed[511:0], sw[7:0], segments[31:0]);
+  //multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
   
   
   //d693_db77_4994_9506_6222_61a5_33ef_98e5_4ed5_f609_20f6_0ad0_3bc3_38d0_5bd9_c905_1491_9ae8_b3de_1f25_f7d9_9f87_b056_5d0a_4024_93c5_b401_66a5_eb76_65c9_e3ac_af2b
   
   //multiplexer
   
-module multiplexer(input logic [255:0] hashed,
-input logic [3:0] ctrl,
- output logic [15:0] segments);
+module multiplexer(input logic [511:0] hashed,
+input logic [7:0] ctrl,
+ output logic [31:0] segments);
 always_comb
 case(ctrl)
 // abc_defg
 4'b0000: segments = hashed[15:0]; // 0
 4'b0001: segments = hashed[31:16]; //1
 4'b0010: segments = hashed[47:32]; //2
-4'b0011: segments = hashed[63:48]; //3
+4'b00011: segments = hashed[63:48]; //3
 4'b0100: segments = hashed[79:64]; //4
 4'b0101: segments = hashed[95:80]; //5
 4'b0110: segments = hashed[111:96]; //6
@@ -91,37 +79,54 @@ case(ctrl)
 4'b1110: segments = hashed[239:224]; //14
 4'b1111: segments = hashed[255:240]; //15
 
-default: segments = 16'hAAAA;
+//4'b0000: segments = hashed[271:256]; // 16
+//4'b0001: segments = hashed[287:272]; //17
+//4'b0010: segments = hashed[303:288]; //18
+//4'b0011: segments = hashed[319:304]; //19
+//4'b0100: segments = hashed[335:320]; //20
+//4'b0101: segments = hashed[351:336]; //21
+//4'b0110: segments = hashed[367:352]; //22
+//4'b0111: segments = hashed[383:368]; //23 
+//4'b1000: segments = hashed[399:384]; //24
+//4'b1001: segments = hashed[415:400]; //25
+//4'b1010: segments = hashed[431:416]; //26
+//4'b1011: segments = hashed[447:432]; //27
+//4'b1100: segments = hashed[463:448]; //28
+//4'b1101: segments = hashed[479:464]; //29
+//4'b1110: segments = hashed[495:480]; //30
+//4'b1111: segments = hashed[511:496]; //31 must test this some other way, beacuse 7 segment display can only display up to 30
+
+default: segments = 16'hAA00;
 endcase
  endmodule
  
  
-module multiplexer2(input logic [511:256] hashed,
-input logic [7:4] ctrl,
- output logic [31:16] segments);
-always_comb
-case(ctrl)
+//module multiplexer2(input logic [511:256] hashed,
+//input logic [7:4] ctrl,
+ //output logic [31:16] segments);
+//always_comb
+//case(ctrl)
 // abc_defg
-4'b0000: segments = hashed[271:256]; // 16
-4'b0001: segments = hashed[287:272]; //17
-4'b0010: segments = hashed[303:288]; //18
-4'b0011: segments = hashed[319:304]; //19
-4'b0100: segments = hashed[335:320]; //20
-4'b0101: segments = hashed[351:336]; //21
-4'b0110: segments = hashed[367:352]; //22
-4'b0111: segments = hashed[383:368]; //23 
-4'b1000: segments = hashed[399:384]; //24
-4'b1001: segments = hashed[415:400]; //25
-4'b1010: segments = hashed[431:416]; //26
-4'b1011: segments = hashed[447:432]; //27
-4'b1100: segments = hashed[463:448]; //28
-4'b1101: segments = hashed[479:464]; //29
-4'b1110: segments = hashed[495:480]; //30
-4'b1111: segments = hashed[511:496]; //31
+//4'b0000: segments = hashed[271:256]; // 16
+//4'b0001: segments = hashed[287:272]; //17
+//4'b0010: segments = hashed[303:288]; //18
+//4'b0011: segments = hashed[319:304]; //19
+//4'b0100: segments = hashed[335:320]; //20
+//4'b0101: segments = hashed[351:336]; //21
+//4'b0110: segments = hashed[367:352]; //22
+//4'b0111: segments = hashed[383:368]; //23 
+//4'b1000: segments = hashed[399:384]; //24
+//4'b1001: segments = hashed[415:400]; //25
+//4'b1010: segments = hashed[431:416]; //26
+//4'b1011: segments = hashed[447:432]; //27
+//4'b1100: segments = hashed[463:448]; //28
+//4'b1101: segments = hashed[479:464]; //29
+//4'b1110: segments = hashed[495:480]; //30
+//4'b1111: segments = hashed[511:496]; //31
 
-default: segments = 16'hAAAA;
-endcase
- endmodule 
+//default: segments = 16'hAAAA;
+//endcase
+ //endmodule 
  
   
   //input random letters
@@ -132,27 +137,22 @@ endcase
   assign led[1] = segments[31:16];
   assign led [2] = segments[15:12];
   assign led[3] = segments[15:0];
-  assign led[4] = segments[11:8]; //gets all signals
+  assign led[4] = segments[11:8]; 
   
     assign led [5] = segments[31:25];
   assign led[6] = segments[28:3];
   assign led [7] = segments[17:0];
-  
-  //getting signal segments[0];
-//getting signals from segments !!!!!, must put range as shown above, this is talking about the LED only
-  //256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271
-  
-  //code here is only showing first bit of every 4 bits -> showing 1, 4, 1, 0, 9, etc. this may be correct tho, since I only have digit 1 programmed rn
+
 
   
   // 7-segment display
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-  .digit0(segments[7:0]),
- .digit1(segments[15:8]),
-  .digit2(segments[23:16]),
- .digit3(segments[31:24]),
+  .digit0(segments[3:0]),
+ .digit1(segments[7:4]),
+  .digit2(segments[11:8]),
+ .digit3(segments[15:12]),
  
  
  
