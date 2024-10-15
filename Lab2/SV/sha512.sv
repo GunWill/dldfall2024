@@ -41,9 +41,9 @@ module sha256 #(parameter PADDED_SIZE = 1024)
 	//K is 2.3.2 in lab pdf, but we need to figure it out for sha512, is it 64 bit size????
 	//in fips doc ---> fips doc is where you'll find knew H and K values, range values, and basically the whole algorithm for sha512
 
-	logic [255:0] H = {64'h, 64'h,
-		      64'h, 64'h, 64'h, 64'h,
-			64'h, 64'h};   
+	logic [255:0] H = {64'h6a09e667f3bcc908, 64'hbb67ae8584caa73b,
+		      64'h3c6ef372fe94f82b, 64'ha54ff53a5f1d36f1, 64'h510e527fade682d1, 64'h9b05688c2b3e6c1f,
+			64'h1f83d9abfb41bd6b, 64'h5be0cd19137e2179};   
 	//need 80 K values of 64 bits for each values, now how to get that values?
 	//5120
 	//Done
