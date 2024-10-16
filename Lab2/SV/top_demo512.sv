@@ -43,22 +43,22 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
- // logic [3:0] ctrl;
+  // logic [7:0] ctrl;
   logic [31:0] segments; 
   logic [511:0] hashed;
   // Place TicTacToe instantiation here
   top #(112, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
-  multiplexer dut1 (hashed[511:0], sw[7:0], segments[31:0]);
-  //multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
+  multiplexer dut1 (hashed[255:0], sw[3:0], segments[15:0]);
+  multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
   
   
   //d693_db77_4994_9506_6222_61a5_33ef_98e5_4ed5_f609_20f6_0ad0_3bc3_38d0_5bd9_c905_1491_9ae8_b3de_1f25_f7d9_9f87_b056_5d0a_4024_93c5_b401_66a5_eb76_65c9_e3ac_af2b
   
   //multiplexer
   
-module multiplexer(input logic [511:0] hashed,
-input logic [7:0] ctrl,
- output logic [31:0] segments);
+  module multiplexer(input logic [255:0] hashed,
+                     input logic [3:0] ctrl,
+                     output logic [15:0] segments);
 always_comb
 case(ctrl)
 // abc_defg
@@ -94,7 +94,7 @@ case(ctrl)
 //4'b1100: segments = hashed[463:448]; //28
 //4'b1101: segments = hashed[479:464]; //29
 //4'b1110: segments = hashed[495:480]; //30
-//4'b1111: segments = hashed[511:496]; //31 must test this some other way, beacuse 7 segment display can only display up to 30
+//4'b1111: segments = hashed[511:496]; //31
 
 default: segments = 16'hAA00;
 endcase
@@ -146,13 +146,14 @@ endcase
 
   
   // 7-segment display
+  
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-  .digit0(segments[3:0]),
- .digit1(segments[7:4]),
-  .digit2(segments[11:8]),
- .digit3(segments[15:12]),
+    .digit0(segments[7:0]),
+    .digit1(segments[15:8]),
+    .digit2(segments[23:16]),
+    .digit3(segments[31:24]),
  
  
  
