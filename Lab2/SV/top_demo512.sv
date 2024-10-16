@@ -132,7 +132,8 @@ endcase
   //input random letters
 
   
-
+//these test if the board is getting a signal for segments
+  
   assign led [0] = segments[15:0];
   assign led[1] = segments[31:16];
   assign led [2] = segments[15:12];
@@ -150,21 +151,20 @@ endcase
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-    .digit0(segments[7:0]),
-    .digit1(segments[15:8]),
-    .digit2(segments[23:16]),
-    .digit3(segments[31:24]),
+    //.digit0(segments[7:0]),
+    //.digit1(segments[15:8]),
+    //.digit2(segments[23:16]),
+   // .digit3(segments[31:24]),
  
+ ///try synthesis w/ hardcoded digits values, to see if board can even get a signal. If synthesis doesn't work w/ these hardcoded values, then possible something is wrong with the clock, or some other error that
+    //is making the file unable to synthesize. Also can try to just try 1 mux for now, then get the other mux to work. 
  
- 
-   //.digit0(4'hF),
-  //.digit1(4'hf),
-  //.digit2(4'hb),
-  //.digit3(4'hB),
+   .digit0(4'hF),
+  .digit1(4'hf),
+.digit2(4'hb),
+  .digit3(4'hB),
   
-  //board display has issues w/ B, must have malfunction, or dead circuit in board
-  //board displaying B as b, either due to board display error or implementation error? Most likely segment display is malfunctioning, because displays A and E as A and E
- 
+  
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
