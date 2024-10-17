@@ -622,3 +622,5 @@ do sha256.do
 #           Attempting to use alternate WLF file "./wlft1jqbtb".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
 #           Using alternate file: ./wlft1jqbtb
+# End time: 17:43:08 on Oct 10,2024, Elapsed time: 1:43:17
+# Errors: 0, Warnings: 2
