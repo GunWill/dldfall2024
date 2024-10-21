@@ -44,11 +44,11 @@ module top_demo
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
   // logic [7:0] ctrl;
-  logic [31:0] segments; 
+  logic [15:0] segments; 
   logic [511:0] hashed;
   // Place TicTacToe instantiation here
   top #(112, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
-  multiplexer dut1 (hashed[511:0], sw[4:0], segments[31:0]);
+  multiplexer dut1 (hashed[511:0], sw[4:0], segments[15:0]);
   //multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
   
   
@@ -58,7 +58,7 @@ module top_demo
   
   module multiplexer(input logic [511:0] hashed,
                      input logic [4:0] ctrl,
-                     output logic [31:0] segments);
+                     output logic [15:0] segments);
 always_comb
 case(ctrl)// abc_defg
 5'b00000: segments = hashed[15:0]; // 0
@@ -93,38 +93,10 @@ case(ctrl)// abc_defg
 5'b11101: segments = hashed[479:464]; //29
 5'b11110: segments = hashed[495:480]; //30
 5'b11111: segments = hashed[511:496]; //31
-default: segments = 16'hAA00;
+default: segments = 16'hAAA0;
 endcase
  endmodule
- 
- /*
-module multiplexer2(input logic [511:256] hashed,
-input logic [7:4] ctrl,
-output logic [31:16] segments);
-always_comb
-case(ctrl)
-//abc_defg
-4'b0000: segments = hashed[271:256]; // 16
-4'b0001: segments = hashed[287:272]; //17
-4'b0010: segments = hashed[303:288]; //18
-4'b0011: segments = hashed[319:304]; //19
-4'b0100: segments = hashed[335:320]; //20
-4'b0101: segments = hashed[351:336]; //21
-4'b0110: segments = hashed[367:352]; //22
-4'b0111: segments = hashed[383:368]; //23 
-4'b1000: segments = hashed[399:384]; //24
-4'b1001: segments = hashed[415:400]; //25
-4'b1010: segments = hashed[431:416]; //26
-4'b1011: segments = hashed[447:432]; //27
-4'b1100: segments = hashed[463:448]; //28
-4'b1101: segments = hashed[479:464]; //29
-4'b1110: segments = hashed[495:480]; //30
-4'b1111: segments = hashed[511:496]; //31
-*/
-//default: segments = 16'hAAAA;
-//endcase
- //endmodule 
- 
+
   
   //input random letters
 
@@ -132,14 +104,14 @@ case(ctrl)
 //these test if the board is getting a signal for segments
   
   assign led[0] = segments[15:0];
-  assign led[1] = segments[31:16];
+  //assign led[1] = segments[31:16];
   assign led[2] = segments[15:12];
   assign led[3] = segments[15:0];
   assign led[4] = segments[11:8]; 
   
-  assign led[5] = segments[31:25];
-  assign led[6] = segments[28:3];
-  assign led[7] = segments[17:0];
+  //assign led[5] = segments[31:25];
+  //assign led[6] = segments[28:3];
+  //assign led[7] = segments[17:0];
 
 
   
@@ -152,6 +124,7 @@ case(ctrl)
     .digit1(segments[7:4]),
     .digit2(segments[11:8]),
     .digit3(segments[15:12]),
+
  
  ///try synthesis w/ hardcoded digits values, to see if board can even get a signal. If synthesis doesn't work w/ these hardcoded values, then possible something is wrong with the clock, or some other error that
     //is making the file unable to synthesize. Also can try to just try 1 mux for now, then get the other mux to work. 
@@ -183,3 +156,4 @@ case(ctrl)
   assign smol_clk = CURRENT_COUNT == 17'd100000 ? 1'b1 : 1'b0;
 
 endmodule
+
