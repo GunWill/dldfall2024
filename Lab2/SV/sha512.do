@@ -29,7 +29,7 @@ vlog sha512.sv sha512_tb.sv
 vsim -voptargs=+acc work.stimulus
 view wave
 
-#am going to change height values from 32 to 64, and sha256 to sha512 idk what this will do ???
+//Updated runtime to 1000ns for clear simulation
 
 -- display input and output signals as hexidecimal values
 # Diplays All Signals recursively
@@ -165,6 +165,5 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation 
-//Updated simulation runtime
 run 1000 ns
 quit
