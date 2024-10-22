@@ -49,9 +49,9 @@ module top_demo
   // Place TicTacToe instantiation here
   top #(112, 1024) dut (112'h48656c6c6f205348412d35313221, hashed);
   multiplexer dut1 (hashed[511:0], sw[4:0], segments[15:0]);
-  //multiplexer2 dut2 (hashed[511:256], sw[7:4], segments[31:16]);
   
   
+  //Ideal sha512 output for comparrison
   //d693_db77_4994_9506_6222_61a5_33ef_98e5_4ed5_f609_20f6_0ad0_3bc3_38d0_5bd9_c905_1491_9ae8_b3de_1f25_f7d9_9f87_b056_5d0a_4024_93c5_b401_66a5_eb76_65c9_e3ac_af2b
   
   //multiplexer
@@ -60,7 +60,7 @@ module top_demo
                      input logic [4:0] ctrl,
                      output logic [15:0] segments);
 always_comb
-case(ctrl)// abc_defg
+case(ctrl)
 5'b00000: segments = hashed[15:0]; // 0
 5'b00001: segments = hashed[31:16]; //1
 5'b00010: segments = hashed[47:32]; //2
@@ -98,9 +98,9 @@ endcase
  endmodule
 
   
-  //input random letters
-
   
+
+//DEBUGGING:
 //these test if the board is getting a signal for segments
   
   assign led[0] = segments[15:0];
@@ -108,7 +108,6 @@ endcase
   assign led[2] = segments[15:12];
   assign led[3] = segments[15:0];
   assign led[4] = segments[11:8]; 
-  
   //assign led[5] = segments[31:25];
   //assign led[6] = segments[28:3];
   //assign led[7] = segments[17:0];
@@ -125,13 +124,14 @@ endcase
     .digit2(segments[11:8]),
     .digit3(segments[15:12]),
 
- 
+ //DEBUGGING:
+    
  ///try synthesis w/ hardcoded digits values, to see if board can even get a signal. If synthesis doesn't work w/ these hardcoded values, then possible something is wrong with the clock, or some other error that
-    //is making the file unable to synthesize. Also can try to just try 1 mux for now, then get the other mux to work. 
+//is making the file unable to synthesize. Also can try to just try 1 mux for now, then get the other mux to work. 
  
-   //.digit0(4'hF),
+  //.digit0(4'hF),
   //.digit1(4'hf),
-//.digit2(4'hb),
+  //.digit2(4'hb),
   //.digit3(4'hB),
   
   
