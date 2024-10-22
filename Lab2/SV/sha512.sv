@@ -35,18 +35,11 @@ module sha512 #(parameter PADDED_SIZE = 1024)
    (input logic [PADDED_SIZE-1:0] padded,
     output logic [511:0] hashed);  
 
-	//we have to update these H and K values, these are only for the sha256
-	//H is first 64 bits of fractional part of square root of prime number 1th thru 8th prime nums
-
-	//K is 2.3.2 in lab pdf, but we need to figure it out for sha512, is it 64 bit size????
-	//in fips doc ---> fips doc is where you'll find knew H and K values, range values, and basically the whole algorithm for sha512
-
+	//Updated H and K values:
+	
 	logic [511:0] H = {64'h6a09e667f3bcc908, 64'hbb67ae8584caa73b,
 		      64'h3c6ef372fe94f82b, 64'ha54ff53a5f1d36f1, 64'h510e527fade682d1, 64'h9b05688c2b3e6c1f,
 			64'h1f83d9abfb41bd6b, 64'h5be0cd19137e2179};   
-	//need 80 K values of 64 bits for each values, now how to get that values?
-	//5120
-	//Done
 	
 	logic [5119:0] K = {64'h428a2f98d728ae22, 64'h7137449123ef65cd, 64'hb5c0fbcfec4d3b2f,
 		       64'he9b5dba58189dbbc, 64'h3956c25bf348b538, 64'h59f111f1b605d019, 64'h923f82a4af194f9b,
@@ -71,47 +64,7 @@ module sha512 #(parameter PADDED_SIZE = 1024)
 			64'h6c44198c4a475817 };
 
 
-
-
-
-
-
-//these are the knew K values
-/*
-64'h428a2f98d728ae22, 64'h7137449123ef65cd, 65'hb5c0fbcfec4d3b2f, 65'he9b5dba58189dbbc,
-65'h3956c25bf348b538, 65'h59f111f1b605d019 923f82a4af194f9b ab1c5ed5da6d8118
-d807aa98a3030242 12835b0145706fbe 243185be4ee4b28c 550c7dc3d5ffb4e2
-72be5d74f27b896f 80deb1fe3b1696b1 9bdc06a725c71235 c19bf174cf692694
-e49b69c19ef14ad2 efbe4786384f25e3 0fc19dc68b8cd5b5 240ca1cc77ac9c65
-2de92c6f592b0275 4a7484aa6ea6e483 5cb0a9dcbd41fbd4 76f988da831153b5
-983e5152ee66dfab a831c66d2db43210 b00327c898fb213f bf597fc7beef0ee4
-c6e00bf33da88fc2 d5a79147930aa725 06ca6351e003826f 142929670a0e6e70
-27b70a8546d22ffc 2e1b21385c26c926 4d2c6dfc5ac42aed 53380d139d95b3df
-650a73548baf63de 766a0abb3c77b2a8 81c2c92e47edaee6 92722c851482353b
-a2bfe8a14cf10364 a81a664bbc423001 c24b8b70d0f89791 c76c51a30654be30
-d192e819d6ef5218 d69906245565a910 f40e35855771202a 106aa07032bbd1b8
-19a4c116b8d2d0c8 1e376c085141ab53 2748774cdf8eeb99 34b0bcb5e19b48a8
-391c0cb3c5c95a63 4ed8aa4ae3418acb 5b9cca4f7763e373 682e6ff3d6b2b8a3
-748f82ee5defb2fc 78a5636f43172f60 84c87814a1f0ab72 8cc702081a6439ec
-90befffa23631e28 a4506cebde82bde9 bef9a3f7b2c67915 c67178f2e372532b
-ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
-06f067aa72176fba 0a637dc5a2c898a6 113f9804bef90dae 1b710b35131c471b
-28db77f523047d84 32caab7b40c72493 3c9ebe0a15c9bebc 431d67c49c100d4c
-4cc5d4becb3e42b6 597f299cfc657e2a 5fcb6fab3ad6faec 6c44198c4a475817
-*/
-
-
-
-
-
-
-
-
-
-
-	
-
-   // Define your intermediate variables here (forgetting them assumes variables are 1-bit)
+   // Intermediate variables:
 	//all must be size 64 bits, and now rounds go to 80 instead of 64, so 0 to 79 of each variable is needed
 	
 	logic [63:0]   a, b, c, d, e, f, g, h;
@@ -206,7 +159,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
 
 	//define everything of 64 bits
-//p1 good
+
 	prepare p1 (padded[1023:960], padded[959:896], padded[895:832],
 		    padded[831:768], padded[767:704], padded[703:640],
 		    padded[639:576], padded[575:512], padded[511:448],
@@ -222,7 +175,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
    // Initialize a through h
 
-	//need to change H still, range has been changed but not H , still need to update H
+	//512 H Ranges:
 	
 	assign a = H[511:448];
 	assign b = H[447:384];
@@ -236,7 +189,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
    // 80 hash computations
    // Each main_comp block computes according to Sec 2.3.3
 
-	//need to change K range in each main comp mc01 - mc80, 64 bits each time for K range
+	//Main comp now has a 64 bit range
 	
    main_comp mc01 (a, b, c, d, 
                    e, f, g, h, 
@@ -622,7 +575,7 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
                    a63_out, b63_out, c63_out, d63_out, 
                    e63_out, f63_out, g63_out, h63_out );
 
-	//need main comp 65-80 built, be very careful to not typo !
+	
 
 	main_comp mc65 (a63_out, b63_out, c63_out, d63_out, 
                    e63_out, f63_out, g63_out, h63_out,
@@ -724,21 +677,19 @@ ca273eceea26619c d186b8c721c0c207 eada7dd6cde0eb1e f57d4f7fee6ed178
 
 
 	
-	//update intermediate hash 1hi ---- need to change h0 - h7 values
-
+	//New intermediate hash:
+	
    intermediate_hash ih1 (a79_out, b79_out, c79_out, d79_out, 
                    	  e79_out, f79_out, g79_out, h79_out,
 			  a, b, c, d, e, f, g, h,
 			  h0, h1, h2, h3, h4, h5, h6, h7);
 	
    // Final output concatenating h0 through h7 outputs
-   // assign hashed = {};
+
 	assign hashed ={h0, h1, h2, h3, h4, h5, h6, h7};
 
 endmodule // sha_main
 
-
-//module prepare has a lot of work to be done 
 
 module prepare (input logic [63:0] M0, M1, M2, M3,
 		input logic [63:0]  M4, M5, M6, M7,
@@ -778,7 +729,6 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
    logic [63:0]		W57_sigma0_out, W58_sigma0_out, W59_sigma0_out, W60_sigma0_out, W61_sigma0_out, W62_sigma0_out, W63_sigma0_out, W64_sigma0_out;
 	
 	
-	//define all sigma0 and sigma 1 values
 	
    // Equation for W_i (top of page 7)
    assign W0 = M0;
@@ -799,6 +749,7 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
    assign W15 = M15;
 
    // sigma 1 (see bottom of page 6)
+	//Updated sigma1 values:
    sigma1 sig1_1 (W14, W14_sigma1_out);
    sigma1 sig1_2 (W15, W15_sigma1_out);
 	sigma1 sig1_3 (W16, W16_sigma1_out);
@@ -863,13 +814,13 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 	sigma1 sig1_62 (W75, W75_sigma1_out);
 	sigma1 sig1_63 (W76, W76_sigma1_out);
 	sigma1 sig1_64 (W77, W77_sigma1_out);
-   //all the way to 61
+   
 
-   // fill in other sigma1 blocks
+   
 
    // sigma 0 (see bottom of page 6)
+	//Updated sigma0 values:
    sigma0 sig0_1 (W1, W1_sigma0_out);
-   //all the way to 47
    sigma0 sig0_2 (W2, W2_sigma0_out);
    sigma0 sig0_3 (W3, W3_sigma0_out);
    sigma0 sig0_4 (W4, W4_sigma0_out);
@@ -934,13 +885,13 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
    sigma0 sig0_63 (W63, W63_sigma0_out);
    sigma0 sig0_64 (W64, W64_sigma0_out);
 	
-   // fill in other sigma0 blocks
+   
 
-   // Equation for W_i (top of page 7)3
+   // Equation for W_i (top of page 7)
    assign W16 = W14_sigma1_out + W9 + W1_sigma0_out + W0;
    assign W17 = W15_sigma1_out + W10 + W2_sigma0_out + W1;
 
-   // fill in other W18 through W63   
+   // Updated W Computations
    assign W18 = W16_sigma1_out + W11 + W3_sigma0_out + W2;
    assign W19 = W17_sigma1_out + W12 + W4_sigma0_out + W3;
    assign W20 = W18_sigma1_out + W13 + W5_sigma0_out + W4;
@@ -1006,14 +957,15 @@ module prepare (input logic [63:0] M0, M1, M2, M3,
 
 endmodule // prepare
 
-//how does this change w/ sha512?
 
+//Main comp with new values
 module main_comp (input logic [63:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h_in,
 		  input logic [63:0] K_in, W_in,
 		  output logic [63:0] a_out, b_out, c_out, d_out, e_out, f_out, g_out,
 		  output logic [63:0] h_out);
 
    // Figure 4
+	//Computations
 	logic [63:0] ch, maj, Sig0, Sig1;	
 choice ch1 ( e_in, f_in, g_in, ch);
 majority m1(a_in, b_in, c_in, maj);
@@ -1056,7 +1008,7 @@ module intermediate_hash (input logic [63:0] a_in, b_in, c_in, d_in, e_in, f_in,
    
 endmodule
 
-//does majority or choice modules change w/ sha512
+//Choice and majority, same as 256
 
 module majority (input logic [63:0] x, y, z, output logic [63:0] maj);
 
@@ -1081,7 +1033,7 @@ assign Sig0 = ({x[27:0], x[63:28]})^({x[33:0], x[63:34]})^({x[38:0], x[63:39]});
 
    
 	//ror^28 ^ ror^34 ^ ror^39
-//need to change to above equation 
+
 
 endmodule // Sigma0
 
@@ -1092,7 +1044,7 @@ module sigma0 (input logic [63:0] x, output logic [63:0] sig0);
       assign sig0 = ({x[0], x[63:1]})^({x[7:0], x[63:8]})^(x>>7);
 
 	//ror^1 ^ ror^8 ^ (x>>7)
-	//need to change to above equation
+	
    
 
 endmodule // sigma0
@@ -1103,7 +1055,7 @@ module Sigma1 (input logic [63:0] x, output logic [63:0] Sig1);
    assign Sig1 = ({x[13:0], x[63:14]})^({x[17:0], x[63:18]})^({x[40:0], x[63:41]});
 
 	//ror^14 ^ ror^18 ^ ror^41
-	//need to change to above equation
+	
 
 endmodule // Sigma1
 
@@ -1114,7 +1066,7 @@ module sigma1 (input logic [63:0] x, output logic [63:0] sig1);
 assign sig1 = ({x[18:0], x[63:19]})^({x[60:0], x[63:61]})^(x>>6);
 
 	//ror^19 ^ ror^61 ^ (x>>6)
-	//need to change to above equation
+	
 
 endmodule // sigma1
 
