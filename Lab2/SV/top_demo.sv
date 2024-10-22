@@ -50,7 +50,7 @@ module top_demo
   top #(120, 512) dut (120'h48656c6c6f2c205348412d32353621, hashed);
   multiplexer dut1 (hashed, sw[3:0], segments);
   
-  
+  //ideal sha256 output
   //256'h_d0e8_b8f1_1c98_f369_016e_b2ed_3c54_1e1f_0138_2f9d_5b31_04c9_ffd0_6b61_75a4_6271
   
   //multiplexer
@@ -85,7 +85,7 @@ endcase
   //input random letters
 
   
-
+//DEBUGGING:
   assign led [0] = segments[3:0];
   assign led[1] = segments[7:4];
   assign led [2] = segments[15:12];
@@ -97,11 +97,8 @@ endcase
   assign led [7] = segments[7:0];
   
   //getting signal segments[0];
-//getting signals from segments !!!!!, must put range as shown above, this is talking about the LED only
+  //getting signals from segments !!!!!, must put range as shown above, this is talking about the LED only
   //256'hd0e8b8f11c98f369016eb2ed3c541e1f01382f9d5b3104c9ffd06b6175a46271
-  
-  //code here is only showing first bit of every 4 bits -> showing 1, 4, 1, 0, 9, etc. this may be correct tho, since I only have digit 1 programmed rn
-
   
   // 7-segment display
   segment_driver driver(
@@ -119,8 +116,7 @@ endcase
   //.digit2(4'hb),
   //.digit3(4'hB),
   
-  //board display has issues w/ B, must have malfunction, or dead circuit in board
-  //board displaying B as b, either due to board display error or implementation error? Most likely segment display is malfunctioning, because displays A and E as A and E
+  
  
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
