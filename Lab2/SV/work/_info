@@ -58,6 +58,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -155,10 +156,10 @@ n@_opt7
 R6
 R1
 T_opt8
-!s110 1729559782
-V7dW`Sz3AZ:AcoGMglH2?E2
+!s110 1729559978
+Vnbj@aEY0bjL>J]Qlk=APa2
 R2
-=1-00a5545ac9b3-6716fce5-25d-f98
+=1-00a5545ac9b3-6716fdaa-f0-a1c
 R3
 R4
 R5
@@ -166,25 +167,25 @@ n@_opt8
 R6
 vchoice
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z8 !s110 1729559781
+Z8 !s110 1729559975
 !i10b 1
-!s100 J1gnI=6@9ie^_7gXGS3]g3
-I7Q9CYDm9@eC[]6jkzDX6^2
+!s100 5iDM;?n=G]080VQ`Bzfl^3
+IgMYL?YfVRW2Xd@[60T<<21
 S1
 Z9 dC:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/lab2/sv
 Z10 w1729559462
-Z11 8sha512.sv
-Z12 Fsha512.sv
+Z11 8sha256_stub.sv
+Z12 Fsha256_stub.sv
 !i122 0
-L0 1020 9
+L0 830 8
 Z13 VDg1SIo80bB@j0V0VzS_@n1
 Z14 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z15 !s108 1729559781.000000
-Z16 !s107 sha512_tb.sv|sha512.sv|
-Z17 !s90 -reportprogress|300|sha512.sv|sha512_tb.sv|
+Z15 !s108 1729559975.000000
+Z16 !s107 sha256_tb_tv.sv|sha256_stub.sv|
+Z17 !s90 -reportprogress|300|sha256_stub.sv|sha256_tb_tv.sv|
 !i113 0
 Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
@@ -192,15 +193,15 @@ vintermediate_hash
 R7
 R8
 !i10b 1
-!s100 WZE3Dlj5[=OMg<<:dfL>G0
-Iz[U]PT1`Go:cKGQzZZZg^0
+!s100 X3_iVfE;Xcj15zHHCnOmZ0
+IZb3M7WBDKz0ZJ_DOeFng31
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 996 14
+L0 807 15
 R13
 R14
 r1
@@ -216,15 +217,15 @@ vmain_comp
 R7
 R8
 !i10b 1
-!s100 z_f9PHXagCgWZek`;Xl]f2
-I0Nd4m5POa1?B6^Ke1oJJO1
+!s100 EcS3a;A7W2iNQ9o::mFm11
+Ib3oVzfg>AlI]<UiSVDj:32
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 962 33
+L0 773 33
 R13
 R14
 r1
@@ -240,15 +241,15 @@ vmajority
 R7
 R8
 !i10b 1
-!s100 >dZWFiGaK^SgXm[YRV_mA0
-IQnz24EiH6G132b:b6nHkl1
+!s100 <[bo1aP[QzF3>l8djQQ>z2
+I2QWUX:>@Un^1<`Moc;1R31
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 1013 6
+L0 823 6
 R13
 R14
 r1
@@ -264,15 +265,15 @@ vprepare
 R7
 R8
 !i10b 1
-!s100 Wgock;5kJW^h:BO2oOJz63
-I<W^^7W`95ES[g<lT19EzT1
+!s100 ;k:7Y[h;j?de07<zL_b_D0
+IiKTY:XGKJJlRSMziUUXW_3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 694 265
+L0 556 215
 R13
 R14
 r1
@@ -284,19 +285,19 @@ R17
 !i113 0
 R18
 R5
-vsha512
+vsha256
 R7
 R8
 !i10b 1
-!s100 U[mHU:b5mSI]mbIIaATQQ2
-IIAG_;8koagVjAIo=WW5P[2
+!s100 C4CCbQ@OY9[WY6WKk5oQ43
+I=d<UG[L<O<idKUcG5;nzE3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 34 658
+L0 31 524
 R13
 R14
 r1
@@ -312,15 +313,39 @@ vsha_padder
 R7
 R8
 !i10b 1
-!s100 CTX@nMg=4[BQ`V9^ISFS`1
-IWVKWD7[HCgoIhzeYNLP:n0
+!s100 DSlbEZd4@3J4dAeK[PfUl2
+I4@6_99>zkn<=6D8e4h]jA3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 20 13
+L0 18 12
+R13
+R14
+r1
+!s85 0
+31
+R15
+R16
+R17
+!i113 0
+R18
+R5
+vsigma0
+R7
+R8
+!i10b 1
+!s100 mH<1JNZcR_`TUkoWR;N]<1
+ITz4PImX82U]1SL4d[^lY`3
+S1
+R9
+R10
+R11
+R12
+!i122 0
+L0 849 10
 R13
 R14
 r1
@@ -336,15 +361,15 @@ vSigma0
 R7
 R8
 !i10b 1
-!s100 e^o2HU>J7NfD`MhQ:aQUe3
-IfLPSSo?Id3Z1Ccca1laF92
+!s100 jh2^_:6oC4I6h5zKakK3`0
+I>Bm82<DJE7XM;d^f:[O;N3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 1030 9
+L0 839 9
 R13
 R14
 r1
@@ -357,19 +382,19 @@ R17
 R18
 R5
 n@sigma0
-vsigma0
+vsigma1
 R7
 R8
 !i10b 1
-!s100 n>EJTFg33j1mBEPz>SO^C3
-I67f=69[bclFVUg40^[VgL2
+!s100 XNTF^QTc0]QU92WjA3=[32
+I0TCm2aXJQ0b?[JT=D`0BO0
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 1041 10
+L0 869 9
 R13
 R14
 r1
@@ -385,15 +410,15 @@ vSigma1
 R7
 R8
 !i10b 1
-!s100 _h8N5WZj9nSHP[h5T8W@R0
-I4?haLPgfD:T<DI:YFhBHV0
+!s100 ao`jFiXc8?hD76k>HHZ5C2
+IV@Hh5P5EmmGdX_=X[W1^I2
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 1052 9
+L0 860 8
 R13
 R14
 r1
@@ -406,43 +431,19 @@ R17
 R18
 R5
 n@sigma1
-vsigma1
-R7
-R8
-!i10b 1
-!s100 Dj`CKX[V3h4PYUBd6ObbE0
-IkgRlmTH?oYRG@X1b`m3=<2
-S1
-R9
-R10
-R11
-R12
-!i122 0
-L0 1062 10
-R13
-R14
-r1
-!s85 0
-31
-R15
-R16
-R17
-!i113 0
-R18
-R5
 vstimulus
 R7
 R8
 !i10b 1
-!s100 IHhK_QUMOYfoBhFP9]E_Q3
-Ic]OY@5jAQmn=iH=>Z2Cj>0
+!s100 S^GlM2B9D5@MdYGgRL8hD3
+IlI4J78[SX<hZZ@TQ?jNFB2
 S1
 R9
 R10
-8sha512_tb.sv
-Fsha512_tb.sv
+8sha256_tb_tv.sv
+Fsha256_tb_tv.sv
 !i122 0
-L0 2 102
+L0 2 106
 R13
 R14
 r1
@@ -458,15 +459,15 @@ vtop
 R7
 R8
 !i10b 1
-!s100 4JNCTifNfP9?h2V5f@6:R3
-IeN;zzJin0><ANdZl7MlZA2
+!s100 BTQ?J_WUm91@Y^MWk]eX=1
+IaI:B>Nbz:kEB;LBmJGTlZ1
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 7 12
+L0 5 12
 R13
 R14
 r1

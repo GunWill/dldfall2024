@@ -29,7 +29,6 @@ vlog sha512.sv sha512_tb.sv
 vsim -voptargs=+acc work.stimulus
 view wave
 
-//Updated runtime to 1000ns for clear simulation
 
 -- display input and output signals as hexidecimal values
 # Diplays All Signals recursively
