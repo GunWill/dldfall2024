@@ -2,16 +2,16 @@
 module stimulus ();
 
    logic  clk;
-   logic  a;
-   logic  reset;
+   logic  reset; 
    
-   logic  y;
+   logic  [1:0] LR;
+   logic [5:0] light;
    
    integer handle3;
    integer desc3;
    
    // Instantiate DUT
-   FSM dut (clk, reset, a, y);   
+   FSM dut (clk, reset, LR, light);   
    
    // Setup the clock to toggle every 1 time units 
    initial 
@@ -31,17 +31,18 @@ module stimulus ();
    always 
      begin
 	desc3 = handle3;
-	#5 $fdisplay(desc3, "%b %b || %b", 
-		     reset, a, y);
+	#5 $fdisplay(desc3, "%b || %b || %b", 
+		     reset, LR, light);
      end   
    
    initial 
      begin      
 	#0   reset = 1'b1;
-	#41  reset = 1'b0;	
-	#0   a = 1'b0;
-	#20  a = 1'b1;
-	#20  a = 1'b0;
+	#20  reset = 1'b0;	
+	#0   LR = 2'b00;
+	#50  LR = 2'b10;
+	#50  LR = 2'b01;
+     #50  LR = 2'b11;
      end
 
 endmodule // FSM_tb

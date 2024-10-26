@@ -110,8 +110,8 @@ endcase
  .digit3(segments[15:12]),
  
  
- 
-   //.digit0(4'hF),
+  //DEBUGGING:
+  //.digit0(4'hF),
   //.digit1(4'hf),
   //.digit2(4'hb),
   //.digit3(4'hB),
