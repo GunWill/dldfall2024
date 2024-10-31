@@ -50,32 +50,34 @@ module top_demo
   logic [5:0] light;
   // Place TicTacToe instantiation here
   FSM dut (clk, reset, LR, light);
+  clk_div dut2 ( clk,  rst, clk_en);
   
-  assign reset=sw[1];
-  assign LR[1]= sw [3];
-  assign LR[0]=sw[2];
-  assign light[5]=led[3];
-  assign light[4]=led[4];
-  assign light[3]=led[5];
+initial 
+     begin 
+  //assign sw[0] = reset;
+  assign  LR[1] = sw [3];
   
-  assign light[2:0]=led[2:0];
+  assign sw[2] = LR[0];
+  assign led[3] = light[5];
+  assign led[4] = light[4];
+  assign led[5] = light[3];
+  
+  assign led[2:0] = light[2:0];
+  end
+  
+   initial 
+     begin      
+	#0   reset = 1'b1;
+	#20  reset = 1'b0;	
+	#0   LR = 2'b00;
+	#50  LR = 2'b10;
+	#50  LR = 2'b01;
+     #50  LR = 2'b11;
+     end
+ 
   
   
-  //Clock Divider
-  module clk_div (input logic clk, input logic rst, output logic clk_en);
-
-   logic [23:0] clk_count;
-
-   always_ff @(posedge clk) begin
-      if (rst)
-	clk_count <= 24'h0;
-      else
-	clk_count <= clk_count + 1;
-   end   
-   
-   assign clk_en = clk_count[23];
-   
-endmodule // clk_div
+ 
 
   
 
@@ -118,3 +120,5 @@ endmodule // clk_div
   assign smol_clk = CURRENT_COUNT == 17'd100000 ? 1'b1 : 1'b0;
 
 endmodule
+
+
