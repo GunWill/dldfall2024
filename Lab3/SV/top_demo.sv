@@ -43,67 +43,35 @@ module top_demo
   logic [16:0] CURRENT_COUNT;
   logic [16:0] NEXT_COUNT;
   logic        smol_clk;
-  // logic [7:0] ctrl;
-  logic [15:0] segments; 
   logic [1:0] LR;
-  logic reset;
   logic [5:0] light;
+  logic clk_en; 
+  
   // Place TicTacToe instantiation here
-  FSM dut (clk, reset, LR, light);
-  clk_div dut2 ( clk,  rst, clk_en);
+  clk_div dut1(sysclk_125mhz, sw[0], clk_en);
+  FSM dut (clk_en, sw[0], LR, light);
   
-initial 
-     begin 
-  //assign sw[0] = reset;
-  assign  LR[1] = sw [3];
-  
-  assign sw[2] = LR[0];
-  assign led[3] = light[5];
-  assign led[4] = light[4];
-  assign led[5] = light[3];
-  
-  assign led[2:0] = light[2:0];
-  end
-  
-   initial 
-     begin      
-	#0   reset = 1'b1;
-	#20  reset = 1'b0;	
-	#0   LR = 2'b00;
-	#50  LR = 2'b10;
-	#50  LR = 2'b01;
-     #50  LR = 2'b11;
-     end
- 
+  assign LR = sw[2:1];
+  assign light [5] = led[3];
+  assign light [4] = led[4];
+  assign light [3] = led[5];
+  assign light [2:0] = led[2:0]; 
   
   
- 
-
   
-
-  //segment_driver driver(
-  /*.clk(smol_clk),
+  // 7-segment display
+  segment_driver driver(
+  .clk(smol_clk),
   .rst(btn[3]),
-    .digit0(segments[3:0]),
-    .digit1(segments[7:4]),
-    .digit2(segments[11:8]),
-    .digit3(segments[15:12]),
-
- 
- ///try synthesis w/ hardcoded digits values, to see if board can even get a signal. If synthesis doesn't work w/ these hardcoded values, then possible something is wrong with the clock, or some other error that
-    //is making the file unable to synthesize. Also can try to just try 1 mux for now, then get the other mux to work. 
- 
-   //.digit0(4'hF),
-  //.digit1(4'hf),
-//.digit2(4'hb),
-  //.digit3(4'hB),
-  
-  
+  .digit0(sw[3:0]),
+  .digit1(4'b0111),
+  .digit2(sw[7:4]),
+  .digit3(4'b1111),
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
   );
-*/
+
 // Register logic storing clock counts
   always@(posedge sysclk_125mhz)
   begin
@@ -120,5 +88,3 @@ initial
   assign smol_clk = CURRENT_COUNT == 17'd100000 ? 1'b1 : 1'b0;
 
 endmodule
-
-
