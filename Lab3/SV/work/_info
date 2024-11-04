@@ -10,6 +10,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -39,52 +40,63 @@ R4
 R5
 n@_opt1
 R6
+R1
+T_opt2
+!s110 1730690170
+VlF26^f1TJR?FzEkg[mSM:2
+R2
+=1-e4c76793e2a7-67283c79-119-906c
+R3
+R4
+R5
+n@_opt2
+R6
 vFSM
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-!s110 1729807753
+Z8 !s110 1730690168
 !i10b 1
-!s100 k=<32ezCTTRKZiTK5AY0R2
-ICgSLWS]_R2o_aKR24l6Si1
+!s100 X=Jffgk8B7PkUJHBh:h301
+IXOEb9GMJb7m9mMX6dzVM?2
 S1
-R1
-w1729805738
+Z9 dC:/Users/User/Desktop/Git CLONE dldfall2024/dldfall2024/Lab3/SV
+w1730690115
 8fsm.sv
 Ffsm.sv
 !i122 0
-L0 1 73
-Z8 VDg1SIo80bB@j0V0VzS_@n1
-Z9 OL;L;2021.3;73
+L0 1 64
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z10 !s108 1729807753.000000
-Z11 !s107 fsm_tb.sv|fsm.sv|
-Z12 !s90 -reportprogress|300|fsm.sv|fsm_tb.sv|
+Z12 !s108 1730690168.000000
+Z13 !s107 fsm_tb.sv|fsm.sv|
+Z14 !s90 -reportprogress|300|fsm.sv|fsm_tb.sv|
 !i113 0
-Z13 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z15 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
 n@f@s@m
 vstimulus
 R7
-!s110 1729807754
+R8
 !i10b 1
 !s100 6onASHkSSi8?=PU?d7a4;2
 I;2]8hRJS4>2DEC]G3XbP62
 S1
-R1
-w1729807750
+R9
+w1730689926
 8fsm_tb.sv
 Ffsm_tb.sv
 !i122 0
 L0 2 47
-R8
-R9
+R10
+R11
 r1
 !s85 0
 31
-R10
-R11
 R12
-!i113 0
 R13
+R14
+!i113 0
+R15
 R5
