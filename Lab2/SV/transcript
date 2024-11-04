@@ -11,7 +11,7 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# do sha512.do
+# do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
@@ -23,162 +23,14 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 20:16:21 on Oct 21,2024
-# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha512
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 20:16:21 on Oct 21,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 20:16:21 on Oct 21,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha512(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Error: invalid command name "//Updated"
-# Error in macro ./sha512.do line 32
-# invalid command name "//Updated"
-#     while executing
-# "//Updated runtime to 1000ns for clear simulation"
-do sha512.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt8".  Locker is gunnz@R2D2.
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 20:18:39 on Oct 21,2024
-# vlog -reportprogress 300 sha512.sv sha512_tb.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha512
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 20:18:39 on Oct 21,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:18:41 on Oct 21,2024, Elapsed time: 0:02:20
-# Errors: 1, Warnings: 0
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 20:18:41 on Oct 21,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt8
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha512(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
-#           Attempting to use alternate WLF file "./wlftbegngy".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftbegngy
-do sha256.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt3".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt4".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt5".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt6".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt7".  Locker is ekravch@CEAT-ENDV350-01.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt8".  Locker is gunnz@R2D2.
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 20:19:35 on Oct 21,2024
+# Start time: 22:06:58 on Oct 25,2024
 # vlog -reportprogress 300 sha256_stub.sv sha256_tb_tv.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 20:19:35 on Oct 21,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 20:19:38 on Oct 21,2024, Elapsed time: 0:00:57
-# Errors: 0, Warnings: 2
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 20:19:38 on Oct 21,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha256(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 27008
-#           Attempting to use alternate WLF file "./wlftjhat85".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjhat85
+# ** Error: (vlog-7) Failed to open design unit file "sha256_stub.sv" in read mode.
+# No such file or directory. (errno = ENOENT)
+# End time: 22:06:58 on Oct 25,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_CORRECT.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_stub.sv sha256_tb_tv.sv"
