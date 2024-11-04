@@ -15,8 +15,8 @@ module FSM (input logic clk, reset, input logic [1:0] LR, output logic [5:0] lig
 	  light <= 6'b000000;	  
 	  if (LR == 2'b00) nextstate <= S0;
 	  else if (LR == 2'b10)   nextstate <= S1;
-    else if (LR == 2'b01)   nextstate <= S4;
-    else if (LR == 2'b11)   nextstate <= S7;
+    	  else if (LR == 2'b01)   nextstate <= S4;
+   	  else if (LR == 2'b11)   nextstate <= S7;
        end
        S1: begin
 	  light <= 6'b100000;	  	  
@@ -28,10 +28,7 @@ module FSM (input logic clk, reset, input logic [1:0] LR, output logic [5:0] lig
        end
        S3: begin
 	  light <= 6'b111000;	  
-	  if (LR == 2'b00) nextstate <= S0;
-	  else if (LR == 2'b10)   nextstate <= S1;
-    else if (LR == 2'b01)   nextstate <= S4;
-    else if (LR == 2'b11)   nextstate <= S7;
+	  nextstate <= S0;
        end
        S4: begin
 	  light <= 6'b000100;	  
@@ -43,10 +40,7 @@ module FSM (input logic clk, reset, input logic [1:0] LR, output logic [5:0] lig
        end
        S6: begin
 	  light <= 6'b000111;	  
-    if (LR == 2'b00) nextstate <= S0;
-	  else if (LR == 2'b10)   nextstate <= S1;
-    else if (LR == 2'b01)   nextstate <= S4;
-    else if (LR == 2'b11)   nextstate <= S7;
+    	  nextstate <= S0;
        end
        S7: begin
 	  light <= 6'b100100;	  
@@ -58,10 +52,7 @@ module FSM (input logic clk, reset, input logic [1:0] LR, output logic [5:0] lig
        end
        S9: begin
 	  light <= 6'b111111;	  
-    if (LR == 2'b00) nextstate <= S0;
-	  else if (LR == 2'b10)   nextstate <= S1;
-    else if (LR == 2'b01)   nextstate <= S4;
-    else if (LR == 2'b11)   nextstate <= S7;
+    	  nextstate <= S0;
        end
 
        default: begin
