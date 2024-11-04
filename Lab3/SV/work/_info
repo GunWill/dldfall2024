@@ -11,6 +11,7 @@ R0
 R0
 R0
 R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -42,17 +43,10 @@ n@_opt1
 R6
 R1
 T_opt2
-<<<<<<< HEAD
-!s110 1729911077
-VS1D_FY=@3P@^zR0b^PPYX0
+!s110 1730754484
+V_7ogUBJ0eSV8HMod^78_l1
 R2
-=1-00a5545ac9b3-671c5925-a5-5304
-=======
-!s110 1730690170
-VlF26^f1TJR?FzEkg[mSM:2
-R2
-=1-e4c76793e2a7-67283c79-119-906c
->>>>>>> 32e59cc8e5f6c01433a489d8f2e05b3ea562d5e9
+=1-00a5545ac9b3-672937b4-31-6fe0
 R3
 R4
 R5
@@ -60,40 +54,23 @@ n@_opt2
 R6
 vFSM
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-<<<<<<< HEAD
-Z8 !s110 1729911076
-=======
-Z8 !s110 1730690168
->>>>>>> 32e59cc8e5f6c01433a489d8f2e05b3ea562d5e9
+Z8 !s110 1730754483
 !i10b 1
 !s100 X=Jffgk8B7PkUJHBh:h301
 IXOEb9GMJb7m9mMX6dzVM?2
 S1
-<<<<<<< HEAD
 Z9 dC:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/lab3/sv
-w1729910570
-8fsm.sv
-Ffsm.sv
-!i122 0
-L0 1 73
-=======
-Z9 dC:/Users/User/Desktop/Git CLONE dldfall2024/dldfall2024/Lab3/SV
-w1730690115
+w1730754317
 8fsm.sv
 Ffsm.sv
 !i122 0
 L0 1 64
->>>>>>> 32e59cc8e5f6c01433a489d8f2e05b3ea562d5e9
 Z10 VDg1SIo80bB@j0V0VzS_@n1
 Z11 OL;L;2021.3;73
 r1
 !s85 0
 31
-<<<<<<< HEAD
-Z12 !s108 1729911076.000000
-=======
-Z12 !s108 1730690168.000000
->>>>>>> 32e59cc8e5f6c01433a489d8f2e05b3ea562d5e9
+Z12 !s108 1730754483.000000
 Z13 !s107 fsm_tb.sv|fsm.sv|
 Z14 !s90 -reportprogress|300|fsm.sv|fsm_tb.sv|
 !i113 0
@@ -108,11 +85,7 @@ R8
 I;2]8hRJS4>2DEC]G3XbP62
 S1
 R9
-<<<<<<< HEAD
 w1729910571
-=======
-w1730689926
->>>>>>> 32e59cc8e5f6c01433a489d8f2e05b3ea562d5e9
 8fsm_tb.sv
 Ffsm_tb.sv
 !i122 0
