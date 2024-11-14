@@ -8,7 +8,7 @@ module top #(parameter MSG_SIZE = 24,
     output logic [255:0] hashed);
 
    logic [PADDED_SIZE-1:0] padded;
-   
+   counter instance(clk, rst, start, count);
    sha_padder #(.MSG_SIZE(MSG_SIZE), .PADDED_SIZE(PADDED_SIZE)) padder (.message(message), .padded(padded));
    sha256 #(.PADDED_SIZE(PADDED_SIZE)) main (.padded(padded), .hashed(hashed));
    
@@ -155,24 +155,38 @@ module sha256 #(parameter PADDED_SIZE = 512)
    assign g = H[63:32];
    assign h = H[31:0];
 
-   main_comp mc01 (a, b, c, d, 
-		   e, f, g, h, 
-		   K[2047:2016], W0,
+//Muxes
+   //s=select -> chooses either first input or outputs to continue with computation
+   //A-Hout -> Output of computation
+   //MuxA-Hout -> whichever choice is made with s, (a-h or A-Hout), Whichever path is gone down
+   //a-h -> input a, defined before muxes
+mux2 #(32) muxA ( a, Aout, s, muxAout);
+mux2 #(32) muxB ( b, Bout, s, muxBout);
+mux2 #(32) muxC ( c, Cout, s, muxCout);
+mux2 #(32) muxD ( d, Dout, s, muxDout);
+mux2 #(32) muxE ( e, Eout, s, muxEout);
+mux2 #(32) muxF ( f, Fout, s, muxFout);
+mux2 #(32) muxG ( g, Gout, s, muxGout);
+mux2 #(32) muxH ( h, Hout, s, muxHout);
+
+
+   main_comp mc01 (muxAout, muxBout, muxCout, muxDout, 
+		   muxEout, muxFout, muxGout, muxHout, 
+		  k, w,
 		   a0_out, b0_out, c0_out, d0_out, 
 		   e0_out, f0_out, g0_out, h0_out);
 
-counter instance(clk, rst, start, count);
-
-flopenr #(32) instanceA(clk, reset, en,Ain,Aout);
-flopenr #(32) instanceB(clk, reset, en,Bin,Bout);
-flopenr #(32) instanceC(clk, reset, en,Cin,Cout);
-flopenr #(32) instanceD(clk, reset, en,Din,Dout);
-flopenr #(32) instanceE(clk, reset, en,Ein,Eout);
-flopenr #(32) instanceF(clk, reset, en,Fin,Fout);
-flopenr #(32) instanceG(clk, reset, en,Gin,Gout);
-flopenr #(32) instanceH(clk, reset, en,Hin,Hout);
 
 
+//registers
+flopenr #(32) instanceA(clk, reset, en, a0_out, Aout);
+flopenr #(32) instanceB(clk, reset, en, b0_out, Bout);
+flopenr #(32) instanceC(clk, reset, en, c0_out, Cout);
+flopenr #(32) instanceD(clk, reset, en, d0_out, Dout);
+flopenr #(32) instanceE(clk, reset, en, e0_out, Eout);
+flopenr #(32) instanceF(clk, reset, en, f0_out, Fout);
+flopenr #(32) instanceG(clk, reset, en, g0_out, Gout);
+flopenr #(32) instanceH(clk, reset, en, h0_out, Hout);
 
 
 
@@ -187,6 +201,50 @@ flopenr #(32) instanceH(clk, reset, en,Hin,Hout);
 
 
 endmodule // sha_main
+
+//EDIT
+module FSM (clk, reset, a, y);
+
+   input logic  clk;
+   input logic  reset;
+   input logic 	a;
+   
+   output logic y;
+
+   typedef enum 	logic [1:0] {S0, S1, S2} statetype;
+   statetype state, nextstate;
+   
+   // state register
+   always_ff @(posedge clk, posedge reset)
+     if (reset) state <= S0;
+     else       state <= nextstate;
+   
+   // next state logic
+   always_comb
+     case (state)
+       S0: begin
+	  y <= 1'b0;	  
+	  if (a) nextstate <= S0;
+	  else   nextstate <= S1;
+       end
+       S1: begin
+	  y <= 1'b0;	  	  
+	  if (a) nextstate <= S2;
+	  else   nextstate <= S1;
+       end
+       S2: begin
+	  y <= 1'b1;	  	  
+	  if (a) nextstate <= S2;
+	  else   nextstate <= S0;
+       end
+       default: begin
+	  y <= 1'b0;	  	  
+	  nextstate <= S0;
+       end
+     endcase
+   
+endmodule//FSM
+
 
 module prepare (input logic [31:0] M0, M1, M2, M3,
 		input logic [31:0]  M4, M5, M6, M7,
@@ -495,11 +553,11 @@ module sigma1 (input logic [31:0] x, output logic [31:0] sig1);
 
 endmodule // sigma1
 
-module decrementK(input logic [5:0] count, input logic [2047:0] K, output logic [31:0] Kout);
-login [10:0] IN;
-logic [10:0] END;
-assign IN = 2047 - 32*count;
-assign END = IN-31;
+//module decrementK(input logic [5:0] count, input logic [2047:0] K, output logic [31:0] Kout);
+//login [10:0] IN;
+//logic [10:0] END;
+//assign IN = 2047 - 32*count;
+//assign END = IN-31;
 
 
 //if counter <= 6'b111110
@@ -509,15 +567,15 @@ assign END = IN-31;
    //get value 
    //end loop
 
-   (K>>32) 
+   //(K>>32) 
 
  
-assign Kout = (K>>2016 - 32*count) ;
+//assign Kout = (K>>2016 - 32*count) ;
 
 
 
 
-endmodule //decrementK
+//endmodule //decrementK
 
      
    

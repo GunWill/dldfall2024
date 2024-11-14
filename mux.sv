@@ -81,3 +81,16 @@ module mux16 #(parameter WIDTH = 8)
 endmodule // mux16
 
 /* verilator lint_on DECLFILENAME */
+module mux64 #(parameter WIDTH = 8)
+   (input logic [WIDTH-1:0] d0, d1, d2, d3, d4, input [5:0] s,
+    output logic [WIDTH-1:0] y);
+
+   always_comb
+     case(s)
+       6'b000000: y = d0;
+       4'b0010: y = d1;
+       4'b0100: y = d2;
+       4'b1000: y = d3;
+       default: y = d4;
+     endcase // case (s)
+endmodule // mux16
