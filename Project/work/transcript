@@ -1,0 +1,7 @@
+# vsim do sha256.do -c 
+# Start time: 16:44:41 on Nov 16,2024
+# ** Error (suppressible): (vsim-19) Failed to access library 'sha256' at "sha256".
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# End time: 16:44:42 on Nov 16,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0

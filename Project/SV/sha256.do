@@ -23,7 +23,8 @@ if [file exists work] {
 }
 vlib work
 # compile source files
-vlog sha256.sv tb_sha256.sv
+vlog sha256_testing.sv
+vlog sha256_tb_testing.sv
 
 # start and run simulation
 vsim -voptargs=+acc work.stimulus
@@ -33,8 +34,9 @@ view wave
 # Diplays All Signals recursively
 add wave -hex -r /stimulus/*
 #add wave -noupdate -divider -height 32 "Main tb"
-#add wave -noupdate -expand -group tb /stimulus/message
 #add wave -noupdate -expand -group tb /stimulus/hashed
+#add wave -noupdate -expand -group tb /stimulus/golden
+#add wave -noupdate -expand -group tb /stimulus/message
 #add wave -noupdate -divider -height 32 "padded"
 #add wave -noupdate -expand -group padded /stimulus/dut/padder/*
 #add wave -noupdate -divider -height 32 "sha256 main module"
