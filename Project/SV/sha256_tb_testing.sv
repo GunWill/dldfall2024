@@ -11,7 +11,14 @@ module stimulus;
    logic [255:0] golden;
 
 
-   top #(MSG_SIZE, 512) dut (message, hashed);
+   top #(MSG_SIZE, 512) dut (
+    .clk(clk),
+    .reset(reset),
+    .start(start),
+    .message(message),
+    .hashed(hashed),
+    .done(done)
+);
 
    // 1 ns clock
    initial 

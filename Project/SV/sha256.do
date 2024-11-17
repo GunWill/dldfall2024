@@ -25,6 +25,11 @@ vlib work
 # compile source files
 vlog sha256_testing.sv
 vlog sha256_tb_testing.sv
+vlog flopenr.sv
+vlog counter.sv
+vlog mux.sv
+vlog flopr.sv
+
 
 # start and run simulation
 vsim -voptargs=+acc work.stimulus

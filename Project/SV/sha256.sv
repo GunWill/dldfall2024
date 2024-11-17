@@ -2,7 +2,7 @@
 // Secure Hash Standard (SHA-256)
 //
 
-module top #(parameter MSG_SIZE = 24,
+module top #(parameter MSG_SIZE = 120,
 	     parameter PADDED_SIZE = 512)
    (input logic [MSG_SIZE-1:0] message,
     output logic [255:0] hashed);
@@ -53,84 +53,9 @@ module sha256 #(parameter PADDED_SIZE = 512)
 		       32'hc67178f2};
 
    logic [31:0]	  a, b, c, d, e, f, g, h;
-   logic [31:0]   W0, W1, W2, W3, W4, W5, W6, W7, W8, W9;
-   logic [31:0]   W10, W11, W12, W13, W14, W15, W16, W17, W18, W19;
-   logic [31:0]   W20, W21, W22, W23, W24, W25, W26, W27, W28, W29;
-   logic [31:0]   W30, W31, W32, W33, W34, W35, W36, W37, W38, W39;
-   logic [31:0]   W40, W41, W42, W43, W44, W45, W46, W47, W48, W49;
-   logic [31:0]   W50, W51, W52, W53, W54, W55, W56, W57, W58, W59;
-   logic [31:0]   W60, W61, W62, W63;
-   
+   logic [31:0]   W;
    logic [31:0]   a0_out, b0_out, c0_out, d0_out, e0_out, f0_out, g0_out, h0_out;
-   logic [31:0]   a1_out, b1_out, c1_out, d1_out, e1_out, f1_out, g1_out, h1_out;
-   logic [31:0]   a2_out, b2_out, c2_out, d2_out, e2_out, f2_out, g2_out, h2_out;
-   logic [31:0]   a3_out, b3_out, c3_out, d3_out, e3_out, f3_out, g3_out, h3_out;
-   logic [31:0]   a4_out, b4_out, c4_out, d4_out, e4_out, f4_out, g4_out, h4_out;
-   logic [31:0]   a5_out, b5_out, c5_out, d5_out, e5_out, f5_out, g5_out, h5_out;
-   logic [31:0]   a6_out, b6_out, c6_out, d6_out, e6_out, f6_out, g6_out, h6_out;
-   logic [31:0]   a7_out, b7_out, c7_out, d7_out, e7_out, f7_out, g7_out, h7_out;
-   logic [31:0]   a8_out, b8_out, c8_out, d8_out, e8_out, f8_out, g8_out, h8_out;
-   logic [31:0]   a9_out, b9_out, c9_out, d9_out, e9_out, f9_out, g9_out, h9_out;
-
-   logic [31:0]   a10_out, b10_out, c10_out, d10_out, e10_out, f10_out, g10_out, h10_out;
-   logic [31:0]   a11_out, b11_out, c11_out, d11_out, e11_out, f11_out, g11_out, h11_out;
-   logic [31:0]   a12_out, b12_out, c12_out, d12_out, e12_out, f12_out, g12_out, h12_out;
-   logic [31:0]   a13_out, b13_out, c13_out, d13_out, e13_out, f13_out, g13_out, h13_out;
-   logic [31:0]   a14_out, b14_out, c14_out, d14_out, e14_out, f14_out, g14_out, h14_out;
-   logic [31:0]   a15_out, b15_out, c15_out, d15_out, e15_out, f15_out, g15_out, h15_out;
-   logic [31:0]   a16_out, b16_out, c16_out, d16_out, e16_out, f16_out, g16_out, h16_out;
-   logic [31:0]   a17_out, b17_out, c17_out, d17_out, e17_out, f17_out, g17_out, h17_out;
-   logic [31:0]   a18_out, b18_out, c18_out, d18_out, e18_out, f18_out, g18_out, h18_out;
-   logic [31:0]   a19_out, b19_out, c19_out, d19_out, e19_out, f19_out, g19_out, h19_out;   
-
-   logic [31:0]   a20_out, b20_out, c20_out, d20_out, e20_out, f20_out, g20_out, h20_out;
-   logic [31:0]   a21_out, b21_out, c21_out, d21_out, e21_out, f21_out, g21_out, h21_out;
-   logic [31:0]   a22_out, b22_out, c22_out, d22_out, e22_out, f22_out, g22_out, h22_out;
-   logic [31:0]   a23_out, b23_out, c23_out, d23_out, e23_out, f23_out, g23_out, h23_out;
-   logic [31:0]   a24_out, b24_out, c24_out, d24_out, e24_out, f24_out, g24_out, h24_out;
-   logic [31:0]   a25_out, b25_out, c25_out, d25_out, e25_out, f25_out, g25_out, h25_out;
-   logic [31:0]   a26_out, b26_out, c26_out, d26_out, e26_out, f26_out, g26_out, h26_out;
-   logic [31:0]   a27_out, b27_out, c27_out, d27_out, e27_out, f27_out, g27_out, h27_out;
-   logic [31:0]   a28_out, b28_out, c28_out, d28_out, e28_out, f28_out, g28_out, h28_out;
-   logic [31:0]   a29_out, b29_out, c29_out, d29_out, e29_out, f29_out, g29_out, h29_out;
-
-   logic [31:0]   a30_out, b30_out, c30_out, d30_out, e30_out, f30_out, g30_out, h30_out;
-   logic [31:0]   a31_out, b31_out, c31_out, d31_out, e31_out, f31_out, g31_out, h31_out;
-   logic [31:0]   a32_out, b32_out, c32_out, d32_out, e32_out, f32_out, g32_out, h32_out;
-   logic [31:0]   a33_out, b33_out, c33_out, d33_out, e33_out, f33_out, g33_out, h33_out;
-   logic [31:0]   a34_out, b34_out, c34_out, d34_out, e34_out, f34_out, g34_out, h34_out;
-   logic [31:0]   a35_out, b35_out, c35_out, d35_out, e35_out, f35_out, g35_out, h35_out;
-   logic [31:0]   a36_out, b36_out, c36_out, d36_out, e36_out, f36_out, g36_out, h36_out;
-   logic [31:0]   a37_out, b37_out, c37_out, d37_out, e37_out, f37_out, g37_out, h37_out;
-   logic [31:0]   a38_out, b38_out, c38_out, d38_out, e38_out, f38_out, g38_out, h38_out;
-   logic [31:0]   a39_out, b39_out, c39_out, d39_out, e39_out, f39_out, g39_out, h39_out;
-
-   logic [31:0]   a40_out, b40_out, c40_out, d40_out, e40_out, f40_out, g40_out, h40_out;
-   logic [31:0]   a41_out, b41_out, c41_out, d41_out, e41_out, f41_out, g41_out, h41_out;
-   logic [31:0]   a42_out, b42_out, c42_out, d42_out, e42_out, f42_out, g42_out, h42_out;
-   logic [31:0]   a43_out, b43_out, c43_out, d43_out, e43_out, f43_out, g43_out, h43_out;
-   logic [31:0]   a44_out, b44_out, c44_out, d44_out, e44_out, f44_out, g44_out, h44_out;
-   logic [31:0]   a45_out, b45_out, c45_out, d45_out, e45_out, f45_out, g45_out, h45_out;
-   logic [31:0]   a46_out, b46_out, c46_out, d46_out, e46_out, f46_out, g46_out, h46_out;
-   logic [31:0]   a47_out, b47_out, c47_out, d47_out, e47_out, f47_out, g47_out, h47_out;
-   logic [31:0]   a48_out, b48_out, c48_out, d48_out, e48_out, f48_out, g48_out, h48_out;
-   logic [31:0]   a49_out, b49_out, c49_out, d49_out, e49_out, f49_out, g49_out, h49_out;
-
-   logic [31:0]   a50_out, b50_out, c50_out, d50_out, e50_out, f50_out, g50_out, h50_out;
-   logic [31:0]   a51_out, b51_out, c51_out, d51_out, e51_out, f51_out, g51_out, h51_out;
-   logic [31:0]   a52_out, b52_out, c52_out, d52_out, e52_out, f52_out, g52_out, h52_out;
-   logic [31:0]   a53_out, b53_out, c53_out, d53_out, e53_out, f53_out, g53_out, h53_out;
-   logic [31:0]   a54_out, b54_out, c54_out, d54_out, e54_out, f54_out, g54_out, h54_out;
-   logic [31:0]   a55_out, b55_out, c55_out, d55_out, e55_out, f55_out, g55_out, h55_out;
-   logic [31:0]   a56_out, b56_out, c56_out, d56_out, e56_out, f56_out, g56_out, h56_out;
-   logic [31:0]   a57_out, b57_out, c57_out, d57_out, e57_out, f57_out, g57_out, h57_out;
-   logic [31:0]   a58_out, b58_out, c58_out, d58_out, e58_out, f58_out, g58_out, h58_out;
-   logic [31:0]   a59_out, b59_out, c59_out, d59_out, e59_out, f59_out, g59_out, h59_out;
-
-   logic [31:0]   a60_out, b60_out, c60_out, d60_out, e60_out, f60_out, g60_out, h60_out;
-   logic [31:0]   a61_out, b61_out, c61_out, d61_out, e61_out, f61_out, g61_out, h61_out;
-   logic [31:0]   a62_out, b62_out, c62_out, d62_out, e62_out, f62_out, g62_out, h62_out;
-   logic [31:0]   a63_out, b63_out, c63_out, d63_out, e63_out, f63_out, g63_out, h63_out;
+  
    logic [31:0]   h0, h1, h2, h3, h4, h5, h6, h7;   
 
    prepare p1 (padded[511:480], padded[479:448], padded[447:416],
@@ -138,13 +63,7 @@ module sha256 #(parameter PADDED_SIZE = 512)
 	       padded[319:288], padded[287:256], padded[255:224],
 	       padded[223:192], padded[191:160], padded[159:128],
 	       padded[127:96], padded[95:64], padded[63:32],
-	       padded[31:0], W0, W1, W2, W3, W4, W5, W6, W7, W8, W9,
-	       W10, W11, W12, W13, W14, W15, W16, W17, W18, W19,
-	       W20, W21, W22, W23, W24, W25, W26, W27, W28, W29,
-	       W30, W31, W32, W33, W34, W35, W36, W37, W38, W39,
-	       W40, W41, W42, W43, W44, W45, W46, W47, W48, W49,
-	       W50, W51, W52, W53, W54, W55, W56, W57, W58, W59,
-	       W60, W61, W62, W63);
+	       padded[31:0], W);
 
    assign a = H[255:224];
    assign b = H[223:192];
@@ -176,7 +95,7 @@ K[1599:1568], K[1567:1536], K[1535:1504], K[1503:1472], K[1471:1440], K[1439:140
 K[1343:1312], K[1311:1280], K[1279:1248], K[1247:1216], K[1215:1184], K[1183:1152], K[1151:1120], K[1119:1088], 
 K[1087:1056], K[1055:1024], K[1023:992], K[991:960], K[959:928], K[927:896], K[895:864], K[863:832] K[831:800],
 K[799:768], K[767:736], K[735:704], K[703:672], K[671:640], K[639:608], K[607:576], K[575:544], K[543:512]
- )
+ );
 
  //Make another one for W0-W63
 mux64 #(32) muxW()
