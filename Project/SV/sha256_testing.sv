@@ -16,18 +16,19 @@ module top #(
 );
 
     // Internal signals
-    logic [PADDED_SIZE-1:0] padded;       // Padded message
-    logic [31:0] W [0:63]; 
-    wire [31:0] M [0:15]; 
-    logic [31:0] sigma1_out [16:63];
-    logic [31:0] sigma0_out [16:63];
+    logic [PADDED_SIZE-1:0] padded;       
+    logic [31:0] W; 
+    wire [31:0] M; 
+    logic [31:0] sigma1_out;
+    logic [31:0] sigma0_out;
                   
-    logic [31:0] a, b, c, d, e, f, g, h; // Working variables for SHA-256
-    logic [31:0] Aout, Bout, Cout, Dout, Eout, Fout, Gout, Hout; // Register outputs
-    logic [31:0] a0_out, b0_out, c0_out, d0_out, e0_out, f0_out, g0_out, h0_out; // Computation outputs
-    logic [5:0] count;                     // Round counter
-    logic en;                              // Enable signal from FSM
-    logic [31:0] K_select;                 // Selected constant for the current round
+    logic [31:0] a, b, c, d, e, f, g, h; 
+    logic [31:0] Aout, Bout, Cout, Dout, Eout, Fout, Gout, Hout; 
+    logic [31:0] a0_out, b0_out, c0_out, d0_out, e0_out, f0_out, g0_out, h0_out;
+    logic [5:0] count;                    
+    logic en;                            
+    logic [31:0] K_select;   
+   // logic [31:0] muxAout, muxBout, muxCout, muxDout, muxEout, muxFout, muxGout, muxHout;             
 
     // Initial hash values (H)
     logic [255:0] H_init = {32'h6a09e667, 32'hbb67ae85, 32'h3c6ef372, 32'ha54ff53a,
@@ -60,26 +61,16 @@ module top #(
         .padded(padded)
     );
 
-  
-
-generate
-        genvar i;
-        for (i = 0; i < 16; i++) begin
-            assign M[i] = padded[(i+1)*32-1 -: 32];
-        end
-    endgenerate
 
 
     // Instantiate the Message Schedule (W) module
-    W #(
-        .MSG_SCHEDULE_SIZE(MSG_SCHEDULE_SIZE)
-    ) w_inst (
-        .M(M), 
-    .count(count),       
-    .W(W),           
-    .sigma0_out(sigma0_out), 
-    .sigma1_out(sigma1_out)
-    );
+   // W64 #(32) w_inst (
+     //   .M(M), 
+    //.count(count),       
+    //.W(W),           
+    //.sigma0_out(sigma0_out), 
+    //.sigma1_out(sigma1_out)
+   // );
 
     // Instantiate the FSM for control
     FSM fsm_inst (
@@ -92,14 +83,14 @@ generate
     );
 
     // Instantiate MUXes for inputs to the main computation
-    mux2 #(32) muxA (a, Aout, en, a);
-    mux2 #(32) muxB (b, Bout, en, b);
-    mux2 #(32) muxC (c, Cout, en, c);
-    mux2 #(32) muxD (d, Dout, en, d);
-    mux2 #(32) muxE (e, Eout, en, e);
-    mux2 #(32) muxF (f, Fout, en, f);
-    mux2 #(32) muxG (g, Gout, en, g);
-    mux2 #(32) muxH (h, Hout, en, h);
+   // mux2 #(32) muxA (a, Aout, en, muxAout);
+   // mux2 #(32) muxB (b, Bout, en, muxAout);
+   // mux2 #(32) muxC (c, Cout, en, muxCout);
+   // mux2 #(32) muxD (d, Dout, en, muxDout);
+   // mux2 #(32) muxE (e, Eout, en, muxEout);
+  //  mux2 #(32) muxF (f, Fout, en, muxFout);
+  //  mux2 #(32) muxG (g, Gout, en, muxGout);
+  //  mux2 #(32) muxH (h, Hout, en, muxHout);
 
     // MUX for selecting K constant
    mux64 #(32) muxK (
@@ -124,23 +115,23 @@ generate
 );
 
     // Registers for intermediate values
-    flopenr #(32) regA (clk, reset, en, a0_out, Aout);
-    flopenr #(32) regB (clk, reset, en, b0_out, Bout);
-    flopenr #(32) regC (clk, reset, en, c0_out, Cout);
-    flopenr #(32) regD (clk, reset, en, d0_out, Dout);
-    flopenr #(32) regE (clk, reset, en, e0_out, Eout);
-    flopenr #(32) regF (clk, reset, en, f0_out, Fout);
-    flopenr #(32) regG (clk, reset, en, g0_out, Gout);
-    flopenr #(32) regH (clk, reset, en, h0_out, Hout);
+    flopenr #(32) regA (clk, reset, count, a0_out, Aout);
+    flopenr #(32) regB (clk, reset, count, b0_out, Bout);
+    flopenr #(32) regC (clk, reset, count, c0_out, Cout);
+    flopenr #(32) regD (clk, reset, count, d0_out, Dout);
+    flopenr #(32) regE (clk, reset, count, e0_out, Eout);
+    flopenr #(32) regF (clk, reset, count, f0_out, Fout);
+    flopenr #(32) regG (clk, reset, count, g0_out, Gout);
+    flopenr #(32) regH (clk, reset, count, h0_out, Hout);
 
     // Main computation module
-    main_comp mc_inst (
-        .a_in(a), .b_in(b), .c_in(c), .d_in(d),
-        .e_in(e), .f_in(f), .g_in(g), .h_in(h),
-        .K_in(K_select), .W_in(W[count]),
-        .a_out(a0_out), .b_out(b0_out), .c_out(c0_out), .d_out(d0_out),
-        .e_out(e0_out), .f_out(f0_out), .g_out(g0_out), .h_out(h0_out)
-    );
+   // main_comp mc_inst (
+     //   .a_in(a), .b_in(b), .c_in(c), .d_in(d),
+      //  .e_in(e), .f_in(f), .g_in(g), .h_in(h),
+      //  .K_in(K_select), .W_in(W[count]),
+      //  .a_out(a0_out), .b_out(b0_out), .c_out(c0_out), .d_out(d0_out),
+      //  .e_out(e0_out), .f_out(f0_out), .g_out(g0_out), .h_out(h0_out)
+   // );
 
     // Intermediate hash computation module
 intermediate_hash ih_inst (
@@ -206,15 +197,15 @@ module sha256 #(parameter PADDED_SIZE = 512)
 	    Aout, Bout, Cout, Dout, 
 		Eout, Fout, Gout, Hout; 
    logic [31:0]   h0, h1, h2, h3, h4, h5, h6, h7;   
-   logic [31:0] W [0:63], M [0:15], sigma0_out [16:63], sigma1_out [16:63];
+   logic [31:0] W_selected , K_selected , sigma0_out, sigma1_out;
    logic [5:0] count, index;
 
-   //prepare p1 (padded[511:480], padded[479:448], padded[447:416],
-	      // padded[415:384], padded[383:352], padded[351:320],
-	      // padded[319:288], padded[287:256], padded[255:224],
-	      // padded[223:192], padded[191:160], padded[159:128],
-	      // padded[127:96], padded[95:64], padded[63:32],
-	      // padded[31:0], W );
+   logic [31:0] M ={padded[511:480], padded[479:448], padded[447:416],
+	       padded[415:384], padded[383:352], padded[351:320],
+	       padded[319:288], padded[287:256], padded[255:224],
+	       padded[223:192], padded[191:160], padded[159:128],
+	       padded[127:96], padded[95:64], padded[63:32],
+	       padded[31:0] };
 
    assign a = H[255:224];
    assign b = H[223:192];
@@ -226,6 +217,8 @@ module sha256 #(parameter PADDED_SIZE = 512)
    assign h = H[31:0];
 
    counter64 dut(clk, rst, start, count);
+   W64 dut1( clk,   rst,  start, M , count,    W_selected);
+ FSM dut2( clk, reset, start,index,  en,  done   );
 
 //Muxes
    //s=select -> chooses either first input or outputs to continue with computation
@@ -233,46 +226,52 @@ module sha256 #(parameter PADDED_SIZE = 512)
    //MuxA-Hout -> whichever choice is made with s, (a-h or A-Hout), Whichever path is gone down
    //a-h -> input a, defined before muxes
 
-mux2 #(32) muxA ( a, Aout, en, muxAout);
-mux2 #(32) muxB ( b, Bout, en, muxBout);
-mux2 #(32) muxC ( c, Cout, en, muxCout);
-mux2 #(32) muxD ( d, Dout, en, muxDout);
-mux2 #(32) muxE ( e, Eout, en, muxEout);
-mux2 #(32) muxF ( f, Fout, en, muxFout);
-mux2 #(32) muxG ( g, Gout, en, muxGout);
-mux2 #(32) muxH ( h, Hout, en, muxHout);
+mux2 #(32) muxA ( a, Aout, count, muxAout);
+mux2 #(32) muxB ( b, Bout, count, muxBout);
+mux2 #(32) muxC ( c, Cout, count, muxCout);
+mux2 #(32) muxD ( d, Dout, count, muxDout);
+mux2 #(32) muxE ( e, Eout, count, muxEout);
+mux2 #(32) muxF ( f, Fout, count, muxFout);
+mux2 #(32) muxG ( g, Gout, count, muxGout);
+mux2 #(32) muxH ( h, Hout, count, muxHout);
 
 //needs each K value as an input, counter as s, and output y
 
-mux64 #(32) muxK (K[2047:2016], K[2015:1984], K[1983:1952], K[1951:1920], K[1919:1888], K[1887:1856],
-K[1855:1824], K[1823:1792], K[1791:1760], K[1759:1728], K[1727:1696], K[1695:1664], K[1663:1632], K[1631:1600],
-K[1599:1568], K[1567:1536], K[1535:1504], K[1503:1472], K[1471:1440], K[1439:1408], K[1407:1376], K[1375:1344],
-K[1343:1312], K[1311:1280], K[1279:1248], K[1247:1216], K[1215:1184], K[1183:1152], K[1151:1120], K[1119:1088], 
-K[1087:1056], K[1055:1024], K[1023:992], K[991:960], K[959:928], K[927:896], K[895:864], K[863:832], K[831:800],
-K[799:768], K[767:736], K[735:704], K[703:672], K[671:640], K[639:608], K[607:576], K[575:544], K[543:512], en, K);
+mux64 #(32) muxK (
+    K[2047:2016], K[2015:1984], K[1983:1952], K[1951:1920], K[1919:1888], K[1887:1856],
+    K[1855:1824], K[1823:1792], K[1791:1760], K[1759:1728], K[1727:1696], K[1695:1664],
+    K[1663:1632], K[1631:1600], K[1599:1568], K[1567:1536], K[1535:1504], K[1503:1472],
+    K[1471:1440], K[1439:1408], K[1407:1376], K[1375:1344], K[1343:1312], K[1311:1280],
+    K[1279:1248], K[1247:1216], K[1215:1184], K[1183:1152], K[1151:1120], K[1119:1088],
+    K[1087:1056], K[1055:1024], K[1023:992],  K[991:960],  K[959:928],  K[927:896],
+    K[895:864],  K[863:832],  K[831:800],    K[799:768],  K[767:736],  K[735:704],
+    K[703:672],  K[671:640],  K[639:608],    K[607:576],  K[575:544],  K[543:512],
+    K[511:480],  K[479:448],  K[447:416],    K[415:384],  K[383:352],  K[351:320],
+    K[319:288],  K[287:256],  K[255:224],    K[223:192],  K[191:160],  K[159:128],
+    K[127:96],   K[95:64],    K[63:32],      K[31:0],   32'b00000,  
+    count,      // Select signal for the mux
+    K_selected        // Output of the mux
+);
 
- //Make another one for W0-W63
-
-//mux64 #(32) muxW (M, W, en, muxWout);
 
 
 main_comp mc01 (muxAout, muxBout, muxCout, muxDout, 
 		muxEout, muxFout, muxGout, muxHout, 
-		K, W,
+		K_selected, W_selected,
 	    Aout, Bout, Cout, Dout, 
 		Eout, Fout, Gout, Hout);
 
 
 
 //registers
-flopenr #(32) instanceA(clk, reset, en, a0_out, Aout);
-flopenr #(32) instanceB(clk, reset, en, b0_out, Bout);
-flopenr #(32) instanceC(clk, reset, en, c0_out, Cout);
-flopenr #(32) instanceD(clk, reset, en, d0_out, Dout);
-flopenr #(32) instanceE(clk, reset, en, e0_out, Eout);
-flopenr #(32) instanceF(clk, reset, en, f0_out, Fout);
-flopenr #(32) instanceG(clk, reset, en, g0_out, Gout);
-flopenr #(32) instanceH(clk, reset, en, h0_out, Hout);
+flopenr #(32) instanceA(clk, reset, count, a0_out, Aout);
+flopenr #(32) instanceB(clk, reset, count, b0_out, Bout);
+flopenr #(32) instanceC(clk, reset, count, c0_out, Cout);
+flopenr #(32) instanceD(clk, reset, count, d0_out, Dout);
+flopenr #(32) instanceE(clk, reset, count, e0_out, Eout);
+flopenr #(32) instanceF(clk, reset, count, f0_out, Fout);
+flopenr #(32) instanceG(clk, reset, count, g0_out, Gout);
+flopenr #(32) instanceH(clk, reset, count, h0_out, Hout);
 
 
 
@@ -500,28 +499,46 @@ endmodule // sigma1
      
    
 
-module W
- #(MSG_SCHEDULE_SIZE = 64)
- (input wire [31:0] M [0:15], input logic [5:0] count,
-  output logic [31:0] W [0:63], sigma0_out [16:63], sigma1_out [16:63]);
+module W64 (
+    input  logic clk,          
+    input  logic rst,             
+    input  logic start,         
+    input  logic [31:0] M , 
+    input  logic [5:0] count,   
+    output logic [31:0] W_selected);
 
-   genvar i;
+    // Internal registers for W values
+    logic [31:0] W_reg [0:63];
+    logic [31:0] sigma0_out, sigma1_out;
 
-   generate
+    // Instantiate sigma0 and sigma1 modules
+    sigma0 sig0_inst (.x(W_reg[count - 15]), .sig0(sigma0_out));
+    sigma1 sig1_inst (.x(W_reg[count - 2]), .sig1(sigma1_out));
 
-      for (i = 0; i < 16; i = i + 1) begin
-        assign W[i] = M[i ];
-      end
+    // Combinational logic to compute W
+    always_comb begin
+        if (count < 16) begin
+            W_selected = M[count]; // Use the initial message words
+        end else begin
+            W_selected = sigma1_out + W_reg[count - 7] + sigma0_out + W_reg[count - 16];
+        end
+    end
 
-	for (i = 16; i < 64; i = i + 1) begin
-	 sigma1 sig1_inst (.x(W[i-2]), .sig1(sigma1_out[i])); // σ1(W[i-2])
-         sigma0 sig0_inst (.x(W[i-15]), .sig0(sigma0_out[i])); // σ0(W[i-15])
-         assign W[i] = sigma1_out[i] + W[i-7] + sigma0_out[i] + W[i-16];
-      end
-   endgenerate
+    // Sequential logic to update W_reg
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) begin
+            // Reset W registers
+            for (int i = 0; i < 64; i++) begin
+                W_reg[i] <= 32'b0;
+            end
+        end else if (start) begin
+            // Update the W registers on start
+            if (count < 16) begin
+                W_reg[count] <= M[count];
+            end else begin
+                W_reg[count] <= W_selected; // Store the computed W value
+            end
+        end
+    end
 
 endmodule
-
-
-
-

@@ -13,7 +13,7 @@
 # //
 # do sha256.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:56 on Nov 16,2024
+# Start time: 15:47:42 on Nov 17,2024
 # vlog -reportprogress 300 sha256_testing.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -27,43 +27,42 @@
 # -- Compiling module sigma0
 # -- Compiling module Sigma1
 # -- Compiling module sigma1
-# -- Compiling module W
-# ** Warning: sha256_testing.sv(505): (vlog-13314) Defaulting port 'M' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# -- Compiling module W64
 # 
 # Top level modules:
 # 	top
 # 	sha256
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 15:47:43 on Nov 17,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:43 on Nov 17,2024
 # vlog -reportprogress 300 sha256_tb_testing.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 15:47:43 on Nov 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:43 on Nov 17,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 15:47:43 on Nov 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:43 on Nov 17,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 15:47:43 on Nov 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:43 on Nov 17,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -81,255 +80,29 @@
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 15:47:43 on Nov 17,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:43 on Nov 17,2024
 # vlog -reportprogress 300 flopr.sv 
 # -- Compiling module flopr
 # 
 # Top level modules:
 # 	flopr
-# End time: 19:40:57 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 15:47:44 on Nov 17,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 19:40:57 on Nov 16,2024
+# Start time: 15:47:44 on Nov 17,2024
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: sha256_testing.sv(505): (vopt-13314) Defaulting port 'M' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
 # Loading work.sha_padder(fast)
-# Loading work.counter64(fast)
-# Loading work.W(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
 # Loading work.FSM(fast)
-# Loading work.mux2(fast)
 # Loading work.mux64(fast)
 # Loading work.flopenr(fast)
-# Loading work.main_comp(fast)
-# Loading work.Sigma1(fast)
-# Loading work.Sigma0(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.intermediate_hash(fast)
-# ** Error (suppressible): (vsim-3839) Variable '/stimulus/dut/count', driven via a port connection, is multiply driven. See sha256_testing.sv(63).
-#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/fsm_inst File: sha256_testing.sv Line: 85
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./sha256.do PAUSED at line 35
-do sha256.do
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:56 on Nov 16,2024
-# vlog -reportprogress 300 sha256_testing.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module FSM
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module W
-# ** Warning: sha256_testing.sv(505): (vlog-13314) Defaulting port 'M' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	top
-# 	sha256
-# End time: 19:41:56 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:56 on Nov 16,2024
-# vlog -reportprogress 300 sha256_tb_testing.sv 
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 19:41:56 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:56 on Nov 16,2024
-# vlog -reportprogress 300 flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 19:41:56 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:56 on Nov 16,2024
-# vlog -reportprogress 300 counter.sv 
-# -- Compiling module counter64
-# 
-# Top level modules:
-# 	counter64
-# End time: 19:41:56 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:56 on Nov 16,2024
-# vlog -reportprogress 300 mux.sv 
-# -- Compiling module mux2
-# -- Compiling module mux3
-# -- Compiling module mux4
-# -- Compiling module mux5
-# -- Compiling module mux6
-# -- Compiling module mux16
-# -- Compiling module mux64
-# 
-# Top level modules:
-# 	mux2
-# 	mux3
-# 	mux4
-# 	mux5
-# 	mux6
-# 	mux16
-# 	mux64
-# End time: 19:41:57 on Nov 16,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:41:57 on Nov 16,2024
-# vlog -reportprogress 300 flopr.sv 
-# -- Compiling module flopr
-# 
-# Top level modules:
-# 	flopr
-# End time: 19:41:57 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 19:40:57 on Nov 16,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: sha256_testing.sv(505): (vopt-13314) Defaulting port 'M' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=2.
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.sha_padder(fast)
-# Loading work.W(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.FSM(fast)
-# Loading work.mux2(fast)
-# Loading work.mux64(fast)
-# Loading work.flopenr(fast)
-# Loading work.main_comp(fast)
-# Loading work.Sigma1(fast)
-# Loading work.Sigma0(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
 # Loading work.intermediate_hash(fast)
 # .main_pane.wave.interior.cs.body.pw.wf
-do sha256.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is User@EMELIA-LAPTOP.
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:38 on Nov 16,2024
-# vlog -reportprogress 300 sha256_testing.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module FSM
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module W
-# 
-# Top level modules:
-# 	top
-# 	sha256
-# End time: 19:43:38 on Nov 16,2024, Elapsed time: 0:00:00
+# End time: 16:34:34 on Nov 17,2024, Elapsed time: 0:46:50
 # Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:38 on Nov 16,2024
-# vlog -reportprogress 300 sha256_tb_testing.sv 
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 19:43:38 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:39 on Nov 16,2024
-# vlog -reportprogress 300 flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 19:43:39 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:39 on Nov 16,2024
-# vlog -reportprogress 300 counter.sv 
-# -- Compiling module counter64
-# 
-# Top level modules:
-# 	counter64
-# End time: 19:43:39 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:39 on Nov 16,2024
-# vlog -reportprogress 300 mux.sv 
-# -- Compiling module mux2
-# -- Compiling module mux3
-# -- Compiling module mux4
-# -- Compiling module mux5
-# -- Compiling module mux6
-# -- Compiling module mux16
-# -- Compiling module mux64
-# 
-# Top level modules:
-# 	mux2
-# 	mux3
-# 	mux4
-# 	mux5
-# 	mux6
-# 	mux16
-# 	mux64
-# End time: 19:43:39 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 19:43:39 on Nov 16,2024
-# vlog -reportprogress 300 flopr.sv 
-# -- Compiling module flopr
-# 
-# Top level modules:
-# 	flopr
-# End time: 19:43:39 on Nov 16,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:43:40 on Nov 16,2024, Elapsed time: 0:02:43
-# Errors: 1, Warnings: 2
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 19:43:40 on Nov 16,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.sha_padder(fast)
-# Loading work.W(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.FSM(fast)
-# Loading work.mux2(fast)
-# Loading work.mux64(fast)
-# Loading work.flopenr(fast)
-# Loading work.main_comp(fast)
-# Loading work.Sigma1(fast)
-# Loading work.Sigma0(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
