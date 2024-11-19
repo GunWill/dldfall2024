@@ -13,7 +13,7 @@
 # //
 # do sha256_T.do
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:23:54 on Nov 19,2024
+# Start time: 13:16:59 on Nov 19,2024
 # vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -32,10 +32,10 @@
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:23:54 on Nov 19,2024, Elapsed time: 0:00:00
+# End time: 13:16:59 on Nov 19,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:23:55 on Nov 19,2024
+# Start time: 13:16:59 on Nov 19,2024
 # vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
 # -- Compiling module counter64
 # -- Compiling module flopenr
@@ -57,10 +57,10 @@
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 12:23:55 on Nov 19,2024, Elapsed time: 0:00:00
+# End time: 13:17:00 on Nov 19,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:23:55 on Nov 19,2024
+# Start time: 13:17:00 on Nov 19,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
 # Loading sv_std.std
@@ -82,325 +82,1866 @@
 # Loading work.Sigma1(fast)
 # Loading work.intermediate_hash(fast)
 # .main_pane.wave.interior.cs.body.pw.wf
-# Time: 0 | State: x | index: x | Start: x | Reset: x | En: 0 | Done: 0
-# Time: 10000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
-# Time: 20000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
-# Time: 30000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
-#############  Autofindloop Analysis  ###############
-#############  Loop found at time 30 ns ###############
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#189 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St0 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#22 @ sub-iteration 0 at Value St1 (sha256_T.sv:127)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#185 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St0 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#10 @ sub-iteration 0 at Value St1 (sha256_T.sv:123)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#188 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St1 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#19 @ sub-iteration 0 at Value St0 (sha256_T.sv:126)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#184 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St1 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#7 @ sub-iteration 0 at Value St0 (sha256_T.sv:122)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#187 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St1 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#16 @ sub-iteration 0 at Value St0 (sha256_T.sv:125)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#183 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St1 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#4 @ sub-iteration 0 at Value St0 (sha256_T.sv:121)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St0 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#186 @ sub-iteration 0 at Value St1 (sha256_T.sv:198)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St1 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St1 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St0 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St1 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St1 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#13 @ sub-iteration 0 at Value St1 (sha256_T.sv:124)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St0 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#182 @ sub-iteration 0 at Value St1 (sha256_T.sv:197)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St0 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#       Signal: /stimulus/dut/main/#implicit-wire#1 @ sub-iteration 0 at Value St1 (sha256_T.sv:120)
-#   Active process: /stimulus/dut/main/muxA/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:120
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#248 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxE/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:124
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#252 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxB/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:121
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#249 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxF/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:125
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#253 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxC/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:122
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#250 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxG/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:126
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#254 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxD/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:123
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#251 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/muxH/#ASSIGN#34 @ sub-iteration 1
-#     Source: sha256_T.sv:127
-#   Active process: /stimulus/dut/main/ih1/#ASSIGN#255 @ sub-iteration 1
-#     Source: sha256_T.sv:197
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxAout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxEout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxBout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxFout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxCout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxGout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxDout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#IMPLICIT-WIRE(muxHout)#191 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/main/#ASSIGN#202 @ sub-iteration 1
-#     Source: sha256_T.sv:13
-#   Active process: /stimulus/dut/#IMPLICIT-WIRE(hashed)#4 @ sub-iteration 1
-#     Source: sha256_tb_T.sv:20
-# End time: 12:25:11 on Nov 19,2024, Elapsed time: 0:01:16
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:18:44 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:18:44 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:18:44 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:18:44 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:18:45 on Nov 19,2024, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:18:45 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:31:38 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# ** Error: sha256_T.sv(203): (vlog-13282) 'regA' already declared in this scope.
+# ** Error: sha256_T.sv(204): (vlog-13282) 'regB' already declared in this scope.
+# ** Error: sha256_T.sv(205): (vlog-13282) 'regC' already declared in this scope.
+# ** Error: sha256_T.sv(206): (vlog-13282) 'regD' already declared in this scope.
+# ** Error: sha256_T.sv(207): (vlog-13282) 'regE' already declared in this scope.
+# ** Error: sha256_T.sv(208): (vlog-13282) 'regF' already declared in this scope.
+# ** Error: sha256_T.sv(209): (vlog-13282) 'regG' already declared in this scope.
+# ** Error: sha256_T.sv(210): (vlog-13282) 'regH' already declared in this scope.
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# End time: 13:31:39 on Nov 19,2024, Elapsed time: 0:00:01
+# Errors: 8, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:32:20 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:32:20 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:32:20 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:32:20 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:32:21 on Nov 19,2024, Elapsed time: 0:13:36
+# Errors: 1, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:32:21 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut01'.  Expected 7, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/dut01 File: sha256_T.sv Line: 174
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en2'.
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 45000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 55000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 65000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 75000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 85000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 95000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 105000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 115000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 125000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 135000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 145000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 155000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 165000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 175000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 185000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 195000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 205000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 215000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 225000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 235000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 245000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 255000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 265000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 275000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 285000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 295000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 305000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 315000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 325000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 335000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 345000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 355000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 365000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 375000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 385000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 395000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 405000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 415000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 425000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 435000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 445000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 455000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 465000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 475000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 485000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 495000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 505000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 515000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 525000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 535000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 545000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 555000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 565000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 575000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 585000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 595000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 605000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 615000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 625000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 635000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 645000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 655000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 665000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 675000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 685000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 695000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:33:11 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha256_tb_T.sv(82): near "=": syntax error, unexpected '='.
+# ** Error: sha256_tb_T.sv(82): (vlog-13205) Syntax error found in the scope following 'start'. Is there a missing '::'?
+# End time: 13:33:11 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:33:55 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha256_tb_T.sv(84): near "end": syntax error, unexpected end.
+# End time: 13:33:55 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:36:32 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# ** Error: (vlog-13069) sha256_T.sv(628): near ")": syntax error, unexpected ')', expecting IDENTIFIER.
+# -- Compiling module stimulus
+# End time: 13:36:32 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:37:28 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# ** Error: (vlog-13069) sha256_T.sv(628): near ")": syntax error, unexpected ')', expecting IDENTIFIER.
+# -- Compiling module stimulus
+# End time: 13:37:28 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:37:55 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# ** Error: (vlog-13069) sha256_T.sv(628): near ")": syntax error, unexpected ')', expecting IDENTIFIER.
+# -- Compiling module stimulus
+# End time: 13:37:55 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:38:18 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:38:18 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:38:18 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:38:18 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:38:19 on Nov 19,2024, Elapsed time: 0:05:58
+# Errors: 5, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:38:19 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut01'.  Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/dut01 File: sha256_T.sv Line: 174
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en2'.
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en0'.
+# .main_pane.wave.interior.cs.body.pw.wf
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:39:38 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:39:38 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:39:38 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:39:38 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:39:39 on Nov 19,2024, Elapsed time: 0:01:20
+# Errors: 0, Warnings: 3
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:39:39 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut01'.  Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/dut01 File: sha256_T.sv Line: 174
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en2'.
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en0'.
+# .main_pane.wave.interior.cs.body.pw.wf
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:40:22 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:40:22 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:40:22 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:40:22 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:40:23 on Nov 19,2024, Elapsed time: 0:00:44
+# Errors: 0, Warnings: 3
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:40:23 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut01'.  Expected 8, found 6.
+#    Time: 0 ps  Iteration: 0  Instance: /stimulus/dut/main/dut01 File: sha256_T.sv Line: 174
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en2'.
+# ** Warning: (vsim-3722) sha256_T.sv(174): [TFMPC] - Missing connection for port 'en0'.
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:42:57 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:42:57 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:42:57 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:42:57 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:42:58 on Nov 19,2024, Elapsed time: 0:02:35
+# Errors: 0, Warnings: 3
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:42:58 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:43:40 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:43:40 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:43:40 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:43:40 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:43:41 on Nov 19,2024, Elapsed time: 0:00:43
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:43:41 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:44:48 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha256_tb_T.sv(82): near "#": syntax error, unexpected '#'.
+# End time: 13:44:48 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:45:24 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha256_tb_T.sv(57): near "#": syntax error, unexpected '#'.
+# End time: 13:45:25 on Nov 19,2024, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:45:56 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# ** Error: (vlog-13069) sha256_tb_T.sv(88): near "end": syntax error, unexpected end.
+# End time: 13:45:56 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 26
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog sha256_T.sv sha256_tb_T.sv "
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:46:07 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:46:07 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:46:07 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:46:07 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:46:08 on Nov 19,2024, Elapsed time: 0:02:27
+# Errors: 3, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:46:08 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 0 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+# Time: 695000 | State: 0 | index: 0 | Start: 0 | Reset: 0 | En: 0 | Done: 0
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:46:35 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:46:35 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:46:35 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:46:35 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:46:36 on Nov 19,2024, Elapsed time: 0:00:28
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:46:36 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:47:53 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:47:53 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:47:53 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:47:53 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:47:54 on Nov 19,2024, Elapsed time: 0:01:18
+# Errors: 0, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:47:54 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "FSM(fast)".
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:49:49 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:49:49 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:49:49 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# ** Error: mux.sv(34): (vlog-2730) Undefined variable: 's'.
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# End time: 13:49:49 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/modeltech64_2021.3/win64/vlog failed.
+# Error in macro ./sha256_T.do line 27
+# C:/modeltech64_2021.3/win64/vlog failed.
+#     while executing
+# "vlog counter.sv flopenr.sv mux.sv"
+do sha256_T.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is ekravch@CEAT-ENDV350-01.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:50:11 on Nov 19,2024
+# vlog -reportprogress 300 sha256_T.sv sha256_tb_T.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module Sigma1
+# -- Compiling module prepare
+# -- Compiling module sigma0
+# -- Compiling module sigma1
+# -- Compiling module FSM
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:50:11 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:50:11 on Nov 19,2024
+# vlog -reportprogress 300 counter.sv flopenr.sv mux.sv 
+# -- Compiling module counter64
+# -- Compiling module flopenr
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	counter64
+# 	flopenr
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:50:11 on Nov 19,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:50:12 on Nov 19,2024, Elapsed time: 0:02:18
+# Errors: 1, Warnings: 0
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:50:12 on Nov 19,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux2(fast)
+# Loading work.mux64(fast)
+# Loading work.flopenr(fast)
+# Loading work.FSM(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# Time: 5000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 15000 | State: 0 | index: 0 | Start: 0 | Reset: 1 | En: 0 | Done: 0
+# Time: 25000 | State: 0 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 0
+# Time: 35000 | State: 1 | index: 0 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 45000 | State: 1 | index: 1 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 55000 | State: 1 | index: 2 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 65000 | State: 1 | index: 3 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 75000 | State: 1 | index: 4 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 85000 | State: 1 | index: 5 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 95000 | State: 1 | index: 6 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 105000 | State: 1 | index: 7 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 115000 | State: 1 | index: 8 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 125000 | State: 1 | index: 9 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 135000 | State: 1 | index: 10 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 145000 | State: 1 | index: 11 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 155000 | State: 1 | index: 12 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 165000 | State: 1 | index: 13 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 175000 | State: 1 | index: 14 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 185000 | State: 1 | index: 15 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 195000 | State: 1 | index: 16 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 205000 | State: 1 | index: 17 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 215000 | State: 1 | index: 18 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 225000 | State: 1 | index: 19 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 235000 | State: 1 | index: 20 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 245000 | State: 1 | index: 21 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 255000 | State: 1 | index: 22 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 265000 | State: 1 | index: 23 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 275000 | State: 1 | index: 24 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 285000 | State: 1 | index: 25 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 295000 | State: 1 | index: 26 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 305000 | State: 1 | index: 27 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 315000 | State: 1 | index: 28 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 325000 | State: 1 | index: 29 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 335000 | State: 1 | index: 30 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 345000 | State: 1 | index: 31 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 355000 | State: 1 | index: 32 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 365000 | State: 1 | index: 33 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 375000 | State: 1 | index: 34 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 385000 | State: 1 | index: 35 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 395000 | State: 1 | index: 36 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 405000 | State: 1 | index: 37 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 415000 | State: 1 | index: 38 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 425000 | State: 1 | index: 39 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 435000 | State: 1 | index: 40 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 445000 | State: 1 | index: 41 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 455000 | State: 1 | index: 42 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 465000 | State: 1 | index: 43 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 475000 | State: 1 | index: 44 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 485000 | State: 1 | index: 45 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 495000 | State: 1 | index: 46 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 505000 | State: 1 | index: 47 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 515000 | State: 1 | index: 48 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 525000 | State: 1 | index: 49 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 535000 | State: 1 | index: 50 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 545000 | State: 1 | index: 51 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 555000 | State: 1 | index: 52 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 565000 | State: 1 | index: 53 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 575000 | State: 1 | index: 54 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 585000 | State: 1 | index: 55 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 595000 | State: 1 | index: 56 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 605000 | State: 1 | index: 57 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 615000 | State: 1 | index: 58 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 625000 | State: 1 | index: 59 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 635000 | State: 1 | index: 60 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 645000 | State: 1 | index: 61 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 655000 | State: 1 | index: 62 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 665000 | State: 1 | index: 63 | Start: 1 | Reset: 0 | En: 1 | Done: 0
+# Time: 675000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 685000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# Time: 695000 | State: 2 | index: 0 | Start: 1 | Reset: 0 | En: 0 | Done: 1
+# End time: 13:51:32 on Nov 19,2024, Elapsed time: 0:01:20
 # Errors: 0, Warnings: 0

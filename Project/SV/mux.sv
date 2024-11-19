@@ -28,10 +28,10 @@
 
 module mux2 #(parameter WIDTH = 32) (
   input  logic [WIDTH-1:0] d0, d1, 
-  input  logic             s, 
+  input  logic             [5:0] index, 
   output logic [WIDTH-1:0] y);
 
-  assign y = s ? d1 : d0; 
+  assign y = index ? d1 : d0; 
 endmodule
 
 module mux3 #(parameter WIDTH = 8) (
@@ -85,8 +85,7 @@ module mux64 #(parameter WIDTH = 32)
     d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24,
     d25, d26, d27, d28, d29, d30, d31, d32, d33, d34, d35, d36, d37, d38, 
     d39, d40, d41, d42, d43, d44, d45, d46, d47, d48, d49, d50, d51, d52,
-    d53, d54, d55, d56, d57, d58, d59, d60, d61, d62, d63, d64, input [5:0] count,
-    output logic [31:0] y);
+    d53, d54, d55, d56, d57, d58, d59, d60, d61, d62, d63,  input logic [5:0] count, output logic [31:0] y);
 
    always_comb
      case(count)
@@ -154,6 +153,6 @@ module mux64 #(parameter WIDTH = 32)
        6'b111101: y = d61;
        6'b111110: y = d62;
        6'b111111: y = d63;
-       default: y = d64;
+       default: y = 'x;
      endcase // case (s)
 endmodule // mux16

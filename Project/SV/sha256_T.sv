@@ -68,7 +68,7 @@ module sha256 #(parameter PADDED_SIZE = 512)
 
     //counter64 inst(clk, rst, start, count);
 
-   logic en, done;
+   logic en, en2, done;
    logic [5:0]  index;
    logic [31:0]   a, b, c, d, e, f, g, h;
    logic [31:0]   a_out, b_out, c_out, d_out, e_out, f_out, g_out, h_out;
@@ -79,6 +79,7 @@ module sha256 #(parameter PADDED_SIZE = 512)
    logic [31:0]   muxAout, muxBout, muxCout, muxDout, muxEout, muxFout, muxGout, muxHout;
 
    logic [31:0] h0, h1, h2, h3, h4, h5, h6, h7;
+   logic [31:0] h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q;
    logic [31:0] K_selected, W_selected;
 
 
@@ -117,14 +118,14 @@ module sha256 #(parameter PADDED_SIZE = 512)
    //these are the muxes for initially choosing between a and a_out (round 0 or round 1-63)
    //muxes choose between a and a_out, if en=0 (rounds havent started, a is chosen)
 
-mux2 #(32) muxA ( a, a_out, en, muxAout);
-mux2 #(32) muxB ( b, b_out, en, muxBout);
-mux2 #(32) muxC ( c, c_out, en, muxCout);
-mux2 #(32) muxD ( d, d_out, en, muxDout);
-mux2 #(32) muxE ( e, e_out, en, muxEout);
-mux2 #(32) muxF ( f, f_out, en, muxFout);
-mux2 #(32) muxG ( g, g_out, en, muxGout);
-mux2 #(32) muxH ( h, h_out, en, muxHout);
+mux2 #(32) muxA ( a, flopA, index, muxAout);
+mux2 #(32) muxB ( b, flopB, index, muxBout);
+mux2 #(32) muxC ( c, flopC, index, muxCout);
+mux2 #(32) muxD ( d, flopD, index, muxDout);
+mux2 #(32) muxE ( e, flopE, index, muxEout);
+mux2 #(32) muxF ( f, flopF, index, muxFout);
+mux2 #(32) muxG ( g, flopG, index, muxGout);
+mux2 #(32) muxH ( h, flopH, index, muxHout);
 
 //needs each K value as an input, counter as s, and output y
 
@@ -135,7 +136,7 @@ mux64 #(32) muxW (
                W30, W31, W32, W33, W34, W35, W36, W37, W38, W39,
                W40, W41, W42, W43, W44, W45, W46, W47, W48, W49,
                W50, W51, W52, W53, W54, W55, W56, W57, W58, W59,
-               W60, W61, W62, W63,   32'b0,  
+               W60, W61, W62, W63,    
     index,  
     W_selected 
 );
@@ -151,7 +152,7 @@ mux64 #(32) muxK (
     K[703:672],  K[671:640],  K[639:608],    K[607:576],  K[575:544],  K[543:512],
     K[511:480],  K[479:448],  K[447:416],    K[415:384],  K[383:352],  K[351:320],
     K[319:288],  K[287:256],  K[255:224],    K[223:192],  K[191:160],  K[159:128],
-    K[127:96],   K[95:64],    K[63:32],      K[31:0],   32'b0,  
+    K[127:96],   K[95:64],    K[63:32],      K[31:0],  
     index,  
     K_selected 
 );
@@ -170,7 +171,7 @@ mux64 #(32) muxK (
     flopenr #(32) regH (clk, reset, en, h_out,  flopH);
 
 
-FSM dut01(clk,reset,start,index,  en,    done  );
+FSM dut01(~clk,reset,start,index,  en,  done , en2, en0);
    
 
 
@@ -199,7 +200,16 @@ FSM dut01(clk,reset,start,index,  en,    done  );
 			  a, b, c, d, e, f, g, h,
 			  h0, h1, h2, h3, h4, h5, h6, h7);
 
-	assign hashed ={h0, h1, h2, h3, h4, h5, h6, h7};
+    flopenr #(32) regH0 (clk, reset, en2, h0,  h0_q);
+    flopenr #(32) regH1 (clk, reset, en2, h1,  h1_q );
+    flopenr #(32) regH2 (clk, reset, en2, h2,  h2_q );
+    flopenr #(32) regH3 (clk, reset, en2, h3,  h3_q );
+    flopenr #(32) regH4 (clk, reset, en2, h4,  h4_q );
+    flopenr #(32) regH5 (clk, reset, en2, h5,  h5_q);
+    flopenr #(32) regH6 (clk, reset, en2, h6,  h6_q );
+    flopenr #(32) regH7 (clk, reset, en2, h7,  h7_q);
+
+	assign hashed ={h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q};
 
 endmodule // sha_main
 
@@ -613,9 +623,7 @@ module FSM (
     input logic reset,
     input logic start,
     output logic [5:0] index,
-    output logic en, done
-
-);
+    output logic en, done, en2, en0);
 
    typedef enum logic [1:0] {S0, S1, S2} statetype;
    statetype state, nextstate;
@@ -649,10 +657,16 @@ module FSM (
            end
            S1: begin
                en = 1'b1;
+               en0 = 1'b1;
+               en2 = 1'b0;
                if (index == 6'd63) nextstate = S2;
+               else nextstate = S1;
            end
            S2: begin
                done = 1'b1;
+               en2 = 1'b1;
+               en =1'b0;
+               en0=1'b0;
                if (!start) nextstate = S0;
            end
        endcase
@@ -661,9 +675,12 @@ module FSM (
   // assign index = count;
 
    // Debugging output
-   always_ff @(posedge clk) begin
+  always_ff @(posedge clk) 
+   begin
+
        $display("Time: %0t | State: %0d | index: %0d | Start: %b | Reset: %b | En: %b | Done: %b",
                 $time, state, index, start, reset, en, done);
+
    end
 
 endmodule

@@ -41,7 +41,7 @@ add wave -noupdate -expand -group tb /stimulus/message
 add wave -noupdate -expand -group tb /stimulus/reset
 add wave -noupdate -expand -group tb /stimulus/start
 add wave -noupdate -expand -group tb /stimulus/clk
-add wave -noupdate -expand -group tb /stimulus/en
+
 
 add wave -noupdate -divider -height 32 "padded"
 add wave -noupdate -expand -group padded /stimulus/dut/padder/*
