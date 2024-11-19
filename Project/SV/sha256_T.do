@@ -23,7 +23,7 @@ if [file exists work] {
 }
 vlib work
 # compile source files
-vlog sha256_stub_CORRECT.sv sha256_tb_tv_CORRECT.sv 
+vlog sha256_T.sv sha256_tb_T.sv 
 vlog counter.sv flopenr.sv mux.sv
 
 # start and run simulation
@@ -88,11 +88,14 @@ add wave /stimulus/dut/main/dut01/*
 #add wave -noupdate -divider -height 32 "sha256 counter64"
 #add wave /stimulus/dut/main/dut/*
 
-add wave -noupdate -divider -height 32 "sha256 W64"
-add wave /stimulus/dut/main/W_gen/*
+#add wave -noupdate -divider -height 32 "sha256 W64"
+#add wave /stimulus/dut/main/W_gen/*
 
 add wave -noupdate -divider -height 32 "sha256 muxK"
 add wave /stimulus/dut/main/muxK/*
+
+add wave -noupdate -divider -height 32 "sha256 muxW"
+add wave /stimulus/dut/main/muxW/*
 
 add wave -noupdate -divider -height 32 "sha256 muxA"
 add wave /stimulus/dut/main/muxA/*

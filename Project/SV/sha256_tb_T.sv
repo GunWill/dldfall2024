@@ -39,7 +39,7 @@ end
      #0  start = 1'b0;
  
 	#20  reset = 1'b0;
-  #0 en =1;
+  
 #0 start = 1'b1; // Trigger FSM start
 
 
