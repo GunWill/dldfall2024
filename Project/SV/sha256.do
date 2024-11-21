@@ -23,8 +23,8 @@ if [file exists work] {
 }
 vlib work
 # compile source files
-vlog sha256_testing.sv
-vlog sha256_tb_testing.sv
+vlog sha256.sv
+vlog tb_sha256.sv
 vlog flopenr.sv
 vlog counter.sv
 vlog mux.sv

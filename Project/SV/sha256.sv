@@ -4,15 +4,17 @@
 
 module top #(parameter MSG_SIZE = 120,
 	     parameter PADDED_SIZE = 512)
-   (input logic [MSG_SIZE-1:0] message,
+   (input logic [MSG_SIZE-1:0] message, input logic clk, reset, start,
     output logic [255:0] hashed);
-
+logic count;
+sha256_fsm inst2(clk, reset, start, count, en, done, init);
    logic [PADDED_SIZE-1:0] padded;
-   counter instance(clk, rst, start, count);
+   counter64 inst(clk, rst, start, count);
    sha_padder #(.MSG_SIZE(MSG_SIZE), .PADDED_SIZE(PADDED_SIZE)) padder (.message(message), .padded(padded));
    sha256 #(.PADDED_SIZE(PADDED_SIZE)) main (.padded(padded), .hashed(hashed));
    
 endmodule // sha_256
+
 
 module sha_padder #(parameter MSG_SIZE = 24,
 		    parameter PADDED_SIZE = 512) 
@@ -63,7 +65,13 @@ module sha256 #(parameter PADDED_SIZE = 512)
 	       padded[319:288], padded[287:256], padded[255:224],
 	       padded[223:192], padded[191:160], padded[159:128],
 	       padded[127:96], padded[95:64], padded[63:32],
-	       padded[31:0], W);
+	       padded[31:0], W0, W1, W2, W3, W4, W5, W6, W7, W8, W9,
+               W10, W11, W12, W13, W14, W15, W16, W17, W18, W19,
+               W20, W21, W22, W23, W24, W25, W26, W27, W28, W29,
+               W30, W31, W32, W33, W34, W35, W36, W37, W38, W39,
+               W40, W41, W42, W43, W44, W45, W46, W47, W48, W49,
+               W50, W51, W52, W53, W54, W55, W56, W57, W58, W59,
+               W60, W61, W62, W63);
 
    assign a = H[255:224];
    assign b = H[223:192];
@@ -74,6 +82,27 @@ module sha256 #(parameter PADDED_SIZE = 512)
    assign g = H[63:32];
    assign h = H[31:0];
 
+logic [31:0] Aout;
+logic [31:0] Bout;
+logic [31:0] Cout;
+logic [31:0] Dout;
+logic [31:0] Eout;
+logic [31:0] Fout;
+logic [31:0] Gout;
+logic [31:0] Hout;
+
+logic [31:0] muxAout;
+logic [31:0] muxBout;
+logic [31:0] muxCout;
+logic [31:0] muxDout;
+logic [31:0] muxEout;
+logic [31:0] muxFout;
+logic [31:0] muxGout;
+logic [31:0] muxHout;
+
+logic [5:0] count;
+logic [31:0] K_selected;
+logic [31:0] W_selected;
 //Muxes
    //s=select -> chooses either first input or outputs to continue with computation
    //A-Hout -> Output of computation
@@ -90,15 +119,31 @@ mux2 #(32) muxH ( h, Hout, s, muxHout);
 
 //needs each K value as an input, counter as s, and output y
 mux64 #(32) muxK (K[2047:2016], K[2015:1984], K[1983:1952], K[1951:1920], K[1919:1888], K[1887:1856],
-K[1855:1824], K[1823:1792], K[1791:1760], K[1759:1728], K[1727:1696], K[1695:1664], K[1663:1632], K[1631:1600]
+K[1855:1824], K[1823:1792], K[1791:1760], K[1759:1728], K[1727:1696], K[1695:1664], K[1663:1632], K[1631:1600],
 K[1599:1568], K[1567:1536], K[1535:1504], K[1503:1472], K[1471:1440], K[1439:1408], K[1407:1376], K[1375:1344],
 K[1343:1312], K[1311:1280], K[1279:1248], K[1247:1216], K[1215:1184], K[1183:1152], K[1151:1120], K[1119:1088], 
-K[1087:1056], K[1055:1024], K[1023:992], K[991:960], K[959:928], K[927:896], K[895:864], K[863:832] K[831:800],
-K[799:768], K[767:736], K[735:704], K[703:672], K[671:640], K[639:608], K[607:576], K[575:544], K[543:512]
- );
+K[1087:1056], K[1055:1024], K[1023:992], K[991:960], K[959:928], K[927:896], K[895:864], K[863:832], K[831:800],
+K[799:768], K[767:736], K[735:704], K[703:672], K[671:640], K[639:608], K[607:576], K[575:544], K[543:512], K[511:480], 
+ K[479:448],  K[447:416],    K[415:384],  K[383:352],  K[351:320], K[319:288],  K[287:256],  K[255:224],    K[223:192], 
+  K[191:160],  K[159:128], K[127:96],   K[95:64],    K[63:32],      K[31:0],  
+    count,  
+    K_selected 
+);
+ 
 
  //Make another one for W0-W63
-mux64 #(32) muxW()
+mux64 #(32) muxW (
+    W0, W1, W2, W3, W4, W5, W6, W7, W8, W9,
+               W10, W11, W12, W13, W14, W15, W16, W17, W18, W19,
+               W20, W21, W22, W23, W24, W25, W26, W27, W28, W29,
+               W30, W31, W32, W33, W34, W35, W36, W37, W38, W39,
+               W40, W41, W42, W43, W44, W45, W46, W47, W48, W49,
+               W50, W51, W52, W53, W54, W55, W56, W57, W58, W59,
+               W60, W61, W62, W63,    
+    count,  
+    W_selected 
+);
+
    main_comp mc01 (muxAout, muxBout, muxCout, muxDout, 
 		   muxEout, muxFout, muxGout, muxHout, 
 		  k, w,
@@ -131,48 +176,7 @@ flopenr #(32) instanceH(clk, reset, en, h0_out, Hout);
 
 endmodule // sha_main
 
-//EDIT
-module FSM (clk, reset, a, y);
 
-   input logic  clk;
-   input logic  reset;
-   input logic 	a;
-   
-   output logic y;
-
-   typedef enum 	logic [1:0] {S0, S1, S2} statetype;
-   statetype state, nextstate;
-   
-   // state register
-   always_ff @(posedge clk, posedge reset)
-     if (reset) state <= S0;
-     else       state <= nextstate;
-   
-   // next state logic
-   always_comb
-     case (state)
-       S0: begin
-	  y <= 1'b0;	  
-	  if (a) nextstate <= S0;
-	  else   nextstate <= S1;
-       end
-       S1: begin
-	  y <= 1'b0;	  	  
-	  if (a) nextstate <= S2;
-	  else   nextstate <= S1;
-       end
-       S2: begin
-	  y <= 1'b1;	  	  
-	  if (a) nextstate <= S2;
-	  else   nextstate <= S0;
-       end
-       default: begin
-	  y <= 1'b0;	  	  
-	  nextstate <= S0;
-       end
-     endcase
-   
-endmodule//FSM
 
 
 module prepare (input logic [31:0] M0, M1, M2, M3,
@@ -482,30 +486,72 @@ module sigma1 (input logic [31:0] x, output logic [31:0] sig1);
 
 endmodule // sigma1
 
-//module decrementK(input logic [5:0] count, input logic [2047:0] K, output logic [31:0] Kout);
-//login [10:0] IN;
-//logic [10:0] END;
-//assign IN = 2047 - 32*count;
-//assign END = IN-31;
+module sha256_fsm (
+    input logic clk,
+    input logic reset,
+    input logic start,
+    input logic [5:0] count,    // Externally driven counter
+    output logic en,            // Enables hashing rounds
+    output logic done,          // Signals hashing completion
+    output logic init           // Indicates initialization state
+);
+    // FSM States
+    typedef enum logic [1:0] {
+        IDLE = 2'b00,
+        INIT = 2'b01,
+        HASH = 2'b10,
+        DONE = 2'b11
+    } state_t;
 
+    state_t current_state, next_state;
 
-//if counter <= 6'b111110
-   //K-=32;
-   //get value
-//else
-   //get value 
-   //end loop
+    // Sequential Logic: State Transitions
+    always_ff @(posedge clk or posedge reset) begin
+        if (reset) begin
+            current_state <= IDLE;
+        end else begin
+            current_state <= next_state;
+        end
+    end
 
-   //(K>>32) 
+    // Combinational Logic: Next-State Logic
+    always_comb begin
+        // Default outputs
+        en = 1'b0;
+        done = 1'b0;
+        init = 1'b0;
+        next_state = current_state;
 
- 
-//assign Kout = (K>>2016 - 32*count) ;
+        case (current_state)
+            IDLE: begin
+                if (start) begin
+                    next_state = INIT;
+                end
+            end
 
+            INIT: begin
+                init = 1'b1; // Assert `init` during INIT
+                next_state = HASH; // Transition to HASH after initialization
+            end
 
+            HASH: begin
+                en = 1'b1; // Enable hashing
+                if (count == 6'd63) begin
+                    next_state = DONE; // Transition to DONE when counting completes
+                end
+            end
 
+            DONE: begin
+                done = 1'b1; // Signal hashing completion
+                if (!start) begin
+                    next_state = IDLE; // Return to IDLE when start is deasserted
+                end
+            end
 
-//endmodule //decrementK
-
+            default: next_state = IDLE;
+        endcase
+    end
+endmodule
      
    
 

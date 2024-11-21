@@ -76,7 +76,7 @@ module stimulus;
             golden = expected_hash;
             start = 1'b1; // Start hashing
             @(posedge clk); // Wait for one clock cycle
-            start = 1'b0;
+           // start = 1'b0;
 
             // Wait for done signal to be asserted
             wait (dut.hashed == expected_hash);
