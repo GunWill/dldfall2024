@@ -19,7 +19,7 @@ module top #(parameter MSG_SIZE = 120,
                   logic en, done, init; 
 
 
-  sha256_fsm dut2( clk,  reset, start,  count,  en,  done, init);
+  sha256_fsm dut2(~clk,  reset, start,  count,  en,  done, init);
 
 
 
@@ -102,23 +102,24 @@ logic [31:0] W_selected, K_selected;
     logic [31:0]   h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q;
 
 
-mux2 #(32) muxA ( a, a_out, init, muxAout);
-mux2 #(32) muxB ( b, b_out, init, muxBout);
-mux2 #(32) muxC ( c, c_out, init, muxCout);
-mux2 #(32) muxD ( d, d_out, init, muxDout);
-mux2 #(32) muxE ( e, e_out, init, muxEout);
-mux2 #(32) muxF ( f, f_out, init, muxFout);
-mux2 #(32) muxG ( g, g_out, init, muxGout);
-mux2 #(32) muxH ( h, h_out, init, muxHout);
+mux2 #(32) muxA ( a, flopA, init, muxAout);
+mux2 #(32) muxB ( b, flopB, init, muxBout);
+mux2 #(32) muxC ( c, flopC, init, muxCout);
+mux2 #(32) muxD ( d, flopD, init, muxDout);
+mux2 #(32) muxE ( e, flopE, init, muxEout);
+mux2 #(32) muxF ( f, flopF, init, muxFout);
+mux2 #(32) muxG ( g, flopG, init, muxGout);
+mux2 #(32) muxH ( h, flopH, init, muxHout);
 
-    flopenr #(32) regA (clk, reset, en, muxAout,  flopA);
-    flopenr #(32) regB (clk, reset, en, muxBout,  flopB );
-    flopenr #(32) regC (clk, reset, en, muxCout,  flopC );
-    flopenr #(32) regD (clk, reset, en, muxDout,  flopD );
-    flopenr #(32) regE (clk, reset, en, muxEout,  flopE );
-    flopenr #(32) regF (clk, reset, en, muxFout,  flopF);
-    flopenr #(32) regG (clk, reset, en, muxGout,  flopG );
-    flopenr #(32) regH (clk, reset, en, muxHout,  flopH);
+    flopenr #(32) regA (clk, reset, en, a_out,  flopA);
+
+    flopenr #(32) regB (clk, reset, en, b_out,  flopB );
+    flopenr #(32) regC (clk, reset, en, c_out,  flopC );
+    flopenr #(32) regD (clk, reset, en, d_out,  flopD );
+    flopenr #(32) regE (clk, reset, en, e_out,  flopE );
+    flopenr #(32) regF (clk, reset, en, f_out,  flopF);
+    flopenr #(32) regG (clk, reset, en, g_out,  flopG );
+    flopenr #(32) regH (clk, reset, en, h_out,  flopH);
 
 
 
@@ -181,27 +182,28 @@ mux64 #(32) muxW (
 
 
 	
-   main_comp mc01 (flopA, flopB, flopC, flopD, 
-                   flopE, flopF, flopG, flopH, 
-                   K_selected, W_selected,
+   main_comp mc01 (muxAout, muxBout, muxCout, muxDout, 
+                   muxEout, muxFout, muxGout, muxHout, 
+                   K_selected, W_selected, 
                    a_out, b_out, c_out, d_out, 
                    e_out, f_out, g_out, h_out);
 
    
 
-   intermediate_hash ih1 (a_out, b_out, c_out, d_out,
-			  e_out, f_out, g_out, h_out,
+   intermediate_hash ih1 (flopA, flopB, flopC, flopD,
+			  flopE, flopF, flopG, flopH,
 			  a, b, c, d, e, f, g, h,
 			  h0, h1, h2, h3, h4, h5, h6, h7);
 
-    flopenr #(32) H0 (clk, reset, en, h0,  h0_q);
-    flopenr #(32) H1 (clk, reset, en, h1,  h1_q );
-    flopenr #(32) H2 (clk, reset, en, h2,  h2_q );
-    flopenr #(32) H3 (clk, reset, en, h3,  h3_q );
-    flopenr #(32) H4 (clk, reset, en, h4,  h4_q );
-    flopenr #(32) H5 (clk, reset, en, h5,  h5_q);
-    flopenr #(32) H6 (clk, reset, en, h6,  h6_q );
-    flopenr #(32) H7 (clk, reset, en, h7,  h7_q);
+    flopenr #(32) H0 (clk, reset, done, h0,  h0_q);
+    flopenr #(32) H1 (clk, reset, done, h1,  h1_q );
+    flopenr #(32) H2 (clk, reset, done, h2,  h2_q );
+    flopenr #(32) H3 (clk, reset, done, h3,  h3_q );
+    flopenr #(32) H4 (clk, reset, done, h4,  h4_q );
+    flopenr #(32) H5 (clk, reset, done, h5,  h5_q);
+    flopenr #(32) H6 (clk, reset, done, h6,  h6_q );
+    flopenr #(32) H7 (clk, reset, done, h7,  h7_q);
+
 	
 
 	assign hashed ={h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q};
@@ -430,7 +432,7 @@ endmodule // prepare
 
 
 module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h_in,
-		  input logic [31:0] K_in, W_in,
+		  input logic [31:0] K_in, W_in, 
 		  output logic [31:0] a_out, b_out, c_out, d_out, e_out, f_out, g_out,
 		  output logic [31:0] h_out);
 
@@ -440,9 +442,22 @@ choice ch1 ( e_in, f_in, g_in, ch);
 majority m1(a_in, b_in, c_in, maj);
 	Sigma0 S0(a_in, Sig0);	
 	Sigma1 S1(e_in, Sig1);
+
+
+
+
 	logic [31:0] t1, t2;
 logic [31:0] T1, T2;
-assign t1=(h_in+Sig1+ch+K_in+W_in)  ;
+
+
+
+assign t1 =(h_in+Sig1+ch+K_in+W_in);
+
+
+
+
+
+  
 assign t2=(Sig0+maj) ;
 assign T1 = t1;
 assign T2 = t2;
@@ -463,6 +478,46 @@ assign a_out = (T1+T2) ;
 
 endmodule // main_comp
 
+
+
+
+/*
+module main_comp (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h_in,
+		  input logic [31:0] K_in, W_in,
+		  output logic [31:0] a_out, b_out, c_out, d_out, e_out, f_out, g_out,
+		  output logic [31:0] h_out);
+
+   logic [31:0] 		      t1;
+
+   logic [31:0] 		      t2;
+   logic [31:0] 		      temp1;
+   logic [31:0] 		      temp2;
+   logic [31:0] 		      temp3;
+   logic [31:0] 		      temp4;   
+
+   Sigma1 comp1 (e_in, temp1);
+   Sigma0 comp2 (a_in, temp2);
+   choice comp3 (e_in, f_in, g_in, temp3);
+   majority comp4 (a_in, b_in, c_in, temp4);
+   
+   assign t1 = h_in + temp1 + temp3 + K_in + W_in;
+   assign t2 = temp2 + temp4;
+   assign h_out = g_in;
+   assign g_out = f_in;
+   assign f_out = e_in;   
+   assign e_out = d_in + t1;
+   assign d_out = c_in;
+   assign c_out = b_in;
+   assign b_out = a_in;
+   assign a_out = t1 + t2;
+
+endmodule // main_comp
+*/
+
+
+
+
+
 module intermediate_hash (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in, g_in, h_in,
 			  input logic [31:0]  h0_in, h1_in, h2_in, h3_in, h4_in, h5_in, h6_in, h7_in, 
 			  output logic [31:0] h0_out, h1_out, h2_out, h3_out, h4_out, h5_out, h6_out, h7_out);
@@ -479,64 +534,47 @@ module intermediate_hash (input logic [31:0] a_in, b_in, c_in, d_in, e_in, f_in,
    
 endmodule
 			  
+
+
+
+
+
 module majority (input logic [31:0] x, y, z, output logic [31:0] maj);
 
-   // See Section 2.3.3, Number 4
-   assign maj = (x & y) ^ (x & z) ^ (y & z);
+   assign maj = (x & y) ^ (x & z) ^ (y & z);   
 
 endmodule // majority
 
 module choice (input logic [31:0] x, y, z, output logic [31:0] ch);
 
-   // See Section 2.3.3, Number 4
-
-   assign ch = (x & y) ^ (~x & z); 
-
+   assign ch = (x & y) ^ (~x & z);
 
 endmodule // choice
 
 module Sigma0 (input logic [31:0] x, output logic [31:0] Sig0);
 
-assign Sig0 = ({x[1:0], x[31:2]})^({x[12:0], x[31:13]})^({x[21:0], x[31:22]});
-
-   // See Section 2.3.3, Number 4
-	//ror^2 ^ ror^13 ^ ror^22
-
+   assign Sig0 = {x[1:0],x[31:2]} ^ {x[12:0],x[31:13]} ^ {x[21:0],x[31:22]};
 
 endmodule // Sigma0
 
 module sigma0 (input logic [31:0] x, output logic [31:0] sig0);
 
-      // See Section 2.3.3, Number 2
-
-      assign sig0 = ({x[6:0], x[31:7]})^({x[17:0], x[31:18]})^(x>>3);
-
-	//ror^7 ^ ror^18 ^ (x>>3)
-   
+   assign sig0 = {x[6:0],x[31:7]} ^ {x[17:0],x[31:18]} ^ (x >> 3);
 
 endmodule // sigma0
 
 module Sigma1 (input logic [31:0] x, output logic [31:0] Sig1);
 
-   // See Section 2.3.3, Number 4
-   assign Sig1 = ({x[5:0], x[31:6]})^({x[10:0], x[31:11]})^({x[24:0], x[31:25]});
-
-	//ror^6 ^ ror^11 ^ ror^25
+   assign Sig1 = {x[5:0],x[31:6]} ^ {x[10:0],x[31:11]} ^ {x[24:0],x[31:25]};
 
 endmodule // Sigma1
 
-
-
-
 module sigma1 (input logic [31:0] x, output logic [31:0] sig1);
 
-      // See Section 2.3.3, Number 2
-   
-assign sig1 = ({x[16:0], x[31:17]})^({x[18:0], x[31:19]})^(x>>10);
+   assign sig1 = {x[16:0],x[31:17]} ^ {x[18:0],x[31:19]} ^ (x >> 10);
 
-	//ror^17 ^ ror^19 ^ (x>>10)
+endmodule // sigma1
 
-endmodule // sigma1   
 
 
 
@@ -581,17 +619,25 @@ module sha256_fsm (
 
         case (current_state)
             IDLE: begin
+                    en = 1'b0;
+                    done = 1'b0;
+                    init = 1'b0;
                 if (start) begin
                     next_state = INIT;
                 end
             end
 
             INIT: begin
-                init = 1'b1; // Assert `init` during INIT
+                     en = 1'b1;
+                    done = 1'b0;
+                init = 1'b1;
+                // Assert `init` during INIT
                 next_state = HASH; // Transition to HASH after initialization
             end
 
             HASH: begin
+                 done = 1'b0;
+                init = 1'b0;
                 en = 1'b1; // Enable hashing
                 if (count == 6'd63) begin
                     next_state = DONE; // Transition to DONE when counting completes
@@ -599,6 +645,8 @@ module sha256_fsm (
             end
 
             DONE: begin
+                done = 1'b0;
+                init = 1'b0;
                 done = 1'b1; // Signal hashing completion
                 if (!start) begin
                     next_state = IDLE; // Return to IDLE when start is deasserted
