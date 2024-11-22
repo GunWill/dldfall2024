@@ -12,7 +12,7 @@ module top #(parameter MSG_SIZE = 120,
         logic [5:0] count;
 
 
- counter64 dut( clk,  reset,   start,     
+ counter64 dut(~clk,  reset,   start,     
   count 
 );
 
@@ -111,15 +111,15 @@ mux2 #(32) muxF ( f, flopF, init, muxFout);
 mux2 #(32) muxG ( g, flopG, init, muxGout);
 mux2 #(32) muxH ( h, flopH, init, muxHout);
 
-    flopenr #(32) regA (clk, reset, en, a_out,  flopA);
 
+    flopenr #(32) regA (clk, reset, en, a_out,  flopA );
     flopenr #(32) regB (clk, reset, en, b_out,  flopB );
     flopenr #(32) regC (clk, reset, en, c_out,  flopC );
     flopenr #(32) regD (clk, reset, en, d_out,  flopD );
     flopenr #(32) regE (clk, reset, en, e_out,  flopE );
-    flopenr #(32) regF (clk, reset, en, f_out,  flopF);
+    flopenr #(32) regF (clk, reset, en, f_out,  flopF );
     flopenr #(32) regG (clk, reset, en, g_out,  flopG );
-    flopenr #(32) regH (clk, reset, en, h_out,  flopH);
+    flopenr #(32) regH (clk, reset, en, h_out,  flopH );
 
 
 
@@ -154,12 +154,12 @@ mux64 #(32) muxK (
     K[1663:1632], K[1631:1600], K[1599:1568], K[1567:1536], K[1535:1504], K[1503:1472],
     K[1471:1440], K[1439:1408], K[1407:1376], K[1375:1344], K[1343:1312], K[1311:1280],
     K[1279:1248], K[1247:1216], K[1215:1184], K[1183:1152], K[1151:1120], K[1119:1088],
-    K[1087:1056], K[1055:1024], K[1023:992],  K[991:960],  K[959:928],  K[927:896],
-    K[895:864],  K[863:832],  K[831:800],    K[799:768],  K[767:736],  K[735:704],
-    K[703:672],  K[671:640],  K[639:608],    K[607:576],  K[575:544],  K[543:512],
-    K[511:480],  K[479:448],  K[447:416],    K[415:384],  K[383:352],  K[351:320],
-    K[319:288],  K[287:256],  K[255:224],    K[223:192],  K[191:160],  K[159:128],
-    K[127:96],   K[95:64],    K[63:32],      K[31:0],  
+    K[1087:1056], K[1055:1024], K[1023:992],  K[991:960],   K[959:928],   K[927:896],
+    K[895:864],   K[863:832],   K[831:800],   K[799:768],   K[767:736],   K[735:704],
+    K[703:672],   K[671:640],   K[639:608],   K[607:576],   K[575:544],   K[543:512],
+    K[511:480],   K[479:448],   K[447:416],   K[415:384],   K[383:352],   K[351:320],
+    K[319:288],   K[287:256],   K[255:224],   K[223:192],   K[191:160],   K[159:128],
+    K[127:96],    K[95:64],     K[63:32],     K[31:0],  
     count,  
     K_selected 
 );
@@ -601,7 +601,7 @@ module sha256_fsm (
     state_t current_state, next_state;
 
     // Sequential Logic: State Transitions
-    always_ff @(posedge clk or posedge reset) begin
+    always_ff @(negedge clk or negedge reset) begin
         if (reset) begin
             current_state <= IDLE;
         end else begin
