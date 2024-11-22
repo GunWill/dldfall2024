@@ -88,28 +88,28 @@ add wave /stimulus/dut/dut2/*
 add wave -noupdate -divider -height 32 "sha256 counter64"
 add wave /stimulus/dut/dut/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H0"
 add wave /stimulus/dut/main/H0/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H1"
 add wave /stimulus/dut/main/H1/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H2"
 add wave /stimulus/dut/main/H2/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H3"
 add wave /stimulus/dut/main/H3/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H4"
 add wave /stimulus/dut/main/H4/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H5"
 add wave /stimulus/dut/main/H5/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H6"
 add wave /stimulus/dut/main/H6/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H7"
 add wave /stimulus/dut/main/H7/*
 
 add wave -noupdate -divider -height 32 "sha256 muxK"
@@ -146,29 +146,40 @@ add wave /stimulus/dut/main/muxH/*
 
 
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop A"
 add wave /stimulus/dut/main/regA/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+
+
+add wave -noupdate -divider -height 32 "sha256 flip flop B"
 add wave /stimulus/dut/main/regB/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop C"
 add wave /stimulus/dut/main/regC/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop D"
 add wave /stimulus/dut/main/regD/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop E"
 add wave /stimulus/dut/main/regE/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop F"
 add wave /stimulus/dut/main/regF/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop G"
 add wave /stimulus/dut/main/regG/*
 
-add wave -noupdate -divider -height 32 "sha256 flip flop"
+add wave -noupdate -divider -height 32 "sha256 flip flop H"
 add wave /stimulus/dut/main/regH/*
+
+
+
+add wave -noupdate -divider -height 32 "sha256 main comp"
+add wave /stimulus/dut/main/mc01/*
+
+add wave -noupdate -divider -height 32 "sha256 prepare"
+add wave /stimulus/dut/main/p1/*
+
 
 
 
@@ -188,5 +199,5 @@ configure wave -rowmargin 4
 configure wave -childrowmargin 2
 
 -- Run the Simulation 
-run 700 ns
+run 1000 ns
 quit
