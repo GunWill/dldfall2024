@@ -10,6 +10,76 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.3 2021.07, Jul 13 2021
 13
 !s112 1.1
@@ -39,25 +109,36 @@ R4
 R5
 n@_opt1
 R6
+R1
+T_opt2
+!s110 1732564352
+Vk6`0m>W?dSiU71=80fnFT3
+R2
+=1-e4c76793e2a7-6744d580-1a9-2e98
+R3
+R4
+R5
+n@_opt2
+R6
 vchoice
 Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z8 !s110 1732302277
+Z8 !s110 1732564349
 !i10b 1
-!s100 83obNJnnWRX<S;KBKCSP=1
-IPgj@>:[]L>Vk8K^DOEmMK2
+!s100 hgDZPU2XgZ>=DibdMG>9n0
+IT[_HdO7dAMZce103h1c5I0
 S1
-Z9 dC:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv
-Z10 w1732301011
+Z9 dC:/Users/User/Desktop/Git CLONE dldfall2024/dldfall2024/Project/SV
+Z10 w1732562664
 Z11 8sha256_stub_CORRECT.sv
 Z12 Fsha256_stub_CORRECT.sv
 !i122 0
-L0 548 5
+L0 553 5
 Z13 VDg1SIo80bB@j0V0VzS_@n1
 Z14 OL;L;2021.3;73
 r1
 !s85 0
 31
-Z15 !s108 1732302277.000000
+Z15 !s108 1732564349.000000
 Z16 !s107 sha256_stub_CORRECT.sv|
 Z17 !s90 -reportprogress|300|sha256_stub_CORRECT.sv|
 !i113 0
@@ -65,13 +146,13 @@ Z18 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R5
 vcounter64
 R7
-R8
+Z19 !s110 1732564350
 !i10b 1
 !s100 8oVN?zO`FMWg`9J3dCV;73
 IKBA;D4E6nFObe6kN_>SH_0
 S1
 R9
-Z19 w1732289224
+w1731807467
 8counter.sv
 Fcounter.sv
 !i122 2
@@ -81,7 +162,7 @@ R14
 r1
 !s85 0
 31
-R15
+Z20 !s108 1732564350.000000
 !s107 counter.sv|
 !s90 -reportprogress|300|counter.sv|
 !i113 0
@@ -89,13 +170,13 @@ R18
 R5
 vflopenr
 R7
-R8
+R19
 !i10b 1
-!s100 `HbZ^P1fiRgRo8NKR9[:00
-IQlI3LSn^a^bHo1aA<66`a0
+!s100 8KUlRnEMYRI_NXN0EY[:H2
+IM1:8cV0[Vke68`=lWe=W41
 S1
 R9
-R19
+w1732562690
 8flopenr.sv
 Fflopenr.sv
 !i122 4
@@ -105,7 +186,7 @@ R14
 r1
 !s85 0
 31
-R15
+R20
 !s107 flopenr.sv|
 !s90 -reportprogress|300|flopenr.sv|
 !i113 0
@@ -115,15 +196,15 @@ vintermediate_hash
 R7
 R8
 !i10b 1
-!s100 NOgkGjnbDW`UnJ5JGRbkZ0
-IlQTjcFhk5PT11=?SnX;751
+!s100 =bYIRXPCSzLQmMh;4fISI0
+I;[PTCFV2jH4LW`QRadT@a3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 521 15
+L0 526 15
 R13
 R14
 r1
@@ -139,15 +220,15 @@ vmain_comp
 R7
 R8
 !i10b 1
-!s100 Nfdd65fVZ[g?CXF5AIKc92
-I;41B;oL:NmL;PJD8FjE561
+!s100 K`Nmj=DPNOCoAfBgh;gc21
+IJl7mPSWcVS`I^c<JDGjI13
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 434 46
+L0 439 46
 R13
 R14
 r1
@@ -163,15 +244,15 @@ vmajority
 R7
 R8
 !i10b 1
-!s100 >5b@j3H8^2a[ZN`Z@ZUc@1
-I9CSLAdlj9>TS^U2^^[U9I1
+!s100 JZQfKTCLmF32;WIG>5bR91
+I<gf0eh=00QRXniSQQHzY21
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 542 5
+L0 547 5
 R13
 R14
 r1
@@ -185,15 +266,15 @@ R18
 R5
 vmux16
 R7
-R8
+R19
 !i10b 1
 !s100 FBn<bCHGI=@B50]U;H43B2
 IWHTMj;HK]8S?g7i?lHb0h3
 S1
 R9
-R19
-Z20 8mux.sv
-Z21 Fmux.sv
+Z21 w1732324338
+Z22 8mux.sv
+Z23 Fmux.sv
 !i122 3
 L0 69 13
 R13
@@ -201,23 +282,23 @@ R14
 r1
 !s85 0
 31
-R15
-Z22 !s107 mux.sv|
-Z23 !s90 -reportprogress|300|mux.sv|
+R20
+Z24 !s107 mux.sv|
+Z25 !s90 -reportprogress|300|mux.sv|
 !i113 0
 R18
 R5
 vmux2
 R7
-R8
+R19
 !i10b 1
 !s100 I6C4`7h1bdVNjPnbHcEGT0
 IDlfi1d>@aKl6E4i1?492e1
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 29 7
 R13
@@ -225,23 +306,23 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
 vmux3
 R7
-R8
+R19
 !i10b 1
 !s100 HX>mWWJQ@5Y@GIiTOFUT;2
 ImaUGR<dQSG?Jm6oFzmHfm2
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 37 7
 R13
@@ -249,23 +330,23 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
 vmux4
 R7
-R8
+R19
 !i10b 1
 !s100 1<o<^B1zKMNiLzkN2V@RI0
 I?eH=m0FebZmX?2ECEbXCm0
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 45 7
 R13
@@ -273,23 +354,23 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
 vmux5
 R7
-R8
+R19
 !i10b 1
 !s100 3F>N`O6VA^0_zKPRk1zV23
 II_7FQ04`[Jfz3=C6i<2;:0
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 53 7
 R13
@@ -297,23 +378,23 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
 vmux6
 R7
-R8
+R19
 !i10b 1
 !s100 N1:PhA8]DVZOH:jPVlU0=3
 I]hZ5d[M0EEfEIFAej=NT20
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 61 7
 R13
@@ -321,23 +402,23 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
 vmux64
 R7
-R8
+R19
 !i10b 1
 !s100 ?kNL81jXnKmaERi@[BBSO2
 Io:9HV?BZ8lJ[bg89D91cY3
 S1
 R9
-R19
-R20
 R21
+R22
+R23
 !i122 3
 L0 83 76
 R13
@@ -345,9 +426,9 @@ R14
 r1
 !s85 0
 31
-R15
-R22
-R23
+R20
+R24
+R25
 !i113 0
 R18
 R5
@@ -355,15 +436,15 @@ vprepare
 R7
 R8
 !i10b 1
-!s100 e[R;LgbK2[H:13FmB=QBW3
-IOnXhLc32Un<^n@4MIG]2E3
+!s100 jDnF>?K_`9<:^`XMN@^Q62
+Im`Lh]OXKhlzN`=4Be1naK3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 217 215
+L0 222 215
 R13
 R14
 r1
@@ -379,15 +460,15 @@ vsha256
 R7
 R8
 !i10b 1
-!s100 WEC75BbW6l636Y>QMaclP3
-IeKn;<F1]eAU^5Q_XN8Xm_3
+!s100 DYS4fQ>MYCj=Pm=Odala[1
+I83UnDd>4oeJlA6Q]=zc^@1
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 52 161
+L0 52 163
 R13
 R14
 r1
@@ -403,15 +484,15 @@ vsha256_fsm
 R7
 R8
 !i10b 1
-!s100 LK3R4P]Ca4zNOEDPIYYZD0
-IIS`S@m1[DcN@3b:7`<V_53
+!s100 T]GZnfEbF=]fjlfNTNa;L1
+Id:MbzEKUM1l_D<YcLCmZW3
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 584 76
+L0 589 76
 R13
 R14
 r1
@@ -451,15 +532,15 @@ vsigma0
 R7
 R8
 !i10b 1
-!s100 b`;aodLa8V`e;SJMS7Oii2
-Iz9S@NC6AR[BBC]@YG0kXk0
+!s100 aU`?]SPPD92RTa`h@4EN;0
+IV;nnQ;RUc]g^NS;j54b=@1
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 560 5
+L0 565 5
 R13
 R14
 r1
@@ -475,15 +556,15 @@ vSigma0
 R7
 R8
 !i10b 1
-!s100 SZ4HMR2eBSnlB8Y:[je=83
-IRmcVf1X7^RXc5V=f0IlO42
+!s100 P90bQ2Dc`D21M[<5nOJUF0
+ITkCM6X>DnWG;_j6KS1`Q?0
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 554 5
+L0 559 5
 R13
 R14
 r1
@@ -500,15 +581,15 @@ vsigma1
 R7
 R8
 !i10b 1
-!s100 =C<Cdc3^Y6igO=PjhIOk]2
-IT9eHd8;j1[kcN03E12M<D1
+!s100 k;J]S=gn092Idfz@M_^;M2
+IYeY^;MIlNI[Bg4MdQW[H43
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 572 5
+L0 577 5
 R13
 R14
 r1
@@ -524,15 +605,15 @@ vSigma1
 R7
 R8
 !i10b 1
-!s100 7I8WMoz1_JWfnZzWZZISF3
-I]b?Fd7kS;99ZcSahj8G`J3
+!s100 l`mXW8<zRmdW2Lk0PBdS_2
+IX4FJIVkUlT3fhXODU0F`b0
 S1
 R9
 R10
 R11
 R12
 !i122 0
-L0 566 5
+L0 571 5
 R13
 R14
 r1
@@ -547,17 +628,17 @@ R5
 n@sigma1
 vstimulus
 R7
-R8
+R19
 !i10b 1
-!s100 hGOTIK7Y?b`mCPcUFF^2^1
-I2]cz6d9=La1c5oXl@IjYH2
+!s100 O^DWck;bh>IW9[gj?MEmT2
+IMOQOlod`[FQR6?;;R:5DS2
 S1
 R9
-w1732301762
+w1732564347
 8sha256_tb_tv_CORRECT.sv
 Fsha256_tb_tv_CORRECT.sv
 !i122 1
-L0 2 96
+L0 3 143
 R13
 R14
 r1

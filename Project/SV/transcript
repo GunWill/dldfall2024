@@ -13,10 +13,11 @@
 # //
 # do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:30:26 on Nov 22,2024
+# Start time: 13:44:31 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -34,28 +35,28 @@
 # 
 # Top level modules:
 # 	top
-# End time: 09:30:26 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:44:31 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:30:26 on Nov 22,2024
+# Start time: 13:44:31 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 09:30:26 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:44:31 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:30:26 on Nov 22,2024
+# Start time: 13:44:31 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 09:30:26 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:44:31 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:30:26 on Nov 22,2024
+# Start time: 13:44:32 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -73,19 +74,19 @@
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 09:30:26 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:44:32 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:30:26 on Nov 22,2024
+# Start time: 13:44:32 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 09:30:26 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:44:32 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 09:30:27 on Nov 22,2024
+# Start time: 13:44:32 on Nov 25,2024
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
@@ -110,18 +111,22 @@
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlftas2xq7".
+#           Attempting to use alternate WLF file "./wlfts9gwh4".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftas2xq7
+#           Using alternate file: ./wlfts9gwh4
+# Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:44:08 on Nov 22,2024
+# Start time: 13:45:53 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -139,28 +144,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 09:44:08 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:45:53 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:44:08 on Nov 22,2024
+# Start time: 13:45:53 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 09:44:09 on Nov 22,2024, Elapsed time: 0:00:01
+# End time: 13:45:54 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:44:09 on Nov 22,2024
+# Start time: 13:45:54 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 09:44:09 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:45:54 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:44:09 on Nov 22,2024
+# Start time: 13:45:54 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -178,21 +183,21 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 09:44:09 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:45:54 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 09:44:09 on Nov 22,2024
+# Start time: 13:45:54 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 09:44:09 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:45:54 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 09:44:12 on Nov 22,2024, Elapsed time: 0:13:45
+# End time: 13:45:56 on Nov 25,2024, Elapsed time: 0:01:24
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 09:44:12 on Nov 22,2024
+# Start time: 13:45:56 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.stimulus(fast)
@@ -216,19 +221,22 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlfthwg6n9".
+#           Attempting to use alternate WLF file "./wlft373gvr".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfthwg6n9
+#           Using alternate file: ./wlft373gvr
 # Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 10:08:00 on Nov 22,2024
+# Start time: 13:47:14 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -246,28 +254,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 10:08:00 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:47:14 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 10:08:00 on Nov 22,2024
+# Start time: 13:47:14 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 10:08:00 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:47:14 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 10:08:00 on Nov 22,2024
+# Start time: 13:47:14 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 10:08:00 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:47:15 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 10:08:00 on Nov 22,2024
+# Start time: 13:47:15 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -285,23 +293,22 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 10:08:00 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:47:15 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 10:08:00 on Nov 22,2024
+# Start time: 13:47:15 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 10:08:00 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:47:15 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 10:08:03 on Nov 22,2024, Elapsed time: 0:23:51
+# End time: 13:47:16 on Nov 25,2024, Elapsed time: 0:01:20
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 10:08:03 on Nov 22,2024
+# Start time: 13:47:16 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
@@ -324,18 +331,22 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlftwjwjfn".
+#           Attempting to use alternate WLF file "./wlft9bi9z5".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftwjwjfn
+#           Using alternate file: ./wlft9bi9z5
+# Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:30:19 on Nov 22,2024
+# Start time: 13:48:11 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -353,28 +364,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 12:30:19 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:11 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:30:19 on Nov 22,2024
-# vlog -reportprogress 300 sha256_tb_T.sv 
+# Start time: 13:48:11 on Nov 25,2024
+# vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:30:19 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:12 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:30:19 on Nov 22,2024
+# Start time: 13:48:12 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 12:30:19 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:30:19 on Nov 22,2024
+# Start time: 13:48:12 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -392,23 +403,22 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 12:30:19 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:30:19 on Nov 22,2024
+# Start time: 13:48:12 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 12:30:19 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 12:30:41 on Nov 22,2024, Elapsed time: 2:22:38
+# End time: 13:48:14 on Nov 25,2024, Elapsed time: 0:00:58
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:30:41 on Nov 22,2024
+# Start time: 13:48:14 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
@@ -431,18 +441,22 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlft8x7k1i".
+#           Attempting to use alternate WLF file "./wlftr1xh70".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft8x7k1i
+#           Using alternate file: ./wlftr1xh70
+# Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:43:41 on Nov 22,2024
+# Start time: 13:48:41 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -460,28 +474,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 12:43:41 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:41 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:43:41 on Nov 22,2024
+# Start time: 13:48:42 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:43:41 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:42 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:43:41 on Nov 22,2024
+# Start time: 13:48:42 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 12:43:41 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:42 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:43:41 on Nov 22,2024
+# Start time: 13:48:42 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -499,23 +513,22 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 12:43:41 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:42 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:43:41 on Nov 22,2024
+# Start time: 13:48:42 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 12:43:41 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:48:43 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# End time: 12:43:44 on Nov 22,2024, Elapsed time: 0:13:03
+# End time: 13:48:44 on Nov 25,2024, Elapsed time: 0:00:30
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:43:44 on Nov 22,2024
+# Start time: 13:48:44 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
@@ -538,19 +551,22 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlftfw789b".
+#           Attempting to use alternate WLF file "./wlftzzwmhf".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftfw789b
+#           Using alternate file: ./wlftzzwmhf
 # Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:58:03 on Nov 22,2024
+# Start time: 13:49:26 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -568,28 +584,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 12:58:03 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:49:27 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:58:03 on Nov 22,2024
+# Start time: 13:49:27 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 12:58:03 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:49:27 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:58:03 on Nov 22,2024
+# Start time: 13:49:27 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 12:58:04 on Nov 22,2024, Elapsed time: 0:00:01
+# End time: 13:49:27 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:58:04 on Nov 22,2024
+# Start time: 13:49:27 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -607,344 +623,22 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 12:58:04 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:49:27 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 12:58:04 on Nov 22,2024
+# Start time: 13:49:27 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 12:58:04 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:49:28 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# End time: 12:58:06 on Nov 22,2024, Elapsed time: 0:14:22
+# End time: 13:49:29 on Nov 25,2024, Elapsed time: 0:00:45
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 12:58:06 on Nov 22,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.counter64(fast)
-# Loading work.sha256_fsm(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha256(fast)
-# Loading work.mux2(fast)
-# Loading work.flopenr(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.mux64(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlftv1t5bj".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftv1t5bj
-# Test passed for message: 48656c6c6f2c205348412d32353621
-do sha256_CORRECT.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:00:52 on Nov 22,2024
-# vlog -reportprogress 300 sha256_stub_CORRECT.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module sha256_fsm
-# 
-# Top level modules:
-# 	top
-# End time: 13:00:52 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:00:52 on Nov 22,2024
-# vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 13:00:52 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:00:52 on Nov 22,2024
-# vlog -reportprogress 300 counter.sv 
-# -- Compiling module counter64
-# 
-# Top level modules:
-# 	counter64
-# End time: 13:00:52 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:00:52 on Nov 22,2024
-# vlog -reportprogress 300 mux.sv 
-# -- Compiling module mux2
-# -- Compiling module mux3
-# -- Compiling module mux4
-# -- Compiling module mux5
-# -- Compiling module mux6
-# -- Compiling module mux16
-# -- Compiling module mux64
-# 
-# Top level modules:
-# 	mux2
-# 	mux3
-# 	mux4
-# 	mux5
-# 	mux6
-# 	mux16
-# 	mux64
-# End time: 13:00:52 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:00:52 on Nov 22,2024
-# vlog -reportprogress 300 flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 13:00:53 on Nov 22,2024, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# End time: 13:00:56 on Nov 22,2024, Elapsed time: 0:02:50
-# Errors: 0, Warnings: 2
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 13:00:56 on Nov 22,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.counter64(fast)
-# Loading work.sha256_fsm(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha256(fast)
-# Loading work.mux2(fast)
-# Loading work.flopenr(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.mux64(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlfttedmab".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlfttedmab
-# Test passed for message: 48656c6c6f2c205348412d32353621
-do sha256_CORRECT.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:01:35 on Nov 22,2024
-# vlog -reportprogress 300 sha256_stub_CORRECT.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module sha256_fsm
-# 
-# Top level modules:
-# 	top
-# End time: 13:01:35 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:01:35 on Nov 22,2024
-# vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 13:01:35 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:01:35 on Nov 22,2024
-# vlog -reportprogress 300 counter.sv 
-# -- Compiling module counter64
-# 
-# Top level modules:
-# 	counter64
-# End time: 13:01:35 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:01:35 on Nov 22,2024
-# vlog -reportprogress 300 mux.sv 
-# -- Compiling module mux2
-# -- Compiling module mux3
-# -- Compiling module mux4
-# -- Compiling module mux5
-# -- Compiling module mux6
-# -- Compiling module mux16
-# -- Compiling module mux64
-# 
-# Top level modules:
-# 	mux2
-# 	mux3
-# 	mux4
-# 	mux5
-# 	mux6
-# 	mux16
-# 	mux64
-# End time: 13:01:35 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:01:35 on Nov 22,2024
-# vlog -reportprogress 300 flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 13:01:35 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:01:39 on Nov 22,2024, Elapsed time: 0:00:43
-# Errors: 0, Warnings: 2
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 13:01:39 on Nov 22,2024
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# Loading sv_std.std
-# Loading work.stimulus(fast)
-# Loading work.top(fast)
-# Loading work.counter64(fast)
-# Loading work.sha256_fsm(fast)
-# Loading work.sha_padder(fast)
-# Loading work.sha256(fast)
-# Loading work.mux2(fast)
-# Loading work.flopenr(fast)
-# Loading work.prepare(fast)
-# Loading work.sigma1(fast)
-# Loading work.sigma0(fast)
-# Loading work.mux64(fast)
-# Loading work.main_comp(fast)
-# Loading work.choice(fast)
-# Loading work.majority(fast)
-# Loading work.Sigma0(fast)
-# Loading work.Sigma1(fast)
-# Loading work.intermediate_hash(fast)
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlft84qs5i".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft84qs5i
-# Test passed for message: 48656c6c6f2c205348412d32353621
-do sha256_CORRECT.do
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
-# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
-# ** Warning: (vlib-34) Library already exists at "work".
-# Errors: 0, Warnings: 1
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:08 on Nov 22,2024
-# vlog -reportprogress 300 sha256_stub_CORRECT.sv 
-# -- Compiling module top
-# -- Compiling module sha_padder
-# -- Compiling module sha256
-# -- Compiling module prepare
-# -- Compiling module main_comp
-# -- Compiling module intermediate_hash
-# -- Compiling module majority
-# -- Compiling module choice
-# -- Compiling module Sigma0
-# -- Compiling module sigma0
-# -- Compiling module Sigma1
-# -- Compiling module sigma1
-# -- Compiling module sha256_fsm
-# 
-# Top level modules:
-# 	top
-# End time: 13:04:08 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:08 on Nov 22,2024
-# vlog -reportprogress 300 sha256_tb_T.sv 
-# -- Compiling module stimulus
-# 
-# Top level modules:
-# 	stimulus
-# End time: 13:04:08 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:08 on Nov 22,2024
-# vlog -reportprogress 300 counter.sv 
-# -- Compiling module counter64
-# 
-# Top level modules:
-# 	counter64
-# End time: 13:04:08 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:08 on Nov 22,2024
-# vlog -reportprogress 300 mux.sv 
-# -- Compiling module mux2
-# -- Compiling module mux3
-# -- Compiling module mux4
-# -- Compiling module mux5
-# -- Compiling module mux6
-# -- Compiling module mux16
-# -- Compiling module mux64
-# 
-# Top level modules:
-# 	mux2
-# 	mux3
-# 	mux4
-# 	mux5
-# 	mux6
-# 	mux16
-# 	mux64
-# End time: 13:04:08 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:08 on Nov 22,2024
-# vlog -reportprogress 300 flopenr.sv 
-# -- Compiling module flopenr
-# 
-# Top level modules:
-# 	flopenr
-# End time: 13:04:08 on Nov 22,2024, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 13:04:11 on Nov 22,2024, Elapsed time: 0:02:32
-# Errors: 0, Warnings: 2
-# vsim -voptargs="+acc" work.stimulus 
-# Start time: 13:04:11 on Nov 22,2024
+# Start time: 13:49:29 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
@@ -967,18 +661,22 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlftjagqr5".
+#           Attempting to use alternate WLF file "./wlftyx4mrg".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftjagqr5
+#           Using alternate file: ./wlftyx4mrg
+# Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
 do sha256_CORRECT.do
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
 # ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_temp".
-# Error 133: Unable to remove directory "C:/Users/gunnz/OneDrive/Documents/GitHub/dldfall2024/project/sv/work/_tempmsg".
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:37 on Nov 22,2024
+# Start time: 13:50:11 on Nov 25,2024
 # vlog -reportprogress 300 sha256_stub_CORRECT.sv 
 # -- Compiling module top
 # -- Compiling module sha_padder
@@ -996,28 +694,28 @@ do sha256_CORRECT.do
 # 
 # Top level modules:
 # 	top
-# End time: 13:04:37 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:50:11 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:37 on Nov 22,2024
+# Start time: 13:50:11 on Nov 25,2024
 # vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
 # -- Compiling module stimulus
 # 
 # Top level modules:
 # 	stimulus
-# End time: 13:04:37 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:50:12 on Nov 25,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:37 on Nov 22,2024
+# Start time: 13:50:12 on Nov 25,2024
 # vlog -reportprogress 300 counter.sv 
 # -- Compiling module counter64
 # 
 # Top level modules:
 # 	counter64
-# End time: 13:04:37 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:50:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:37 on Nov 22,2024
+# Start time: 13:50:12 on Nov 25,2024
 # vlog -reportprogress 300 mux.sv 
 # -- Compiling module mux2
 # -- Compiling module mux3
@@ -1035,23 +733,22 @@ do sha256_CORRECT.do
 # 	mux6
 # 	mux16
 # 	mux64
-# End time: 13:04:37 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:50:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
-# Start time: 13:04:37 on Nov 22,2024
+# Start time: 13:50:12 on Nov 25,2024
 # vlog -reportprogress 300 flopenr.sv 
 # -- Compiling module flopenr
 # 
 # Top level modules:
 # 	flopenr
-# End time: 13:04:37 on Nov 22,2024, Elapsed time: 0:00:00
+# End time: 13:50:12 on Nov 25,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# End time: 13:04:41 on Nov 22,2024, Elapsed time: 0:00:30
+# End time: 13:50:13 on Nov 25,2024, Elapsed time: 0:00:44
 # Errors: 0, Warnings: 2
 # vsim -voptargs="+acc" work.stimulus 
-# Start time: 13:04:41 on Nov 22,2024
+# Start time: 13:50:13 on Nov 25,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Note: (vopt-143) Recognized 1 FSM in module "sha256_fsm(fast)".
 # Loading sv_std.std
 # Loading work.stimulus(fast)
 # Loading work.top(fast)
@@ -1074,7 +771,196 @@ do sha256_CORRECT.do
 # .main_pane.wave.interior.cs.body.pw.wf
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
-#           Attempting to use alternate WLF file "./wlft5qnt0a".
+#           Attempting to use alternate WLF file "./wlftkns1g5".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5qnt0a
+#           Using alternate file: ./wlftkns1g5
 # Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
+do sha256_CORRECT.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:51:18 on Nov 25,2024
+# vlog -reportprogress 300 sha256_stub_CORRECT.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module sha256_fsm
+# 
+# Top level modules:
+# 	top
+# End time: 13:51:18 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:51:19 on Nov 25,2024
+# vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:51:19 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:51:19 on Nov 25,2024
+# vlog -reportprogress 300 counter.sv 
+# -- Compiling module counter64
+# 
+# Top level modules:
+# 	counter64
+# End time: 13:51:19 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:51:19 on Nov 25,2024
+# vlog -reportprogress 300 mux.sv 
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:51:19 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:51:19 on Nov 25,2024
+# vlog -reportprogress 300 flopenr.sv 
+# -- Compiling module flopenr
+# 
+# Top level modules:
+# 	flopenr
+# End time: 13:51:19 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 13:51:21 on Nov 25,2024, Elapsed time: 0:01:08
+# Errors: 0, Warnings: 2
+# vsim -voptargs="+acc" work.stimulus 
+# Start time: 13:51:21 on Nov 25,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading sv_std.std
+# Loading work.stimulus(fast)
+# Loading work.top(fast)
+# Loading work.counter64(fast)
+# Loading work.sha256_fsm(fast)
+# Loading work.sha_padder(fast)
+# Loading work.sha256(fast)
+# Loading work.mux2(fast)
+# Loading work.flopenr(fast)
+# Loading work.prepare(fast)
+# Loading work.sigma1(fast)
+# Loading work.sigma0(fast)
+# Loading work.mux64(fast)
+# Loading work.main_comp(fast)
+# Loading work.choice(fast)
+# Loading work.majority(fast)
+# Loading work.Sigma0(fast)
+# Loading work.Sigma1(fast)
+# Loading work.intermediate_hash(fast)
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: gunwill  Hostname: CEAT-ENDV350-07  ProcessID: 20992
+#           Attempting to use alternate WLF file "./wlftiddqec".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftiddqec
+# Test passed for message: 48656c6c6f2c205348412d32353621
+# Test passed for message: 4f6e6f6d6f6e6f7065612121212121
+# Test passed for message: 536173737953617371756174636821
+# Test passed for message: 4c696c6f416e645374697463682121
+# Test passed for message: 4f535520526f636b73212121212121
+do sha256_CORRECT.do
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt".  Locker is gunwill@CEAT-ENDV350-07.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt1".  Locker is gunnz@R2D2.
+# ** Warning: (vdel-134) Unable to remove locked optimized design "_opt2".  Locker is User@EMELIA-LAPTOP.
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:52:29 on Nov 25,2024
+# vlog -reportprogress 300 sha256_stub_CORRECT.sv 
+# -- Compiling module top
+# -- Compiling module sha_padder
+# -- Compiling module sha256
+# -- Compiling module prepare
+# -- Compiling module main_comp
+# -- Compiling module intermediate_hash
+# -- Compiling module majority
+# -- Compiling module choice
+# -- Compiling module Sigma0
+# -- Compiling module sigma0
+# -- Compiling module Sigma1
+# -- Compiling module sigma1
+# -- Compiling module sha256_fsm
+# 
+# Top level modules:
+# 	top
+# End time: 13:52:29 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:52:29 on Nov 25,2024
+# vlog -reportprogress 300 sha256_tb_tv_CORRECT.sv 
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 13:52:30 on Nov 25,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:52:30 on Nov 25,2024
+# vlog -reportprogress 300 counter.sv 
+# -- Compiling module counter64
+# 
+# Top level modules:
+# 	counter64
+# End time: 13:52:30 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:52:30 on Nov 25,2024
+# vlog -reportprogress 300 mux.sv 
+# -- Compiling module mux2
+# -- Compiling module mux3
+# -- Compiling module mux4
+# -- Compiling module mux5
+# -- Compiling module mux6
+# -- Compiling module mux16
+# -- Compiling module mux64
+# 
+# Top level modules:
+# 	mux2
+# 	mux3
+# 	mux4
+# 	mux5
+# 	mux6
+# 	mux16
+# 	mux64
+# End time: 13:52:30 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2021.3 Compiler 2021.07 Jul 13 2021
+# Start time: 13:52:30 on Nov 25,2024
+# vlog -reportprogress 300 flopenr.sv 
+# -- Compiling module flopenr
+# 
+# Top level modules:
+# 	flopenr
+# End time: 13:52:30 on Nov 25,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0

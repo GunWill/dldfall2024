@@ -1,3 +1,4 @@
+
 `timescale 1ns/1ps
 module stimulus;
 
@@ -11,6 +12,31 @@ module stimulus;
     logic clk, reset, start;
     logic [31:0] errors;
 
+
+
+     integer handle3;
+   integer desc3;
+   
+
+
+
+   initial
+     begin
+	// Gives output file name
+	handle3 = $fopen("sha256.out");
+		
+     end
+
+   always 
+     begin
+	desc3 = handle3;
+	#640 $fdisplay(desc3, "%h || %h || %h", 
+		     golden, hashed, message);
+     end   
+
+
+
+
     // Instantiate DUT
     top #(MSG_SIZE, 512) dut (
         .message(message),
@@ -20,13 +46,17 @@ module stimulus;
         .hashed(hashed)
     );
 
+
+
     // Initialize signals
     initial begin
-        clk = 1'b0;
+        clk = 1'b1;
         reset = 1'b1;
         start = 1'b0;
         errors = 32'b0;
         #10 reset = 1'b0; // Deassert reset after 10ns
+    
+      
     end
 
     // Clock generation
@@ -34,6 +64,12 @@ module stimulus;
 
     // Test procedure
     initial begin
+
+// Wait for DUT initialization
+  
+        
+
+
         // Test vector 1: "Hello, SHA-256!"
         wait_for_done(
             120'h48656c6c6f2c205348412d32353621, // Message
@@ -64,22 +100,34 @@ module stimulus;
             256'hbad9a6c7eff030cb83b1e45e78cae5c7b29df3c1c035424fb592f93877357828
         );
 
+        wait_for_done(120'bx, 256'bx);
+
+    
+
         // Display final results
         $display("Total Errors: %d", errors);
         $finish;
     end
 
+
+
+
+
     // Task to apply test vectors and wait for hashing to complete
     task wait_for_done(input logic [MSG_SIZE-1:0] msg, input logic [255:0] expected_hash);
         begin
             message = msg;
-            golden = expected_hash;
             start = 1'b1; // Start hashing
-            @(posedge clk); // Wait for one clock cycle
-           // start = 1'b0;
+            
+            
+            #650 start = 1'b0; 
+           #10 golden = expected_hash;
+           
+         
+
 
             // Wait for done signal to be asserted
-            wait (dut.hashed == expected_hash);
+          wait (dut.hashed == expected_hash);
             
             // Verify the result
             @(negedge clk); // On the falling edge, check result
@@ -95,3 +143,5 @@ module stimulus;
     endtask
 
 endmodule
+
+

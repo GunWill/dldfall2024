@@ -87,6 +87,7 @@ module sha256 #(parameter PADDED_SIZE = 512)
    logic [31:0]   a_out_q, b_out_q, c_out_q, d_out_q, e_out_q, f_out_q, g_out_q, h_out_q;
 
     logic [31:0]   flopA, flopB, flopC, flopD, flopE, flopF, flopG, flopH;
+    logic [31:0] finalH0, finalH1, finalH2, finalH3, finalH4, finalH5, finalH6, finalH7; 
 
    logic [31:0]   muxAout, muxBout, muxCout, muxDout, muxEout, muxFout, muxGout, muxHout;
 
@@ -204,12 +205,16 @@ mux64 #(32) muxW (
     flopenr #(32) H6 (clk, reset, done, h6,  h6_q );
     flopenr #(32) H7 (clk, reset, done, h7,  h7_q);
 
-	
 
-	assign hashed ={h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q};
+assign hashed ={h0_q, h1_q, h2_q, h3_q, h4_q, h5_q, h6_q, h7_q};
+
+
 
 
 endmodule // sha_main
+
+
+
 
 
 
@@ -645,7 +650,7 @@ module sha256_fsm (
             end
 
             DONE: begin
-                done = 1'b0;
+               // done = 1'b0;
                 init = 1'b0;
                 done = 1'b1; // Signal hashing completion
                 if (!start) begin

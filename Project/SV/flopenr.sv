@@ -31,7 +31,7 @@ module flopenr #(parameter WIDTH = 8) (
   output logic [WIDTH-1:0] q);
 
   always_ff @(posedge clk)
-    if (reset)   q <= #1 0;
+    if (reset)   q <= #1 32'hx;
     else if (s) q <= #1 d;
 endmodule
 
