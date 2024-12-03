@@ -47,14 +47,20 @@ module top_demo
   logic start;
   
   // Place TicTacToe instantiation here
-  assign start = sw[4];
+  assign start = sw[5];
+  
+  logic clk_en; 
+  
+  // Place TicTacToe instantiation here
+  clk_div dut1(sysclk_125mhz, sw[4], clk_en);
   
    logic [15:0] segments; 
- (*mark_debug = "true" *) logic [255:0] hashed;
+ 
+(*mark_debug = "true" *) logic [255:0] hashed;
   // Place TicTacToe instantiation here
   top #(120, 512) dut000(
-    .clk(sysclk_125mhz),
-    .reset(rst),
+    .clk(clk_en),
+    .reset(sw[4]),
     .start(start),                   // Start hashing process
     .message(120'h48656c6c6f2c205348412d32353621), // "Hello, SHA-256!" message
     .hashed(hashed)                     // Done signal when hashing is complete
@@ -71,6 +77,7 @@ multiplexer dut111 (
   
   //ideal sha256 output
   //256'h_d0e8_b8f1_1c98_f369_016e_b2ed_3c54_1e1f_0138_2f9d_5b31_04c9_ffd0_6b61_75a4_6271
+  
   
   //multiplexer
  
