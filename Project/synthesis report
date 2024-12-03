@@ -1,0 +1,350 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Tue Dec  3 13:08:57 2024
+# Process ID: 73848
+# Current directory: C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.runs/synth_1
+# Command line: vivado.exe -log top_demo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_demo.tcl
+# Log file: C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.runs/synth_1/top_demo.vds
+# Journal file: C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.runs/synth_1\vivado.jou
+# Running On: CEAT-ENDV350-01, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 8, Host memory: 68426 MB
+#-----------------------------------------------------------
+source top_demo.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/utils_1/imports/synth_1/top_demo.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/utils_1/imports/synth_1/top_demo.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top_demo -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 67492
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1430.785 ; gain = 440.031
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_demo' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'clk_div' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Lab3/SV/clk_div.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'clk_div' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Lab3/SV/clk_div.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:5]
+	Parameter MSG_SIZE bound to: 120 - type: integer 
+	Parameter PADDED_SIZE bound to: 512 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter64' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/counter.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'counter64' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/counter.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'sha256_fsm' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:589]
+INFO: [Synth 8-226] default block is never used [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:625]
+INFO: [Synth 8-6155] done synthesizing module 'sha256_fsm' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:589]
+INFO: [Synth 8-6157] synthesizing module 'sha_padder' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:36]
+	Parameter MSG_SIZE bound to: 120 - type: integer 
+	Parameter PADDED_SIZE bound to: 512 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'sha_padder' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:36]
+INFO: [Synth 8-6157] synthesizing module 'sha256' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:52]
+	Parameter PADDED_SIZE bound to: 512 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mux2' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/mux.sv:29]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/mux.sv:29]
+INFO: [Synth 8-6157] synthesizing module 'flopenr' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/flopenr.sv:27]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenr' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/flopenr.sv:27]
+INFO: [Synth 8-6157] synthesizing module 'prepare' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:222]
+INFO: [Synth 8-6157] synthesizing module 'sigma1' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:577]
+INFO: [Synth 8-6155] done synthesizing module 'sigma1' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:577]
+INFO: [Synth 8-6157] synthesizing module 'sigma0' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:565]
+INFO: [Synth 8-6155] done synthesizing module 'sigma0' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:565]
+INFO: [Synth 8-6155] done synthesizing module 'prepare' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:222]
+INFO: [Synth 8-6157] synthesizing module 'mux64' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/mux.sv:83]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/mux.sv:91]
+INFO: [Synth 8-6155] done synthesizing module 'mux64' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/SV/mux.sv:83]
+INFO: [Synth 8-6157] synthesizing module 'main_comp' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:439]
+INFO: [Synth 8-6157] synthesizing module 'choice' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:553]
+INFO: [Synth 8-6155] done synthesizing module 'choice' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:553]
+INFO: [Synth 8-6157] synthesizing module 'majority' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:547]
+INFO: [Synth 8-6155] done synthesizing module 'majority' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:547]
+INFO: [Synth 8-6157] synthesizing module 'Sigma0' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:559]
+INFO: [Synth 8-6155] done synthesizing module 'Sigma0' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:559]
+INFO: [Synth 8-6157] synthesizing module 'Sigma1' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:571]
+INFO: [Synth 8-6155] done synthesizing module 'Sigma1' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:571]
+INFO: [Synth 8-6155] done synthesizing module 'main_comp' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:439]
+INFO: [Synth 8-6157] synthesizing module 'intermediate_hash' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:526]
+INFO: [Synth 8-6155] done synthesizing module 'intermediate_hash' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:526]
+INFO: [Synth 8-6155] done synthesizing module 'sha256' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:52]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/sha256.sv:5]
+INFO: [Synth 8-6157] synthesizing module 'multiplexer' [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:125]
+INFO: [Synth 8-226] default block is never used [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:132]
+INFO: [Synth 8-6155] done synthesizing module 'multiplexer' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:125]
+INFO: [Synth 8-6157] synthesizing module 'segment_driver' [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/segment_driver.sv:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/segment_driver.sv:63]
+INFO: [Synth 8-6157] synthesizing module 'digit2segments' [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/digit2segments.sv:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/digit2segments.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'digit2segments' (0#1) [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/digit2segments.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'segment_driver' (0#1) [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/sources_1/imports/Desktop/segment_driver.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_demo' (0#1) [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:23]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dut000'. This will prevent further optimization [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:61]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dut111'. This will prevent further optimization [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:71]
+WARNING: [Synth 8-3848] Net led in module/entity top_demo does not have driver. [C:/Users/ekravch/Documents/GitHub/dldfall2024/Project/top_demo.sv:31]
+WARNING: [Synth 8-7129] Port reset in module flopenr is either unconnected or has no load
+WARNING: [Synth 8-7129] Port start in module sha256 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module top_demo is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1547.426 ; gain = 556.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1547.426 ; gain = 556.672
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1547.426 ; gain = 556.672
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.097 . Memory (MB): peak = 1547.426 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/constrs_1/imports/Desktop/constr.xdc]
+Finished Parsing XDC File [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/constrs_1/imports/Desktop/constr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.srcs/constrs_1/imports/Desktop/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_demo_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_demo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1649.125 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1649.125 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'sha256_fsm'
+INFO: [Synth 8-802] inferred FSM for state register 'CURRENT_STATE_reg' in module 'segment_driver'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                    INIT |                               01 |                               01
+                    HASH |                               10 |                               10
+                    DONE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'sha256_fsm'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              DIGIT_ZERO |                               00 |                               00
+               DIGIT_ONE |                               01 |                               01
+               DIGIT_TWO |                               10 |                               10
+             DIGIT_THREE |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'CURRENT_STATE_reg' using encoding 'sequential' in module 'segment_driver'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   4 Input   32 Bit       Adders := 48    
+	   5 Input   32 Bit       Adders := 1     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 9     
+	   2 Input    6 Bit       Adders := 1     
++---XORs : 
+	   3 Input     32 Bit         XORs := 99    
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 16    
+	                6 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 8     
+	   4 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 1     
+	   4 Input    4 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port led[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[0] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module top_demo is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   107|
+|3     |LUT1   |   140|
+|4     |LUT2   |     9|
+|5     |LUT3   |    38|
+|6     |LUT4   |   248|
+|7     |LUT5   |    35|
+|8     |LUT6   |   195|
+|9     |MUXF7  |    46|
+|10    |MUXF8  |    23|
+|11    |FDCE   |     9|
+|12    |FDRE   |   454|
+|13    |FDSE   |   101|
+|14    |IBUF   |    11|
+|15    |OBUF   |    12|
+|16    |OBUFT  |     8|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:25 . Memory (MB): peak = 1649.125 ; gain = 556.672
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1649.125 ; gain = 658.371
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1649.125 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 176 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1649.125 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: c9a8036c
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:38 . Memory (MB): peak = 1649.125 ; gain = 1078.449
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1649.125 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ekravch/Desktop/dldfall2024/Lab1/Vivado/Lab1/Lab1.runs/synth_1/top_demo.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_demo_utilization_synth.rpt -pb top_demo_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  3 13:09:43 2024...
