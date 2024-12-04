@@ -653,9 +653,10 @@ module sha256_fsm (
                // done = 1'b0;
                 init = 1'b0;
                 done = 1'b1; // Signal hashing completion
-                if (!start) begin
+               // if (!start) begin
+		    if (hashed !== 'bx) next_state = IDLE;
                     next_state = IDLE; // Return to IDLE when start is deasserted
-                end
+               // end
             end
 
             default: next_state = IDLE;
