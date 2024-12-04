@@ -1,0 +1,14 @@
+For the sha256 design, there are multiple ways to verify that the 5 tests work. The fastest way is to look at the sha256.out file, which is formated: 
+
+golden || hashed || message
+
+Additionally, the Modelsim transcript will display tests passed: Test passed for message: message.
+
+The waveform also has the hashed, golden vector, and message waves displayed for visual verification. 
+
+There were 5 tests done, 5 tests passed. 
+
+There are 2 videos included with the report (one in the report as a link and one will be submitted alongside the report and sha256 files);
+one gives an overview of the design and one gives an overview of the implementation. 
+
+The code used "posedge" but the clock was inverted, so that flip flop values will update on the falling edge of the clock. 
