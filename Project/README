@@ -8,7 +8,7 @@ The waveform also has the hashed, golden vector, and message waves displayed for
 
 There were 5 tests done, 5 tests passed. 
 
-There are 2 videos included with the report (one in the report as a link and one will be submitted alongside the report and sha256 files);
+There are 2 videos included with the report;
 one gives an overview of the design and one gives an overview of the implementation. 
 
 The code used "posedge" but the clock was inverted, so that flip flop values will update on the falling edge of the clock. 
